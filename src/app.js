@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require("../src/db/conn");
+require("../src/db/conn");
 const message = require("../src/models/message");
 const user = require("../src/models/user");
 const home = require("../src/models/home");
@@ -8,6 +8,7 @@ const homeInterest = require("../src/models/homeInterest");
 const app = express();
 const path = require("path");
 const port = process.env.port || 3000;
+const { mongo } = require("mongoose");
 const hbs = require("hbs");
 const { link } = require("fs");
 const bcrypt = require("bcryptjs");
