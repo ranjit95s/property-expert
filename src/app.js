@@ -7,7 +7,7 @@ const home = require("../src/models/home");
 const homeInterest = require("../src/models/homeInterest");
 const app = express();
 const path = require("path");
-const port = process.env.port || 3000;
+// const port = process.env.port || 3000;
 const { mongo } = require("mongoose");
 const hbs = require("hbs");
 const { link } = require("fs");
@@ -721,6 +721,10 @@ app.get("/homes", async (req, res) => {
 
 //server create
 
-app.listen(port, () => {
-    console.log("server is running on " + port);
-});
+// app.listen(port, () => {
+//     console.log("server is running on " + port);
+// });
+
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on 3000 port mode");
+  });
