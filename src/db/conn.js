@@ -8,8 +8,11 @@ mongoose.connect(process.env.DB_CONN2 || DB_REMOTE, {useCreateIndex : true,
 useNewUrlParser : true,
 useUnifiedTopology : true,
 useFindAndModify: true})
-        .then(connect => console.log('connected to mongodb..'))
-        .catch(e => console.log('could not connect to mongodb', e))
+.then(() =>{
+    console.log("connection to db successfull!")
+}).catch((e)=>{
+    console.log("db not connect due to = " + e)
+})
 
 module.exports = mongoose
 

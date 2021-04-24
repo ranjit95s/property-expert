@@ -1,10 +1,10 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require("./db/conn");
-const message = require("./models/message");
-const user = require("./models/user");
-const home = require("./models/home");
-const homeInterest = require("./models/homeInterest");
+const mongoose = require("../src/db/conn");
+const message = require("../src/models/message");
+const user = require("../src/models/user");
+const home = require("../src/models/home");
+const homeInterest = require("../src/models/homeInterest");
 const app = express();
 const path = require("path");
 const port = process.env.port || 3000;
