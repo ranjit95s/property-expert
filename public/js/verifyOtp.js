@@ -46,6 +46,7 @@ $(document).ready(function () {
 
 function onSignInSubmit() {
   var sendBtn = document.getElementById("send");
+  var sendBtno = document.getElementById("sendo");
   var verifyBtn = document.getElementById("verify");
   var verifyBtnz = document.getElementById("gggg");
   var submitBtn = document.getElementById("submit");
@@ -55,7 +56,7 @@ function onSignInSubmit() {
   $("#send").on("click", function () {
     var phoneNo = "+91" + $("#num").val();
     console.log(phoneNo);
-    var sendBtn = document.getElementById("send");
+    var sendBtno = document.getElementById("sendo");
     sendBtn.value = "Please Wait...";
     var appVerifier = window.recaptchaVerifier;
     firebase
