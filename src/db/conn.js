@@ -4,7 +4,7 @@ require('dotenv').config()
 // creating a database !!!
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.DB_CONN2 || DB_REMOTE, {useCreateIndex : true,
+mongoose.connect(process.env.DB_CONN2 || DB_CONN22, {useCreateIndex : true,
 useNewUrlParser : true,
 useUnifiedTopology : true,
 useFindAndModify: true})
