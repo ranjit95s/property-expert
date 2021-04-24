@@ -44,19 +44,19 @@ app.set('json spaces', '  ');
 
 // set Storage Engine 
 
-const storage = multer.diskStorage({
+var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "./public/uploadsTemp/");
+      cb(null, "./public/TempUploads/");
     },
     filename: function (req, file, cb) {
-        cb(
-            null,
-            file.fieldname + "__" + Date.now() + path.extname(file.originalname)
-        );
+      cb(
+        null,
+        file.fieldname + "__" + Date.now() + path.extname(file.originalname)
+      );
     },
-});
-
-const upload = multer({ storage: storage });
+  });
+  
+  var upload = multer({ storage: storage });
 
 // , fileFilter: function (req, res, cd) {
 //     checkFiletype(file, cd);
