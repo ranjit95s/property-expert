@@ -310,7 +310,7 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
     var { uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit } = req.body;
     console.log(uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit);
     try {
-        // const uploadsFolder = path.join(__dirname, "../public/images/property");
+        const uploadsFolder = path.join(__dirname, "../public/images/property");
         // const image_1st = uploadsFolder + req.files.first_image[0].filename;
         // const image_2nd = uploadsFolder + req.files.second_image[0].filename;
         // const image_3rd = uploadsFolder + req.files.third_image[0].filename;
