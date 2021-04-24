@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-require("./db/conn");
+const mongoose = require("./db/conn");
 const message = require("./models/message");
 const user = require("./models/user");
 const home = require("./models/home");
