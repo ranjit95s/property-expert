@@ -57,7 +57,7 @@ function onSignInSubmit() {
     var phoneNo = "+91" + $("#num").val();
     console.log(phoneNo);
     var sendBtno = document.getElementById("sendo");
-    sendBtn.value = "Please Wait...";
+    sendBtno.value = "Please Wait...";
     var appVerifier = window.recaptchaVerifier;
     firebase
       .auth()
@@ -74,7 +74,7 @@ function onSignInSubmit() {
         otpInput.classList.remove("hidden");
         sendBtn.classList.toggle("hidden");
         verifyBtn.classList.remove("hidden");
-        sendBtn.value = "Send OTP";
+        sendBtno.value = "Send OTP";
       })
       .catch(function (error) {
         console.log(error.message);
@@ -84,7 +84,7 @@ function onSignInSubmit() {
           "error"
         );
 
-        sendBtn.value = "Send OTP";
+        sendBtno.value = "Send OTP";
       });
   });
   $("#verify").on("click", function () {
