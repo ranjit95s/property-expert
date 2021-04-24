@@ -722,5 +722,5 @@ app.get("/homes", async (req, res) => {
 //server create
 
 app.listen(port, () => {
-    console.log(`server is running at port number ${port}`);
+    console.log("server is running on " + port);
 });
