@@ -623,7 +623,7 @@ app.get("/properties", async (req, res) => {
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
         const userDetails = await user.findOne({ _id: verifyUser._id });
-        res.render("Property", { getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo });
+        res.render("properties", { getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo });
 
 
     } catch (e) {
