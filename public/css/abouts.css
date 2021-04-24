@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+.about {
+    min-height: 100vh;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    margin: 2px;
+    overflow-x: hidden;
+}
+.about .row .image img {
+    width: 30rem;
+    filter: drop-shadow(.5rem , .5rem , .5rem rgba(black));
+
+}
+.about .row .content {
+    padding: 1rem;
+}
+
+.about .row .content h3 {
+    font-size: 3.5rem;
+    color: var(--red);
+}
+.about .row .content p {
+    font-size: 2rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.about .row .content .btnn {
+    color: var(--red);
+    border-color: var(--red);
+    outline-color: var(--red);
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    
+}
+
+.about .row .content .btnn:hover{
+    color: #fff;;
+}
+
+.head-info {
+    margin: 5rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: rgb(87, 85, 85);
+    text-align: center;
+    font-family: 'Acme', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper{
+  margin-top: 40px;
+  background: rgb(255, 255, 255);
+  border-radius: 12px;
+}
+
+.wrapper h1{
+  font-family: 'Allura', cursive;
+  font-size: 35px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
+ 
+}
+
+.team .team_member{
+  background: #fff;
+  transition: 0.2s ease-out;
+  margin: 15px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: #8e8b8b;  
+  box-shadow: 0rem .5rem .5rem black;
+  position: relative;
+ 
+}
+
+.team .team_member:hover{
+  box-shadow: 0 .5rem .5rem var(--red);
+}
+
+.team .team_member h3{
+  color: #81c644;
+  font-size: 26px;
+  margin-top: 50px;
+}
+
+.team .team_member p.role{
+  color: #ccc;
+  margin: 12px 0;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.team .team_member p{
+    color: rgb(153, 145, 145);
+    font-size: 12px;
+  }
+
+.team .team_member .team_img{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.team .team_member .team_img img{
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  transition: 0.2s ease-in;
+}
+.team .team_member .team_img img:hover {
+    box-shadow: 5px 5px 15px 5px rgb(255, 51, 0);
+    border-radius: 50%;
+}

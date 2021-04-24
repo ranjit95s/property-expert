@@ -1,0 +1,76 @@
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(/images/Marjorie-Holmes.png);
+    
+    background-size: cover;
+    border-radius: 0 0 10px 10px;
+    background-position: center;
+    position: relative;
+}
+
+.home .content {
+    text-align: center;
+    padding: 1rem;
+}
+
+.home .content h1 {
+    font-size: 6rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Potta One', cursive;
+    font-weight: 800;
+}
+
+.home .content h1 span {
+    color: var(--red);
+    font-family: 'Potta One', cursive;
+}
+
+.home .content p {
+   
+    font-size: 2.5rem;
+    color: #000000;
+    text-align: center;
+    font-weight: 700;
+   
+
+    padding: 1rem 0;
+}
+
+.btnn{
+    height: 4.5rem;
+    width: 19rem;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    
+    border: .2rem solid var(--red);
+    outline: .2rem solid var(--red);
+    outline-offset: -.8rem;
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    background: none;
+    
+}
+.home .btnn {
+    
+    background: rgba( 255, 127, 0, 0.35 );
+    box-shadow: 10px 15px 32px 10px rgb(255, 255, 255);
+    color: white;
+    
+}
+
+.home .plus {
+    border-radius: 25px;
+    background-color:var(--red);
+}
+
+.btnn:hover{
+    outline-offset: .4rem;
+    background: var(--red);
+    border-radius: 0px;
+    color: white;
+}

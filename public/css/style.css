@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800.btndisplay=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+:root{
+    --red:#e84118;
+}
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none!important;
+    list-style: none!important;
+    outline: none;
+    text-transform: capitalize;
+    transition: all .2s cubic-bezier(.37,1.14,.26,1.24);
+}
+
+*::selection{
+    background: var(--red);
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background:linear-gradient(transparent,#30ff00);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background:linear-gradient(transparent,#00fcff);
+}
+
+.index-prop {
+    padding: 60px 30px;
+
+}
+
+.wrapperss {
+    max-height: 294px;
+
+    display: flex;
+    margin-top: 50px;
+    overflow-x: scroll;
+    padding: 20px 5px;
+
+    width: 100%;
+
+}
+
+.wrapperss .item {
+    min-width: 225px;
+    min-height: 235px;
+    max-width: 225px;
+    max-height: 235px;
+    margin: 0px 10px;
+    line-height: 25px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba( 255, 255, 255, 0.75 );
+box-shadow: 0 8px 14px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 8.0px );
+-webkit-backdrop-filter: blur( 8.0px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.item img {
+    border-radius: 20px 20px 0px 0px;
+    width: 225px;
+    height: 170px;
+}
+
+.item p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.heading {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 .5rem;
+    padding-top: 2rem;
+    box-shadow: 0 .2rem .05rem rgb(0, 0, .3);
+}
+
+.heading span {
+    display: inline-block;
+    font-size: 3.5rem;
+    color: var(--red);
+    padding: 1rem 0;
+    box-shadow: 0 .2rem .05rem var(--red);
+}
+
+.look-property {
+    min-height: 100vh;
+}
+
+.look-property .head {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 25px;
+    font-weight: 700;
+} 
+
+.look-property .img-box  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+
+.look-property .img-box .box {
+    width: 38rem;
+    margin: 2.5rem;
+    height: 45rem;
+    border: .5rem solid rgb(255, 255, 255);
+    box-shadow: 0 .5rem .5rem black;
+    transition: all .2s ease;
+}
+
+.look-property .img-box .box img {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.look-property .img-box .box h2{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 100 !important;
+    margin: 1.5rem;
+    font-family: 'Bevan', cursive;
+}
+
+.look-property .img-box .box p {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 1.5rem;
+    color: gray;
+}
+
+.look-property .img-box .box .buttons{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2.9rem;
+}
+
+.look-property .img-box .box .buttons a {
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid blue;
+    color: blue;
+    transition: 150ms ease-in;
+}
+
+.look-property .img-box .box:hover > .buttons a {
+    color:whitesmoke;
+    background-color: blue;
+}
+
+.look-property .img-box .box:hover {
+    transform: scaleY(1.1);
+}
+
+.property {
+    min-height: 100vh;
+}
+
+.property .conatiner {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.property .glass {
+    
+    width: max-content;
+    margin: 8px;
+    font-family:cursive;
+    font-weight: 700 !important;
+    font-size: 1.3rem !important;
+    background: rgba( 255, 255, 255, 0.60 );
+box-shadow: 0 8px 8px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.0px );
+-webkit-backdrop-filter: blur( 2.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+.slogan h2{
+    margin-top: 3.7rem;
+    text-align: center;
+    color: #333;
+    word-spacing: 5px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 3.7rem;
+}
+.slogan h3{
+    color: #252525;
+    margin-top: .5rem;
+    text-align: center;
+    font-size: 3.2rem;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.building-name {
+    font-family: 'Potta One', cursive;
+    font-weight: 200;
+    font-size: 2rem !important;
+    word-spacing: 1px;
+    color: rgb(48, 48, 48) !important;
+}
+
+span i {
+    color: #747474;
+    font-size: 3em;
+}
+
+span i:hover {
+    cursor: pointer;
+    color: rgb(61, 61, 61);
+}
+
+.heart {
+    color: var(--red) !important;
+    animation: heart 0.5s linear;
+}
+
+
+@keyframes heart {
+    0% {
+        transform: rotate(0deg) scale(1.7);
+    }
+    40% {
+        transform: rotate(0deg) scale(1);
+    }
+    41% {
+        transform: rotate(360deg) scale(1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+.property .control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    list-style: none;
+}
+
+.property .control .button {
+    margin: 1rem 2rem;
+    padding: .5rem 0;
+    border-bottom: .2rem solid #333;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.property .control .button.button-active,
+.property .control .button:hover {
+    color: var(--red);
+}
+
+.property .img-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    
+}
+
+.property .img-con .image  {
+    width: 45rem;
+    margin: 1.52rem;
+    position: relative;
+    height: 45rem;
+    border: 1rem solid rgb(255, 255, 255);
+    box-shadow: 0 .5rem .5rem black;
+    background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20.0px );
+-webkit-backdrop-filter: blur( 20.0px );
+border-radius: 7.5px;
+
+}
+
+.property .stick_to_bo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.property .img-con .image img{
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+    transition: ease-in 2s;
+}
+.property .img-con .image:hover > img {
+    object-fit: fill;
+}
+
+
+/* [2] Transition property for smooth transformation of images */
+/* .img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+/* .img-hover-zoom:hover img {
+
+    object-fit:fill;
+} */ 
+
+.property .img-con .image p {
+    font-size: 1.4rem;
+    color: #333;
+    padding: .5rem;
+    font-weight: bold;
+    
+}
+
+
+.property .img-con .image a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: underline !important;
+    padding: .5rem;
+}
+
+.property .img-con .image a:hover{
+    color: var(--red);
+    text-decoration: underline !important;
+}
+
+.agents .box-con{
+    max-height: 500px;
+    overflow-x: auto;
+    display: flex;
+}
+
+.agents .box-con::-webkit-scrollbar {
+    height: 12px;
+}
+
+.agents .box-con::-webkit-scrollbar-thumb {
+    background:radial-gradient(#00fcff,#30ff00);
+    border-radius: 6px;
+}
+.agents .box-con::-webkit-scrollbar-thumb:hover {
+    background:radial-gradient(#30ff00,#00fcff);
+}
+
+
+.agents .box .image {
+    width: 35rem;
+    margin: 2rem;
+    border: 1rem solid rgb(255, 255, 255);
+    box-shadow: 0 .5rem .5rem black;
+}
+.agents .box .image img {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+}
+.agents .box .info h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.agents .box-con .info p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: darkred;
+}
+
+.agents .box-con .info .share {
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.fa-twitter:before {
+    content: "\f099";
+    color:var(--red);
+    padding: 10px;
+}
+.fa-youtube::before {
+    content: "\f167";
+    color: var(--red);
+}
+.fa-instagram:before {
+    content: "\f099";
+    color:var(--red);
+    padding: 10px;
+}
+
+.fa-pinterest:before {
+    content: "\f099";
+    color:var(--red);
+    padding: 10px;
+}
+
+.fa-facebook-f:before {
+    content: "\f099";
+    color:var(--red);
+    padding: 10px;
+}
+
+.agents .agents-what-do,
+.agents .agents-what-is{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    margin: 0 15px;
+    overflow-x: hidden;
+  
+}
+
+.headingss {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 .5rem;
+    padding-top: 2Srem;
+    box-shadow: 0 .2rem .05rem rgb(0, 0, .3);
+}
+
+.headingss span {
+    display: inline-block;
+    font-size: 2.5rem;
+    color: rgb(0, 0, 255);
+    padding: 1rem 0;
+    box-shadow: 0 .2rem .05rem rgb(0, 0, 255);
+}
+
+.agents .agents-what-do .image,
+.agents .agents-what-is .image {
+    width: 30rem;
+    margin-top: 2px;
+    filter: drop-shadow(.5rem , .5rem , .5rem rgba(black));
+}
+.agents .agents-what-do p,
+.agents .agents-what-is p {
+    font-size: 1.5rem;
+    color:rgb(82 82 82);
+    margin: 10px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+}

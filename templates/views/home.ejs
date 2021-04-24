@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- {{!--
+    <link rel="stylesheet" href="../css/bootstrap.min.css"> --}} -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/mainc.css">
+  <link rel="stylesheet" href="css/abouts.css">
+  <link rel="stylesheet" href="css/testa.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>home of page</title>
+</head>
+
+<body>
+  <%- include ("navbar.ejs") %>
+    <% if( typeof foundHome !='undefined' && foundHome==false ){ %>
+      <script>
+        window.location.href = "/"
+      </script>
+      <% } %>
+
+      <% if( typeof interestSubmitted != 'undefined' && interestSubmitted == true ){ %>
+        <script>
+                        swal("Grabbed Your Interest!", "We have successfully registered your interest for this home. We will soon contact you. Thank You", "success")
+                            .then((value) => {
+                                if (value == true) {
+                                    window.location.href = "/"
+                                } else {
+                                    window.location.href = "/"
+                                }
+                            });
+                    
+         </script>
+    <% } %>
+
+        <% if( typeof foundHome !='undefined' && foundHome==true ){ %>
+          <% getHome.forEach(function (home){ %>
+
+            <div class="info-sec">
+              <hr>
+              <div class="header-top-info">
+                <div class="price-sec">
+                  <div class="price"><i class="fas fa-rupee-sign"></i>
+                    <%= home.offered_at%> <span><small>
+                          <%= home.sellOrRent %> | <%= home.sq_ft %> sq-ft
+                        </small></span>
+                  </div>
+                </div>
+                <div class="loc-sec">
+                  <div class="location"><i class="fas fa-map-marker-alt"></i> Location :</div>
+                  <div class="location-full">
+                    <%= home.house_number%> , <%= home.building_name%> building , <%= home.floor%> floor , <%=home.nearest_landmark%> , <br>
+                            <%= home.area_name%> , <%= home.city_name%> ,
+                                <%= home.state_name%> , <%= home.country_name%>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <!-- image gallary -->
+              <h2 class="heading"> <span> Property Images </span></h2>
+              <div class="body">
+                <div class="wrapper">
+                  <div class="gallery">
+                    <div class="image"><span><img src="/images/property/<%=home.first_image%>" alt=""></span></div>
+                    <div class="image"><span><img src="/images/property/<%=home.second_image%>" alt=""></span></div>
+                    <div class="image"><span><img src="/images/property/<%=home.third_image%>" alt=""></span></div>
+                    <div class="image"><span><img src="/images/property/<%=home.fourth_image%>" alt=""></span></div>
+
+                  </div>
+                </div>
+                <div class="preview-box">
+                  <div class="details">
+                    <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
+                    <span class="icon fas fa-times"></span>
+                  </div>
+                  <div class="image-box">
+                    <div class="slide prev"><i class="fas fa-angle-left"></i></div>
+                    <div class="slide next"><i class="fas fa-angle-right"></i></div>
+                    <img src="" alt="">
+                  </div>
+                </div>
+                <div class="shadow"></div>
+
+              </div>
+
+              
+
+
+              <!-- image gallary -->
+
+              <div class="overview-sec">
+                <div class="overview"> Overviews :</div>
+                <div class="clear-over">
+
+                  <div class="timeadd over">Time added PropertyExpert.Com : <span> <%= moment(home.receivedAt).format('DD-MM-YYYY');  %>
+                  </span></div>
+                  <div class="owner-list over">
+                    listed by : <span>
+                      <%= home.owner_name%>
+                    </span>
+                  </div>
+                </div>
+                <div class="complete-info">
+                  <div class="details-cell">
+
+                    <div class="detail-cell">
+                      <div class="info-head"><i class="fas fa-home lolololo"></i> Home Type</div>
+                      <div class="info-heads"><%= home.home_Type%></div>
+                    </div>
+                    <div class="detail-cell">
+                      <div class="info-head"><i class="fas fa-tags lolololo"></i> sellOrRent</div>
+                      <div class="info-heads"><%= home.sellOrRent%></div>
+                    </div>
+                    <div class="detail-cell">
+                      <div class="info-head" id="priceCell"><i class="fas fa-rupee-sign lolololo"></i> Offered At</div>
+                      <div class="info-heads"> <%= home.offered_at%></div>
+                    </div>
+                    <% if( home.rentDeposit != null ){ %>
+                      <div class="detail-cell">
+                        <div class="info-head"><i class="fas fa-rupee-sign lolololo"></i> Rent Deposit</div>
+                        <div class="info-heads"><%= home.rentDeposit%></div>
+                      </div>
+                      <% } %>
+                      <div class="detail-cell">
+                        <div class="info-head"><i class="fas fa-parking lolololo"></i> Parking</div>
+                        <div class="info-heads"><%= home.parking%></div>
+                      </div>
+                    <div class="detail-cell">
+                      <div class="info-head" id="sq_ftCell"><i class="fas fa-equals lolololo"></i> Sq_ft</div>
+                      <div class="info-heads"> <%= home.sq_ft%></div>
+                    </div>
+                    <div class="detail-cell">
+                      <div class="info-head"><i class="fas fa-hand-holding-heart lolololo"></i> age</div>
+                      <div class="info-heads"><%= home.age%></div>
+                    </div>
+                    <div class="detail-cell">
+                      <div class="info-head" id="pricePsq_ft"> <i class="fas fa-ruler-combined lolololo"></i> price/sq_ft</div>
+                      <div class="info-heads" id="text9" ><%= (home.offered_at / home.sq_ft).toFixed(0)%></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="questionArrive">
+
+                  <div class="question">Have a question about this home? Connect with a local buyer’s agent who
+                    advertises with
+                    PropertyExpert.Com </div>
+                  <input type="button" value="Get a call">
+
+                </div>
+              </div>
+
+
+
+
+
+              <form action="/homeInterest" method="POST" class="form">
+                <div class="header-form">Interested in touring and buying/Renting Home?</div>
+                <div class="user_infos">
+                  <div class="user-info">
+                    <div class="userinfo">Name</div>
+                    <input type="text" class="input_filed" placeholder="enter name" value="<%= home.owner_name%>"
+                      readonly>
+                  </div>
+                  <div class="user-info">
+                    <div class="userinfo">Phone</div>
+                    <input type="text" class="input_filed" placeholder="enter phone" value="<%= home.owner_phone%>" readonly>
+                  </div>
+                  <div class="user-info">
+                    <div class="userinfo">Email</div>
+                    <input type="text" class="input_filed" placeholder="enter email" value="<%= home.owner_email%>"
+                      readonly>
+                  </div>
+                  <div class="user-info">
+                    <div class="userinfo">Massage <small>(optional)</small></div>
+                    <input type="text" name="message_add" class="input_filed" placeholder="enter msg"
+                      value="I am interested in <%= home.house_number%>,<%= home.building_name%> building,<%= home.floor%> floor,<%=home.nearest_landmark%>,<%= home.area_name%>,<%= home.city_name%>,<%= home.state_name%>,<%= home.country_name%>">
+                  </div>
+                  <br>
+                  <div class="header-popup">Give the agent more details !</div>
+                  <div class="user-info">
+                    <div class="userinfo">is this your first time buying home?</div>
+                    <select name="buying_firstTime" id="select" required>
+                      <option value="Choose" selected disabled>CHOOSE</option>
+                      <option value="YES">YES</option>
+                      <option value="NO">NO</option>
+                    </select>
+                  </div>
+                  <div class="user-info">
+                    <div class="userinfo">When do you plan on buying/Renting a home?</div>
+                    <select name="plan_on_buying_home" id="select2" required>
+                      <option value="Choose" selected disabled>CHOOSE</option>
+                      <option value="0-3 month"> 0-3 month </option>
+                      <option value="3-6 month"> 3-6 month </option>
+                      <option value="6-12 month"> 6-12 month </option>
+                      <option value="12+ month"> 12+ month </option>
+                      <option value="I am not sure">I am not sure</option>
+                    </select>
+                  </div>
+                  <div class="user-info">
+                    <div class="userinfo">Are you or your spouse a veteran or active military?</div>
+                    <select name="active_military_status" id="select3" required>
+                      <option value="Choose" selected disabled>CHOOSE</option>
+                      <option value="YES">YES</option>
+                      <option value="NO">NO</option>
+                    </select>
+                  </div>
+                </div>
+              
+
+                <div id="container-forms">
+                  
+                  <!-- <button
+                    onclick="DoFast('?home_id=<%= home._id %>&owner=<%= home.owner_name %>&sellOrRent=<%= home.sellOrRent %>&offered_at=<%= home.offered_at %>&first_image=<%= home.first_image %>&second_image=<%= home.second_image %>&third_image=<%= home.third_image %>&fourth_image=<%= home.fourth_image %>&home_Type=<%= home.home_Type %>&area_name=<%= home.area_name %>&city_name=<%= home.city_name %>&nearest_landmark=<%= home.nearest_landmark %>&sq_ft=<%= home.sq_ft %>&parking=<%= home.parking %>&floor=<%= home.floor %>&age=<%= home.age %>&user_id=<%= user %>&user_name=<%= userName %>&user_phone=<%= userPhone %>&state_name=<%= home.state_name %>&country_name=<%= home.country_name %>')"
+                    style="text-align: center; display: none;" class="input" id="primaryButton" type="button">  Show Your Interest ❤️</button> -->
+                    <button onclick="DoFast('?home_id=<%= home._id %>&owner=<%= home.owner_name %>&sellOrRent=<%= home.sellOrRent %>&offered_at=<%= home.offered_at %>&first_image=<%= home.first_image %>&second_image=<%= home.second_image %>&third_image=<%= home.third_image %>&fourth_image=<%= home.fourth_image %>&home_Type=<%= home.home_Type %>&area_name=<%= home.area_name %>&city_name=<%= home.city_name %>&nearest_landmark=<%= home.nearest_landmark %>&sq_ft=<%= home.sq_ft %>&parking=<%= home.parking %>&floor=<%= home.floor %>&age=<%= home.age %>&user_id=<%= user %>&userName=<%= userName %>&userPhone=<%= userPhone %>&state_name=<%= home.state_name %>&country_name=<%= home.country_name %>')" class="input" id="button-2" type="submit">Show Your Interest ❤️</button>
+                </div>
+
+              </form>
+            </div>
+            <% }) %>
+            <% } %>
+              <!-- {{!-- things end here --}} -->
+
+              <%- include ("footer.ejs") %>
+</body>
+<script src="../jq/jquery.js" type="text/javascript"></script>
+
+<!-- <script src="../js/bootstrap.js" type="text/javascript"></script> -->
+<!--jq cnd link-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--custom js link-->
+<script src="js/main.js"></script>
+<script>
+
+  function DoFast(str) {
+    var inputString = str;
+    // window.location.href = "/homeInterest"+inputString;
+    var href = "/homeInterest" + inputString ;
+    console.log(href)
+    window.location.href = href;
+  }
+
+  $('#container-forms').on( "click", '#primaryButton', function(e){
+    alert('CLICKED 1');
+});
+$('#container-forms').on( "click", '#button-2', function(e){
+    $('#primaryButton').trigger(e.type);
+    alert('CLICKED 2');
+});
+
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function () { myFunction() };
+
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+
+  //getting all required elements
+  const gallery = document.querySelectorAll(".image"),
+    previewBox = document.querySelector(".preview-box"),
+    previewImg = previewBox.querySelector("img"),
+    closeIcon = previewBox.querySelector(".icon"),
+    currentImg = previewBox.querySelector(".current-img"),
+    totalImg = previewBox.querySelector(".total-img"),
+    shadow = document.querySelector(".shadow");
+
+  window.onload = () => {
+    for (let i = 0; i < gallery.length; i++) {
+      totalImg.textContent = gallery.length; //passing total img length to totalImg variable
+      let newIndex = i; //passing i value to newIndex variable
+      let clickedImgIndex; //creating new variable
+
+      gallery[i].onclick = () => {
+        clickedImgIndex = i; //passing cliked image index to created variable (clickedImgIndex)
+        function preview() {
+          currentImg.textContent = newIndex + 1; //passing current img index to currentImg varible with adding +1
+          let imageURL = gallery[newIndex].querySelector("img").src; //getting user clicked img url
+          previewImg.src = imageURL; //passing user clicked img url in previewImg src
+        }
+        preview(); //calling above function
+
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        if (newIndex == 0) { //if index value is equal to 0 then hide prevBtn
+          prevBtn.style.display = "none";
+        }
+        if (newIndex >= gallery.length - 1) { //if index value is greater and equal to gallery length by -1 then hide nextBtn
+          nextBtn.style.display = "none";
+        }
+        prevBtn.onclick = () => {
+          newIndex--; //decrement index
+          if (newIndex == 0) {
+            preview();
+            prevBtn.style.display = "none";
+          } else {
+            preview();
+            nextBtn.style.display = "block";
+          }
+        }
+        nextBtn.onclick = () => {
+          newIndex++; //increment index
+          if (newIndex >= gallery.length - 1) {
+            preview();
+            nextBtn.style.display = "none";
+          } else {
+            preview();
+            prevBtn.style.display = "block";
+          }
+        }
+        document.querySelector("body").style.overflow = "hidden";
+        previewBox.classList.add("show");
+        shadow.style.display = "block";
+        closeIcon.onclick = () => {
+          newIndex = clickedImgIndex; //assigning user first clicked img index to newIndex
+          prevBtn.style.display = "block";
+          nextBtn.style.display = "block";
+          previewBox.classList.remove("show");
+          shadow.style.display = "none";
+          document.querySelector("body").style.overflow = "scroll";
+        }
+      }
+
+    }
+
+  }
+
+
+
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script src="js/jquery.hislide.js"></script>
+
+<script type="text/javascript">
+  $('.slide').hiSlide();
+</script>
+<!-- <script>
+
+  $('.slide').hiSlide();
+
+</script> -->
+
+</html>

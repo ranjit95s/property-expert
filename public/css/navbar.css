@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&display=swap');
+
+
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .mainLogo a {
+    color: rgb(0, 0, 0);
+    font-family: 'Reggae One', cursive;
+    font-weight: 800;
+    padding-left: 40px;
+    font-size: 3rem;
+
+  }
+
+  .mainLogo a span {
+    color: var(--red);
+    font-family: 'Reggae One', cursive;
+  }
+  
+  header .header-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 5rem;
+    background-color: var(--red);
+    padding: 1rem 2rem;
+}
+
+header .header-1 .logo {
+    font-size: 2.5rem;
+    color: white;
+    font-family: 'Potta One', cursive;
+    
+}
+
+header .header-1 span {
+    font-family: 'Potta One', cursive;
+    color: rgb(228, 228, 228);
+}
+
+header .header-1 .call {
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    
+}
+
+header .header-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background:white;
+    padding: 1.5rem 0.1rem;
+    position: relative;
+    z-index: 1000;
+
+    border-bottom: 1px solid rgb(197, 195, 195);
+}
+
+header .header-2 .navbar ul , .share ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+header .header-2 .navbar ul li , .share ul li {
+    margin: 0rem 2.5rem;
+    padding: 0px;
+    
+}
+header .header-2 .navbar ul a li , .share ul li a {
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    padding: 0px 0px;
+    font-family: 'Balsamiq Sans', cursive;
+    border-radius: 5px;
+}
+header .header-2 .navbar ul a li.active,
+header .header-2 .navbar ul a li:hover {
+    color: rgb(73, 0, 63);
+}
+
+header .header-2 .share a {
+    display: contents;
+    color: rgb(0, 0, 0);
+    /* margin: 1rem; */
+}
+header .header-2 .share a:hover {
+    color: rgb(255, 239, 146);
+}
+header .header-2 #menu{
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    margin: 1rem;
+}
+header .header-2.header-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 .1rem .3rem rgb(0, 0, .3);
+}
+
+.navbarli li .icons  {
+    
+    display: none !important;
+}
+
+/* .share {
+    position: relative;
+} */
+
+.style_nav_icon , .style_nav_icons  {
+    font-size: 2.5rem;
+    text-align: center;
+    transition: all .5s ease-in;
+    margin: 0px;
+}
+
+
+
+ .user {
+    position: absolute;
+    
+    width: 30%;
+    top: 0;
+    right: -30%;
+    overflow: hidden;
+    z-index: 1000;
+    padding: 16px;
+    
+    text-align: center;
+    border-radius: 15px 0 0px 15px;
+    min-height: 550px;
+    background: repeating-linear-gradient(rgb(255, 177, 163),rgb(255, 143, 69));
+}
+
+.user_header {
+   margin: 20px 0;
+   font-size: 2.2rem;
+   font-weight: 600;
+}
+
+.user_logo {
+    font-size: 5.5rem;
+}
+
+.user_menu {
+    text-align: left;
+    width: 100%;
+    padding: 5px;
+}
+
+.user_menu li {
+    margin: 5px;
+    padding: 20px;
+    font-size: 2rem;
+    text-decoration: none;
+}
+.user_menu li a {
+    color: black;
+    font-weight: 600;
+}
+.user_menu i {
+    margin-right: 12px;
+    color:rgb(31, 31, 31) ;
+}
+
+.user-toggle{
+    right: 0;
+}
+
+
+
+@media (max-width : 900px) {
+    .user {
+        width: 40%;
+        right: -40%;
+    }
+    .user-toggle{
+        right: 0;
+    }
+    .mainLogo a {
+        padding-left: 0px;
+    }
+    header .header-2 .navbar ul a li, .share ul li {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+
+ 
+@media ( max-width :789px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .style_nav_icon , .style_nav_icons {
+        margin: 15px;
+    }
+
+
+    .mainLogo a {
+    position: absolute;
+    top: 35px;
+    left: 60px;
+    padding: 0;
+    font-size: 2rem;
+    }
+
+    .user {
+        width: 50%;
+        right: -50%;
+    }
+    .user-toggle{
+        right: 0;
+    }
+    /* .fa-home:before {
+        content: "\f015";
+        display: none;
+    }
+    .fa-building:before {
+        content: "\f1ad";
+        display: none;
+    }
+    .fa-headset:before {
+        content: "\f590";
+        display: none;
+    } */
+
+   /* .navbarli li .ico  {
+    content: "\f015";
+    display: none !important;
+} 
+   .navbarli li .ico  {
+    content: "\f590";
+    display: none !important;
+}  */
+
+.navbarli li .ico  {
+    
+    display: none !important;
+}
+.navbarli li .icons {
+    
+    display: inline !important;
+}
+
+    header .header-2 #menu {
+        display: block;
+    }
+    header .header-2 .navbar {
+        position: absolute;
+        top: 100%;
+        left: -120%;
+    }
+    header .header-2 .navbar ul {
+        flex-flow: column;
+        justify-content: center;
+        /* min-height: calc(100vh - 6rem); */
+        /* padding-bottom: 6rem; */
+        margin-top: 2px;
+        background: rgba( 255, 255, 255, 0.75 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 18.0px );
+        -webkit-backdrop-filter: blur( 18.0px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        width: 32rem;
+    }
+    header .header-2 .navbar ul li {
+        /* width: 100%; */
+        text-align: center;
+    }
+    header .header-2 .navbar ul li a  {
+        font-size: 2.7rem;
+        display: block;
+        margin: 15px;
+    }
+    header .header-2 .fa-times {
+        transform: rotate(180deg);
+    }
+    header .header-2 .nav-toggle {
+        left: 5px;
+    }
+    .home .content h1 {
+        font-size: 4.5rem !important;
+    }
+    .home .content p {
+        width: auto;
+    }
+    .about-agent .agents-what-is,
+    .about-agent .agents-what-do,
+    .about .row {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+    }
+    .about-agent .agents-what-do .image img,
+    .about-agent .agents-what-is .image img,
+    .about .row .image img {
+        width: 85%;
+    }
+
+ 
+}
+
+@media ( max-width :526px){
+    html {
+        font-size: 50%;
+    }
+    .home .content h1 {
+        font-size: 3.5rem !important;
+    }
+    header .header-1 {
+        flex-flow: column;
+    }
+    header .header-1 .logo {
+        padding-bottom: 1rem;
+    }
+    header .header-2 .navbar ul {
+        width: 75vw;
+    }
+    .user {
+        width: 100%;
+        right: -100%;
+        overflow: hidden;
+    }
+    .user-toggle{
+        right: 0;
+    }
+    
+}
+
+@media (max-width : 380px) {
+    
+    .mainLogo a {
+        top: 37px;
+    left: 44px;
+    font-size: 1.8rem;
+    }
+}
+
+

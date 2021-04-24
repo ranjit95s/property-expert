@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<img class="wave" src="images/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="images/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="/signup" method="POST"  enctype="multipart/form-data" autocomplete="off">
+				<img src="images/avatar.svg">
+				<% if(typeof err !='undefined' ){ %>
+
+                    <div class="alert alert-<%= typeof errType != 'undefined' ? errType : " warning" %>
+                        alert-dismissible fade show" role="alert">
+                        <strong>
+                            <%= typeof errHead !='undefined' ? errHead : "Error!" %>
+                        </strong><br>
+                        <%= err %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <% }%>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<h5>FullName</h5>
+						<input class="input" type="text" name="firstname" id="name" autocomplete="OFF" >
+					</div>
+				</div>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-phone"></i>
+					</div>
+					<div class="div">
+						<h5>Phone Number</h5>
+						<input class="input" type="tel" name="signUpPhone" id="phone" autocomplete="OFF" >
+					</div>
+				</div>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user-circle"></i>
+					</div>
+					<div class="div">
+						<h4>Set Profile Picture</h4>
+						<input class="input" style="font-size: medium;" type="file" name="user_photo" accept=".jpg,.jpeg,.png" >
+					</div>
+				</div>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-envelope"></i>
+					</div>
+					<div class="div">
+						<h5>Email Id</h5>
+						<input class="input" type="email" name="signUpEmail" id="email" autocomplete="OFF" >
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<h5>Password</h5>
+						<input class="input" type="password" name="pass" id="password">
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<h5>Comfirm Password</h5>
+						<input class="input" type="password" name="cpass" id="passwordw">
+					</div>
+				</div>
+				<a href="/login">have account?</a>
+				<input type="submit" class="btn" value="Sign Up">
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/mainlog.js"></script>
+</body>
+
+</html>
