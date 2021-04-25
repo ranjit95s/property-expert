@@ -94,24 +94,20 @@ const homeSchema = mongoose.Schema({
     required: true,
   },
   first_image: {
-    type: String,
-    required: true,
-    trim: true,
+    data        : Buffer, 
+    contentType : String 
   },
   second_image: {
-    type: String,
-    required: true,
-    trim: true,
+      data        : Buffer, 
+      contentType : String 
   },
   third_image: {
-    type: String,
-    required: true,
-    trim: true,
+    data        : Buffer, 
+    contentType : String 
   },
   fourth_image: {
-    type: String,
-    required: true,
-    trim: true,
+    data        : Buffer, 
+    contentType : String,
   },
   sellOrRent: {
     type: String,

@@ -10,9 +10,8 @@ const userSchema = mongoose.Schema({
     minlength: 3,
   },
   user_photo: {
-    type: String,
-    required: true,
-    trim: true,
+    data        : Buffer, 
+    contentType : String 
   },
   email: {
     type: String,
