@@ -44,7 +44,7 @@ app.set('json spaces', '  ');
 
 // set Storage Engine 
 
-var storage = multer.diskStorage({
+var storage = multer.memoryStorage({
     destination: function (req, file, cb) {
       cb(null, "./public/images/TempUploads/");
     },
