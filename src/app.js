@@ -46,7 +46,7 @@ app.set('json spaces', '  ');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./public/images/TempUploads/");
+      cb(null, "/images/TempUploads/");
     },
     filename: function (req, file, cb) {
       cb(
@@ -87,7 +87,8 @@ app.get("/", async (req, res) => {
         const token = req.cookies.jwt;
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
-        const userDetails = await user.findOne({ _id: verifyUser._id })
+        const userDetails = await user.findOne({ _id: verifyUser._id });
+      
         res.render("index", { getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
     } catch (e) {
         const getHome = await home.find({}).sort({ _id: -1 }).limit(10);
