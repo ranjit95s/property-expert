@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hello user</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" /> -->
+
+  <style>
+    #thumb_img .img {
+      cursor: pointer;
+      filter: grayscale(100%);
+    }
+
+    #thumb_img .img:hover,
+    #thumb_img img:focus-within {
+      filter: grayscale(0);
+    }
+  </style>
+</head>
+
+<body>
+  <% if( typeof getUser !='undefined' && getUser==false ){ %>
+    <script>
+      window.location.href = "/"
+    </script>
+    <% } %>
+  <h2>hello your id is <%= user %> userName=<%= userName %>
+  </h2>
+
+
+  <!-- <p class="user_logo"><i class="fas fa-user-alt"></i></p> -->
+
+  <!-- <p class="user_logo">  <object data="/images/1.png" type="image/png">
+          <img src="/images/TempUploads/<%=userPhoto%>"/>
+         </object></p> -->
+
+  <p class="user_logo"><img src="/images/TempUploads/<%=userPhoto%>" onerror="this.src='/images/1.png'" width="100px"
+      height="100px" style="border-radius: 50%; border: 2px solid azure;"></p>
+
+  <!-- <p class="user_logo"><img src="/images/TempUploads/<%=userPhoto%>" alt="" width="100px" height="100px" style="border-radius: 50%; border: 2px solid azure;"></p> -->
+  <form action="#">
+    <input type="image" name="file" id="img" src="/images/1.png" alt="your updated image appears here" readonly>
+
+    <!-- <div id="main_img">
+      <img id="img2" data-name="images" src="/images/1.png">
+    </div> -->
+    <div id="thumb_img">
+      <img id="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
+      <img id="2" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
+      <img id="3" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
+    </div>
+
+
+  </form>
+
+
+</body>
+<script>
+  function changeImage(a) {
+    document.getElementById("img").src = a;
+  }
+</script>
+
+</html>
+
+
+
+
+<!-- 
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+label:hover {
+  filter: grayscale(0);
+}
+input[type="radio"]:checked + label {
+  filter: grayscale(0);
+}
+    </style>
+</head>
+<body>
+    <h4>hello user ,</h4>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <fieldset>
+      <legend>
+        Please select gender
+      </legend>
+      <input type="radio" name="gender" class="sr-only" id="male">
+      <label for="male">
+        <img src="shirt-non-m-0.png" alt="male">
+      </label>
+      <input type="radio" name="gender" class="sr-only" id="female">
+      <label for="female">
+        <img src="shirt-non-m-0.png" alt="female">
+      </label>
+    </fieldset>
+</body>
+</html>
+
+
+ -->

@@ -175,38 +175,7 @@ app.post("/homeInterest", async (req, res) => {
             active_military_status,
         } })
         console.log(updateUser);
-        // const addingHomeInterest = new homeInterest({
-        //     // home_id,
-        //     // owner,
-        //     // sellOrRent,
-        //     // offered_at,
-        //     // first_image,
-        //     // second_image,
-        //     // third_image,
-        //     // fourth_image,
-        //     // home_Type,
-        //     // area_name,
-        //     // city_name,
-        //     // state_name,
-        //     // country_name,
-        //     // nearest_landmark,
-        //     // sq_ft,
-        //     // parking,
-        //     // floor,
-        //     // age,
-        //     // user_id,
-        //     // user_name,
-        //     // user_phone,
-        //     message_add,
-        //     buying_firstTime,
-        //     plan_on_buying_home,
-        //     active_military_status
-        // });
 
-
-
-
-        // const insertHomeInterest = await addingHomeInterest.save();
 
 
 
@@ -240,7 +209,7 @@ app.get("/contact", async (req, res) => {
         const userDetails = await user.findOne({ _id: verifyUser._id });
         res.render("contact", {user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
     } catch (e) {
-        res.render("contact");
+        res.render("/");
     }
 });
 
@@ -277,6 +246,25 @@ app.post("/contact", auth , async (req, res) => {
 app.get("/login", (req, res) => {
     res.render("login");
 });
+
+app.get("/user", async (req, res) => {
+    try {
+        const token = req.cookies.jwt;
+        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+        console.log(verifyUser);
+        const userDetails = await user.findOne({ _id: verifyUser._id });
+        const getUsers = await user.find({ _id: verifyUser._id }).limit(1);
+        if (getUsers.length == 1) {
+            res.render("user", { getUsers , getUser: true , user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
+        } else {
+            res.render("user", { getUsers , getUser: false, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
+        }
+
+    } catch (e) {
+        res.render("login", { err: "Login required" });
+        console.log(e);
+    }
+  })
 
 app.get("/signup", (req, res) => {
     res.render("signup");

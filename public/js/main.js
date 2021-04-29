@@ -13,31 +13,18 @@ $(document).ready(function () {
         $('.user').toggleClass('user-toggle');
     });
     
+    window.onscroll = function() {myFunction()};
 
-    $(window).on('load scroll', function () {
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-        
-        
-        if ($(window).scrollTop() > 60) {
-            $('header .header-2').addClass('header-active');
-            
-        } else {
-            $('header .header-2').removeClass('header-active');
-            
-        }
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
-
-            if (top >= offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
-        });
-    });
+    var header = document.getElementById("header-2");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("header-active");
+      } else {
+        header.classList.remove("header-active");
+      }
+    }
 
     $('.control .button').click(function(e){
         $(this).addClass('button-active').siblings().removeClass('button-active');

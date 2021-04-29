@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&display=swap');
 
+.navbarli a > #user_btn {
+    border: none;
+    border-radius: 50px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: large;
+    margin: 0rem 1rem;
+    padding: 2px;
+    color: darkolivegreen;
+}
 
+#user_btn > img {
+    border-radius: 50px; 
+    object-fit: cover;
+    width: 60px;
+    height: 55px;
+    border: 2px solid black;
+}
 
 .header {
     position: fixed;
@@ -61,7 +78,6 @@ header .header-2 {
     padding: 1.5rem 0.1rem;
     position: relative;
     z-index: 1000;
-
     border-bottom: 1px solid rgb(197, 195, 195);
 }
 
@@ -104,10 +120,10 @@ header .header-2 #menu{
     display: none;
     margin: 1rem;
 }
-header .header-2.header-active {
+.header-2.header-active {
     position: fixed;
     top: 0;
-    left: 0;
+    width: 100%;
     box-shadow: 0 .1rem .3rem rgb(0, 0, .3);
 }
 
@@ -131,14 +147,12 @@ header .header-2.header-active {
 
  .user {
     position: absolute;
-    
     width: 30%;
     top: 0;
     right: -30%;
     overflow: hidden;
     z-index: 1000;
     padding: 16px;
-    
     text-align: center;
     border-radius: 15px 0 0px 15px;
     min-height: 550px;
@@ -213,6 +227,9 @@ header .header-2.header-active {
         margin: 15px;
     }
 
+    header .header-2 {
+        padding: 0;
+    }
 
     .mainLogo a {
     position: absolute;
