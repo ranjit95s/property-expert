@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
-<body>
+<body style="overflow: hidden;">
 
 
   <%- include ("navbar.ejs") %>
@@ -74,7 +74,7 @@
               </div>
           <div class="hidden">
             <div class="user-con">
-              <form action="/user" method="post">
+              <form action="/user" method="post" enctype="multipart/form-data">
                 <div class="up-form-user">
                   <div class="form-user">
                     <h2>Name: Suryawanshi Ranjit Kumar</h2>
@@ -95,24 +95,43 @@
                   </div>
                   <div id="thumb_img" class="user-avatars">
                     <div class="avatars-boxs">
+                      <img id="1" tabindex="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
+                    </div>
+                    <div class="avatars-boxs">
+                      <img id="2" tabindex="1" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
+                    </div>
+                    <div class="avatars-boxs"  tabindex="1">
+                      <img id="3" tabindex="1" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="1" tabindex="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="2" tabindex="1" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="3" tabindex="1" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
+                    </div>
+                    </div>
+                  <div id="thumb_img" class="user-avatars">
+                    <div class="avatars-boxs" >
                       <img id="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
                     </div>
-                    <div class="avatars-boxs">
+                    <div class="avatars-boxs" >
                       <img id="2" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
                     </div>
-                    <div class="avatars-boxs">
+                    <div class="avatars-boxs" >
                       <img id="3" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
                     </div>
-                    <div class="avatars-boxs">
+                    <div class="avatars-boxs" >
                       <img id="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
                     </div>
-                    <div class="avatars-boxs">
+                    <div class="avatars-boxs" >
                       <img id="2" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
                     </div>
-                    <div class="avatars-boxs">
+                    <div class="avatars-boxs" >
                       <img id="3" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
                     </div>
-
                     </div>
                 </div>
               </form>
