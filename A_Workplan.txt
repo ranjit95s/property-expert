@@ -1,0 +1,79 @@
+|| next days plan ||
+
+⭐ add overflow : hidden until we complete user section in body tag
+
+⭐ fixing contact us navigations ✔✔✔
+
+⭐ creating home page perfectly ✔✔✔
+
+⭐ log in / sign up page fixing (✔✔✔ """"""""""""only text change remaining"""""""""""" ✔✔✔  ||| change name to email in log in page ✔✔✔ || have account in sign up ✔✔✔)
+
+⭐ in property adding span tags for {{ love }} || adding title "----continue----" ✔✔✔
+
+⭐ fixing footers font size and positions in mobile views ✔✔✔
+
+⭐ creating about us page ✔✔✔
+
+⭐ property box details edit ✔✔✔
+        
+⭐ re-creating index page ✔✔✔
+
+⭐ rendering about testa ...and shit (pending ..... doing at last)
+
+⭐ adding routers for remaining links or things ( like testa, log in / sign up ) ✔✔✔
+
+⭐ log in / sign up auth __ IMP __ ✔✔✔
+
+⭐ user profile part after log in ✔✔✔
+
+⭐ secret APIs ( shhhhhhh..... ) (almost grab)
+
+⭐ /index 🢂N property 🢂C home ✔✔✔
+
+⭐ navigations bar fixing 
+
+⭐ /home 🢂C /index
+
+⭐ fixing /home page (remove extra shit)
+
+⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  
+_____________________________________________________________________________________
+
+⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐
+
+
+{{{{{{_____________ BACKEND DATABASE WORK _____________}}}}}}
+
+
+image section :-
+{
+    <input type="image" name="file" id="img" src="/images/1.png" alt="your updated image appears here" readonly>
+
+        <div id="thumb_img">
+        <img id="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
+        <img id="2" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
+        <img id="3" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
+        </div>
+
+    js code to swipe :-
+                            <script>
+                                    function changeImage(a) {
+                                        document.getElementById("img").src = a;
+                                    }
+                            </script>
+
+
+    user profile picture code :- 
+                                                        <!-- <p class="user_logo"><i class="fas fa-user-alt"></i></p> -->
+
+                                                    <!-- <p class="user_logo">  <object data="/images/1.png" type="image/png">
+                                                            <img src="/images/TempUploads/<%=userPhoto%>"/>
+                                                            </object></p> -->
+        
+                    ⭐ACTUALL CODE START⭐
+                <p class="user_logo"><img src="/images/TempUploads/<%=userPhoto%>" onerror="this.src='/images/1.png'" width="100px"
+                    height="100px" style="border-radius: 50%; border: 2px solid azure;"></p>
+                    ⭐ACTUALL CODE END ⭐
+
+  <!-- <p class="user_logo"><img src="/images/TempUploads/<%=userPhoto%>" alt="" width="100px" height="100px" style="border-radius: 50%; border: 2px solid azure;"></p> -->
+}

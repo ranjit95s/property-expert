@@ -90,7 +90,7 @@ const homeInterestSchema = mongoose.Schema({
         type: Number,
         default: null,
     },
-    receivedAt: {
+    requestedAt: {
         type: String,
         default: new Date(),
     },
@@ -124,7 +124,10 @@ const homeInterestSchema = mongoose.Schema({
     },
 
 
-},{unique: true, dropDups: true})
+});
+
+homeInterestSchema.set('timestamps', true);
+
 const homeInterest = new mongoose.model("homeInterest", homeInterestSchema);
 
 module.exports = homeInterest;

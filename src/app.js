@@ -253,7 +253,7 @@ app.get("/user", async (req, res) => {
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
         const userDetails = await user.findOne({ _id: verifyUser._id });
-        const getUsers = await user.find({ _id: verifyUser._id }).limit(1);
+        const getUsers = await user.find({ _id: verifyUser._id });
         if (getUsers.length == 1) {
             res.render("user", { getUsers , getUser: true , user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
         } else {
@@ -377,6 +377,8 @@ app.get("/homeInterest", async (req, res) => {
     const third_image = req.query.third_image;
     const fourth_image = req.query.fourth_image;
     const home_Type = req.query.home_Type;
+    const house_number = req.query.house_number;
+    const building_name = req.query.building_name;
     const area_name = req.query.area_name;
     const city_name = req.query.city_name;
     const state_name = req.query.state_name;
@@ -410,7 +412,9 @@ app.get("/homeInterest", async (req, res) => {
             third_image,
             fourth_image,
             home_Type,
+            building_name,
             area_name,
+            house_number,
             city_name,
             state_name,
             country_name,
@@ -425,7 +429,7 @@ app.get("/homeInterest", async (req, res) => {
             message_add,
             buying_firstTime,
             plan_on_buying_home,
-            active_military_status
+            active_military_status,
 
         });
 
