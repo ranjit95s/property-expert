@@ -33,7 +33,7 @@
               </object></p> -->
               
               <p class="user_logo-user"><img src="/images/TempUploads/<%=userPhoto%>" onerror="this.src='/images/4.png'"></p>
-              <div class="setting-icon"><i class="fas fa-users-cog"></i> Edit Profile</div>
+              <div class="setting-icon">Logout <i class="fas fa-sign-out-alt"></i> </div>
 
             <!-- <p class="user_logo"><img src="/images/TempUploads/<%=userPhoto%>" alt="" width="100px" height="100px" style="border-radius: 50%; border: 2px solid azure;"></p> -->
           </div>
@@ -51,48 +51,67 @@
         </div>
         <div class="post-section">
           <div class="postcard">
-            <h2>Post Your Properties</h2>
+            <h2>Post Your Properties !!</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="/postproperty"> <button>Post Properties </button></a>
+            <a href="/postproperty"> <button style="cursor: pointer;">Post Properties </button></a>
           </div>
           <div class="postcard">
-            <h2>Saved Properties</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a> <button>Saved </button></a>
-          </div>
-          <div class="postcard">
-            <h2>Your Intersert</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a> <button> Interest </button></a>
+            <h2>want to customize Avatar ?</h2>
+            <a> <button>customized Avatar</button></a>
           </div>
         </div>
         <div class="user-setting">
-              <div class="user-head-main">
-                <div class="user-head">
-                  <p><i class="fas fa-user-cog"></i> User Setting</p>
-                </div>
-              </div>
           <div class="hidden">
             <div class="user-con">
               <form action="/user" method="post" enctype="multipart/form-data">
-                <div class="up-form-user">
-                  <div class="form-user">
-                    <h2>Name: Suryawanshi Ranjit Kumar</h2>
-                    <input type="text" name="newName" id="newName" placeholder="Enter New Name">
-                  </div>
-                  <div class="form-user">
-                    <h2>Email: <span style="text-transform: lowercase;">ranjit955s@gmail.com</span></h2>
-                    <input type="email" name="newEmail" id="newEmail" placeholder="Enter New Email">
-                  </div>
-                </div>
                 <div class="user-avatar">
                     <div class="user-head">
                       <p><i class="fas fa-user-cog"></i> Change Profile Pic</p>
                     </div>
                   <div class="user-avatar-main">
                     <h5>Selected Avatar</h5>
-                    <input type="image" name="file" id="img" src="/images/1.png" alt="your updated image appears here" readonly>
+                    <input type="image" disabled name="newAvatar" id="img" src="/images/1.png" alt="your updated image appears here" readonly>
                   </div>
+                  <h1 class="avatar-head">Non-premium Avatars</h1>
+                  <div id="thumb_img" class="user-avatars">
+                    <div class="avatars-boxs">
+                      <img id="1" tabindex="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
+                    </div>
+                    <div class="avatars-boxs">
+                      <img id="2" tabindex="1" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
+                    </div>
+                    <div class="avatars-boxs"  tabindex="1">
+                      <img id="3" tabindex="1" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="1" tabindex="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="2" tabindex="1" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="3" tabindex="1" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
+                    </div>
+                    <div class="avatars-boxs">
+                      <img id="1" tabindex="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
+                    </div>
+                    <div class="avatars-boxs">
+                      <img id="2" tabindex="1" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
+                    </div>
+                    <div class="avatars-boxs"  tabindex="1">
+                      <img id="3" tabindex="1" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="1" tabindex="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="2" tabindex="1" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
+                    </div>
+                    <div class="avatars-boxs" >
+                      <img id="3" tabindex="1" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
+                    </div>
+                    </div>
+                    <h1 class="avatar-head">premium Avatars (Free)</h1>
                   <div id="thumb_img" class="user-avatars">
                     <div class="avatars-boxs">
                       <img id="1" tabindex="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
@@ -113,26 +132,9 @@
                       <img id="3" tabindex="1" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
                     </div>
                     </div>
-                  <div id="thumb_img" class="user-avatars">
-                    <div class="avatars-boxs" >
-                      <img id="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
-                    </div>
-                    <div class="avatars-boxs" >
-                      <img id="2" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
-                    </div>
-                    <div class="avatars-boxs" >
-                      <img id="3" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
-                    </div>
-                    <div class="avatars-boxs" >
-                      <img id="1" src='/images/1.png' class="img" onclick='changeImage("/images/1.png", "1");'>
-                    </div>
-                    <div class="avatars-boxs" >
-                      <img id="2" src='/images/2.png' class="img" onclick='changeImage("/images/2.png", "2");'>
-                    </div>
-                    <div class="avatars-boxs" >
-                      <img id="3" src='/images/3.png' class="img" onclick='changeImage("/images/3.png", "3");'>
-                    </div>
-                    </div>
+                </div>
+                <div class="subbtn">
+                  <input type="submit" id="avatarbtn" value="Save Avatar">
                 </div>
               </form>
             </div>
