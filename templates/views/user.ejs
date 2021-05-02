@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="css/navbar.css">
   <script type="text/javascript" src="lib/iscroll.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
 </head>
 
@@ -63,12 +62,12 @@
                   <div class="user-head">
                     <p><i class="fas fa-user-cog"></i> Change Profile Pic</p>
                       <div class="main-op">
-                        <input type="tel" name="newphone" id="" value="<%=userPhone%>" readonly>
+                        <input type="tel" name="newphone" id="" value="<%=userPhone%>" readonly hidden>
                         <div class="main-op-2">
                           <select id="id_select2_example" name="user_photo" style="width: 200px;">
-                            <option data-img_src="/images/1.png" value="1.png">Python programming</option>
-                            <option data-img_src="/images/2.png" value="2.png">Python programming</option>
-                            <option data-img_src="/images/3.png" value="3.png">Python programming</option>
+                            <option data-img_src="/images/1.png" value="1.png"></option>
+                            <option data-img_src="/images/2.png" value="2.png"></option>
+                            <option data-img_src="/images/3.png" value="3.png"></option>
                         </select>
                         </div>
                       </div>
@@ -89,7 +88,7 @@
             var text = $(obj.element).text();
             if(data && data['img_src']){
                 img_src = data['img_src'];
-                template = $("<div><img src=\"" + img_src + "\" style=\"width:100%;height:150px;\"/><p style=\"font-weight: 700;font-size:14pt;text-align:center;\">" + text + "</p></div>");
+                template = $("<div><img src=\"" + img_src + "\" style=\"width:100%;height:21rem;\"/><p style=\"font-weight: 700;font-size:14pt;text-align:center;\">" + text + "</p></div>");
                 return template;
             }
         }
@@ -112,6 +111,22 @@
 <script src="js/main.js"></script>
 <script src="js/user.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<% if(typeof newAvatarSet !="undefined" ){ %>
+  <script>
+      var heading = "<%= head %>";
+      var message = "<%= message %>";
+      var type = "<%= type %>";
+      swal(heading, message, type)
+          .then((value) => {
+              if(value == true){
+                  window.location.href = "/"
+                  
+              }else{
+                  window.location.href = "/"
+              }
+          });
+  </script>
+  <% } %>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 crossorigin="anonymous"></script>
 

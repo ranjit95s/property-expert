@@ -57,7 +57,7 @@ var storage = multer.diskStorage({
   });
 var storage_user = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./public/images/");
+      cb(null, "./public/images/Reddit-F");
     },
     filename: function (req, file, cb) {
       cb(
@@ -296,7 +296,7 @@ app.post("/user" ,upload_user.fields([{ name: "user_photo", maxCount: 1 }]), asy
         const updateUserPhoto = await user.updateOne({ phone: req.body.newphone },{ user_photo: req.body.user_photo });
         console.log (updateUserPhoto);
     
-                res.render("index", {getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.userPhoto});
+                res.render("user", {getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.userPhoto , newAvatarSet: "done", head: "Awesome Avatar", message: " Avatar soon reflect to your profile ", type: "success"});
 
             
         }catch(e){

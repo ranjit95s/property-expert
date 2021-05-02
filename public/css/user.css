@@ -133,7 +133,6 @@
 .user-setting .user-head {
   font-size: 2.7rem;
   margin: 0px 20px;
-  width: 100%;
   padding-top: 20px;
   padding-left: 25px;
 }
@@ -216,12 +215,29 @@
 
 
 .main-op {
-  background-color: blue;
   padding: 10px;
 }
 
 .main-op-2{
-  background-color: brown;
+  background: rgba( 255, 255, 255, 0.30 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 10.0px );
+  -webkit-backdrop-filter: blur( 10.0px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   width: fit-content;
+  padding: 5px;
   margin: auto;
+}
+
+.select2-search--dropdown {
+  display: none !important;
+}
+
+.select2-container {
+  width: 27rem !important;
+}
+
+.select2-selection .select2-selection--single{
+  height: fit-content !important;
 }
