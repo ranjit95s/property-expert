@@ -51,12 +51,24 @@ var storage = multer.diskStorage({
     filename: function (req, file, cb) {
       cb(
         null,
-        file.fieldname + "__" + file.originalname 
+        file.fieldname + "__" + Date.now() + path.extname(file.originalname)
+      );
+    },
+  });
+var storage_user = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "./public/images/");
+    },
+    filename: function (req, file, cb) {
+      cb(
+        null,
+        file.fieldname + file.originalname 
       );
     },
   });
   
   var upload = multer({ storage: storage });
+  var upload_user = multer({ storage: storage_user});
 
 // , fileFilter: function (req, res, cd) {
 //     checkFiletype(file, cd);
@@ -248,12 +260,12 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/user", async (req, res) => {
+    const token = req.cookies.jwt;
+    const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+    console.log(verifyUser);
+    const userDetails = await user.findOne({ _id: verifyUser._id });
+    const getUsers = await user.find({ _id: verifyUser._id });
     try {
-        const token = req.cookies.jwt;
-        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
-        console.log(verifyUser);
-        const userDetails = await user.findOne({ _id: verifyUser._id });
-        const getUsers = await user.find({ _id: verifyUser._id });
         if (getUsers.length == 1) {
             res.render("user", { getUsers , getUser: true , user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
         } else {
@@ -265,6 +277,31 @@ app.get("/user", async (req, res) => {
         console.log(e);
     }
   })
+
+
+app.post("/user" ,upload_user.fields([{ name: "user_photo", maxCount: 1 }]), async (req,res) => {
+    
+    const token = req.cookies.jwt;
+    const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+    console.log(verifyUser);
+    const userDetails = await user.findOne({ _id: verifyUser._id });
+    const getHome = await home.find({});
+    const getUsers = await user.find({ _id: verifyUser._id });
+    try {
+        var {user_photo} = req.body;
+        console.log(user_photo);
+
+        const updateUserPhoto = await user.updateOne({ user_photo: req.body.user_photo });
+        console.log (updateUserPhoto);
+    
+                res.render("index", {getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.userPhoto});
+
+            
+        }catch(e){
+        res.send(e);
+        console.log(e);
+    }
+})
 
 app.get("/signup", (req, res) => {
     res.render("signup");
@@ -466,7 +503,7 @@ app.get("/receivedHomeInterests", async (req, res) => {
 
 
 
-app.post("/signup", upload.fields([{ name: "user_photo", maxCount: 1 }]), async (req, res) => {
+app.post("/signup", upload_user.fields([{ name: "user_photo", maxCount: 1 }]), async (req, res) => {
     var { user_photo } = req.body;
     console.log(user_photo);
 

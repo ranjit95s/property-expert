@@ -209,3 +209,19 @@
   background: var(--red);
 }
 
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid #aaa;
+  display: none !important;
+}
+
+
+.main-op {
+  background-color: blue;
+  padding: 10px;
+}
+
+.main-op-2{
+  background-color: brown;
+  width: fit-content;
+  margin: auto;
+}
