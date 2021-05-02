@@ -290,8 +290,10 @@ app.post("/user" ,upload_user.fields([{ name: "user_photo", maxCount: 1 }]), asy
     try {
         var {user_photo} = req.body;
         console.log(user_photo);
+        var {newphone} = req.body;
+        console.log(newphone);
 
-        const updateUserPhoto = await user.updateOne({ user_photo: req.body.user_photo });
+        const updateUserPhoto = await user.updateOne({ phone: req.body.newphone },{ user_photo: req.body.user_photo });
         console.log (updateUserPhoto);
     
                 res.render("index", {getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.userPhoto});
