@@ -92,8 +92,7 @@
 }
 
 .post-section .postcard {
-  padding: 50px;
-  height: 20.5rem;
+  padding: 20px;
   margin: 15px;
   background: rgba( 255, 255, 255, 0.65 );
   box-shadow: 0 8px 24px 0 rgba( 31, 38, 135, 0.37 );
@@ -116,7 +115,7 @@
 .post-section .postcard a > button {
   margin: 5px;
   font-size: 2.2rem;
-  width:fit-content;
+  width: 20rem;
   padding: 5px;
   border-radius: 15px;
   border:1px solid black;
