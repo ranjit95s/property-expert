@@ -32,15 +32,15 @@
           </div>
           <div class="user-infoo ud2">
             <div class="user-d">
-              <p>Suryawanshi Ranjit Kumar</p>
+              <p><%= userName %></p>
             </div>
             <div class="user-d">
-              <p>8329470132</p>
+              <p><%= userPhone%></p>
             </div>
             <div class="user-d">
               <p> <span><i class="fas fa-map-marker-alt"></i> hindustan</span> <span
-                  style="text-transform: lowercase;"><i class="fas fa-envelope"></i> ranjit955s@gmail.com</span><span>
-                  <i class="fas fa-calendar-alt"></i> Joined on March 2017</span></p>
+                  style="text-transform: lowercase;"><i class="fas fa-envelope"></i> <%= userEmail %> </span> <span>
+                  <i class="fas fa-calendar-alt"></i> Joined on <%= moment(user.receivedAt).format('LL');  %></span></p>
             </div>
           </div>
         </div>
