@@ -16,11 +16,12 @@
 
 .user-details {
   padding: 10px 0px;
+  background: #FFEFD5;
   position: relative;
   display: flex;
+  margin: 20px 20px;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
 .setting-icon {
@@ -37,8 +38,8 @@
 }
 
 .user-details > .user-infoo > p > img {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
   border-radius: 20px;
 }
 
@@ -92,6 +93,7 @@
 
 .post-section .postcard {
   padding: 50px;
+  height: 20.5rem;
   margin: 15px;
   background: rgba( 255, 255, 255, 0.65 );
   box-shadow: 0 8px 24px 0 rgba( 31, 38, 135, 0.37 );
@@ -114,15 +116,12 @@
 .post-section .postcard a > button {
   margin: 5px;
   font-size: 2.2rem;
-  width: 20rem;
+  width:fit-content;
   padding: 5px;
   border-radius: 15px;
   border:1px solid black;
 }
 
-/* .user-setting {
-  background-color: aquamarine;
-} */
 
 .user-head-main {
   display: flex;
@@ -167,21 +166,6 @@
 }
 
 
-.avatars-boxs {
-  background: rgba( 211, 211, 211, 0.35 );
-  box-shadow: 0 4px 12px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 20.0px );
-  -webkit-backdrop-filter: blur( 20.0px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-  margin: 3px;
-}
-
-.avatars-boxs > img {
-  height: 150px;
-  width: 150px;
-}
-
 .avatar-head {
   font-size: 2rem;
   padding: 20px;
@@ -192,7 +176,10 @@
   text-align: center;
   padding: 20px;
 }
-
+#id {
+  width:100% !important;
+  height:21rem !important;
+}
 #avatarbtn {
   border-radius: 20px;
   color: var(--red);
@@ -241,3 +228,99 @@
 .select2-selection .select2-selection--single{
   height: fit-content !important;
 }
+
+.select2-container--default .select2-selection--single {
+  border: none !important;
+}
+
+.styleAvatar0 {
+  width: fit-content;
+  margin: auto;
+}
+
+.styleAvatar > button {
+  font-size: 3rem;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  color: #fff;
+  text-align: center;
+  width: 30rem;
+  font-weight: 700;
+  background: rgb(255,0,0);
+  background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,158,0,1) 65%);
+  border-radius: 15px;
+}
+
+
+@media (max-width : 900px) {
+  .user-details {
+    display: block;
+  }
+  .ud1 {
+    width: fit-content;
+    margin: auto;
+  }
+  .ud2 {
+    width: fit-content;
+    margin: auto;
+  }
+  .user-d > p {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  .post-section {
+    display: block;
+    width: fit-content;
+    margin: auto;
+  }
+}
+
+@media (max-width : 789px) {
+  .setting-icon{
+    right: 50px;
+    font-size: 1.5rem;
+  }
+  #id {
+    height: 25rem !important;
+  }
+  .user-setting .user-head {
+    padding-left: 0;
+  }
+  .post-section .postcard a > button {
+    margin-top: 10px;
+  }
+}
+
+
+@media (max-width :526px) { 
+  .user-d > p {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  .setting-icon{
+    right: 20px;
+    font-size: 1.3rem;
+  }
+  #id {
+    height: 27rem !important;
+  }
+  .user-setting .user-head {
+    padding-left: 0;
+  }
+  .post-section .postcard a > button {
+    margin-top: 15px;
+  }
+ }
+
+ @media (max-width :421px) {
+  .post-section .postcard a > button {
+    margin-top: 18px;
+  }
+  .post-section .postcard h2 {
+    font-size: 2rem;
+  }
+  .post-section .postcard p {
+    font-size: 1.5rem;
+  }
+ }
