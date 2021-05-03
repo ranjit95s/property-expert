@@ -1,6 +1,6 @@
 || next days plan ||
 
-⭐ add overflow : hidden until we complete user section in body tag
+⭐ add overflow : hidden until we complete user section in body tag (PENDING ...........)
 
 ⭐ fixing contact us navigations ✔✔✔
 
@@ -18,7 +18,7 @@
         
 ⭐ re-creating index page ✔✔✔
 
-⭐ rendering about testa ...and shit (pending ..... doing at last)
+⭐ rendering about testa ...and shit (pending ..... doing at last)✔✔✔
 
 ⭐ adding routers for remaining links or things ( like testa, log in / sign up ) ✔✔✔
 
@@ -26,15 +26,15 @@
 
 ⭐ user profile part after log in ✔✔✔
 
-⭐ secret APIs ( shhhhhhh..... ) (almost grab)
+⭐ secret APIs ( shhhhhhh..... ) (almost grab)✔✔✔
 
 ⭐ /index 🢂N property 🢂C home ✔✔✔
 
-⭐ navigations bar fixing 
+⭐ navigations bar fixing ✔✔✔
 
-⭐ /home 🢂C /index
+⭐ /home 🢂C /index✔✔✔
 
-⭐ fixing /home page (remove extra shit)
+⭐ fixing /home page (remove extra shit)✔✔✔
 
 ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  
 _____________________________________________________________________________________
@@ -42,7 +42,7 @@ ________________________________________________________________________________
 ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐
 
 
-{{{{{{_____________ BACKEND DATABASE WORK _____________}}}}}}
+{{{{{{_____________ BACKEND DATABASE WORK _____________}}}}}} ✔✔✔✔✔✔
 
 
 image section :-
@@ -118,3 +118,32 @@ image section :-
                         <h2>3.png</h2>
                       </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  
+___________________________________________________________________________________
+
+  what left ?????????????? 
+      goes here - 
+          ...
+
+
+___________________________________________________________________________________
+
+⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐  ⭐

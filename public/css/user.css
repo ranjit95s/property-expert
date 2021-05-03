@@ -16,7 +16,14 @@
 
 .user-details {
   padding: 10px 0px;
-  background: #FFEFD5;
+  background: rgb(255,239,213);
+  background: linear-gradient(90deg, rgba(255,239,213,1) 0%, rgba(255,156,103,1) 100%);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 17.5px );
+-webkit-backdrop-filter: blur( 17.5px );
+border-radius: 10px;
+
+
   position: relative;
   display: flex;
   margin: 20px 20px;
@@ -238,6 +245,7 @@
 }
 
 .styleAvatar > button {
+  cursor: pointer;
   font-size: 3rem;
   padding: 10px;
   margin-bottom: 15px;

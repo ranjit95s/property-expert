@@ -207,15 +207,16 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     margin-bottom: 1rem;
 }
 
+
+
 .property .glass {
     
     width: max-content;
     margin: 8px;
-    font-family:cursive;
     font-weight: 700 !important;
-    font-size: 1.3rem !important;
+    font-size: 1.4rem !important;
     background: rgba( 255, 255, 255, 0.60 );
-box-shadow: 0 8px 8px 0 rgba( 31, 38, 135, 0.37 );
+box-shadow: 0 4px 8px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 2.0px );
 -webkit-backdrop-filter: blur( 2.0px );
 border-radius: 10px;
@@ -242,7 +243,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .building-name {
-    font-family: 'Potta One', cursive;
+    text-decoration: underline !important;
     font-weight: 200;
     font-size: 2rem !important;
     word-spacing: 1px;
@@ -259,26 +260,6 @@ span i:hover {
     color: rgb(61, 61, 61);
 }
 
-.heart {
-    color: var(--red) !important;
-    animation: heart 0.5s linear;
-}
-
-
-@keyframes heart {
-    0% {
-        transform: rotate(0deg) scale(1.7);
-    }
-    40% {
-        transform: rotate(0deg) scale(1);
-    }
-    41% {
-        transform: rotate(360deg) scale(1);
-    }
-    100% {
-        transform: rotate(0deg) scale(1);
-    }
-}
 
 .property .control {
     display: flex;
@@ -315,7 +296,7 @@ span i:hover {
     width: 45rem;
     margin: 1.52rem;
     position: relative;
-    height: 45rem;
+    height: 41rem;
     border: 1rem solid rgb(255, 255, 255);
     box-shadow: 0 .5rem .5rem black;
     background: rgba( 255, 255, 255, 0.25 );
@@ -355,10 +336,10 @@ border-radius: 7.5px;
 } */ 
 
 .property .img-con .image p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #333;
     padding: .5rem;
-    font-weight: bold;
+    font-weight: bolder;
     
 }
 

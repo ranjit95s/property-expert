@@ -46,11 +46,7 @@ $(document).ready(function () {
 
 });
 
-$(document).ready(function(){
-    $(".like").click(function(){
-        $(this).toggleClass("heart");
-    })
-})
+
 
 
 // function add_number() {

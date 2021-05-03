@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/postprop.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <title>POST YOUR PROPERTIES!</title>
+  <title>PROPERTIES!</title>
 </head>
 
 <body>
@@ -44,23 +44,14 @@
           <div class="image img-hover-zoom <%= home.home_Type%>">
             <img src="/images/TempUploads/<%=home.first_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
             <p class="building-name"><%= home.owner_name%>'s home</p>
+            <p><%=home.sellOrRent%> Amount: <i class="fas fa-rupee-sign"></i> <%=home.offered_at%> </p>
             <div class="conatiner">
               <p class="glass"><%= home.home_Type%></p>
               <p class="glass"> <%=home.sq_ft%> sq.ft </p>
               <p class="glass"> location : <%=home.area_name%>,<%=home.city_name%></p>
             </div>
-            <p><span class="glass"
-                style="color: rgb(25, 0, 255);
-                padding: 5px !important;
-                margin-right: 10px !important;
-                /* margin: 0px !important; */
-                margin-left: 0;
-                border-radius: 10px; "><%= home.sellOrRent%></span>
-              <span class="glass" style="font-size: 1.5rem; padding: 5px; color:rgb(0, 175, 29);">Amount : $<%= home.offered_at%></span>
-            </p>
             <div class="stick_to_bo">
-              <a href="/home?h_id=<%= home._id %>">View Full Details </a> <span style="float: right !important;"
-                title="SAVE THIS PROPERTY"><i class="fa fa-heart like" aria-hidden="true"></i></span>
+              <a href="/home?h_id=<%= home._id %>">View Full Details </a>
             </div>
           </div>
           <% }) %>
