@@ -17,7 +17,7 @@ const cookieParser = require("cookie-parser");
 const auth = require("./middleware/auths");
 const multer = require("multer");
 const bodyParser = require("body-parser");
-
+const fs = require('fs');
 //setting path
 
 
