@@ -46,7 +46,9 @@ app.set('json spaces', '  ');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./public/images/TempUploads/");
+        fs.mkdir('./uploads/',(err)=>{
+            cb(null, './uploads/');
+         });
     },
     filename: function (req, file, cb) {
       cb(
