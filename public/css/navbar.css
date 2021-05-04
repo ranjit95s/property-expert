@@ -197,13 +197,6 @@ header .header-2 #menu{
 
 
 @media (max-width : 900px) {
-    .user {
-        width: 40%;
-        right: -40%;
-    }
-    .user-toggle{
-        right: 0;
-    }
     .mainLogo a {
         padding-left: 0px;
     }
@@ -216,16 +209,20 @@ header .header-2 #menu{
 
 
 
- 
-@media ( max-width :789px) {
 
+@media ( max-width :789px) {
+    
     html {
         font-size: 55%;
     }
-
-    .style_nav_icon , .style_nav_icons {
-        margin: 15px;
+    header .header-2 .navbar ul , .share ul {
+        margin: 15px !important;
+        
     }
+
+    /* .style_nav_icon , .style_nav_icons {
+        margin: 15px;
+    } */
 
     header .header-2 {
         padding: 0;
@@ -361,6 +358,11 @@ header .header-2 #menu{
     .user-toggle{
         right: 0;
     }
+    
+header .header-2 .navbar ul , .share ul {
+    margin: 15px !important;
+    
+}
     
 }
 
