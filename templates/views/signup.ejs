@@ -16,7 +16,7 @@
 			<img src="images/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="/signup" method="POST"  enctype="multipart/form-data" autocomplete="off">
+			<form action="/signup" method="POST" autocomplete="off">
 				<img src="images/avatar.svg">
 				<% if(typeof err !='undefined' ){ %>
 
@@ -45,15 +45,6 @@
 					<div class="div">
 						<h5>Phone Number</h5>
 						<input class="input" type="tel" name="signUpPhone" id="phone" autocomplete="OFF" >
-					</div>
-				</div>
-				<div class="input-div one">
-					<div class="i">
-						<i class="fas fa-user-circle"></i>
-					</div>
-					<div class="div">
-						<h4>Set Profile Picture</h4>
-						<input class="input" style="font-size: medium;" type="file" name="user_photo" accept=".jpg,.jpeg,.png" >
 					</div>
 				</div>
 				<div class="input-div one">

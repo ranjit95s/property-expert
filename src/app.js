@@ -57,12 +57,12 @@ var storage = multer.diskStorage({
   });
 var storage_user = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./public/images/Reddit-F");
+      cb(null, "./public/images/Reddit-F/");
     },
     filename: function (req, file, cb) {
       cb(
         null,
-        file.fieldname + file.originalname 
+        file.fieldname  + "__" + file.originalname 
       );
     },
   });
@@ -70,28 +70,6 @@ var storage_user = multer.diskStorage({
   var upload = multer({ storage: storage });
   var upload_user = multer({ storage: storage_user});
 
-// , fileFilter: function (req, res, cd) {
-//     checkFiletype(file, cd);
-// }
-
-// function checkFiletype(file, cd) {
-//     // allow ext
-//     const filetypes = /jpeg|jpg|png|gif/;
-//     //check ext
-//     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-//     const minetype = filetypes.test(file.minetype);
-
-//     if (minetype && extname) {
-//         return cd(null, true);
-//     } else {
-//         cd('err : images only')
-//     }
-
-// }
-
-// console.log(process.env.SECRET_KEY);
-//routing
-//app.get (path, callback)
 app.get("/", async (req, res) => {
 
     try {
@@ -505,9 +483,7 @@ app.get("/receivedHomeInterests", async (req, res) => {
 
 
 
-app.post("/signup", upload_user.fields([{ name: "user_photo", maxCount: 1 }]), async (req, res) => {
-    var { user_photo } = req.body;
-    console.log(user_photo);
+app.post("/signup", async (req, res) => {
 
     var { firstname , signUpPhone , signUpEmail , pass , cpass } = req.body
     var err ;
@@ -549,17 +525,10 @@ app.post("/signup", upload_user.fields([{ name: "user_photo", maxCount: 1 }]), a
         try {
     
     
-            console.log(req.files.user_photo[0].filename);
-    
-    
-            var image_user_photo = req.files.user_photo[0].filename;
-    
-    
             
                 const regiUser = new user({
                     name: req.body.firstname,
                     phone: req.body.signUpPhone,
-                    user_photo: image_user_photo,
                     email: req.body.signUpEmail,
                     password : req.body.pass,
                     confirmpassword: req.body.cpass,
@@ -691,18 +660,6 @@ app.post("/verifyOtp", async (req, res) => {
   })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 app.post("/users", async (req, res) => {
     try {
         const regiUser = new user(req.body);
@@ -719,8 +676,6 @@ app.post("/users", async (req, res) => {
         }
     }
 });
-
-
 
 
 //getting api datas
