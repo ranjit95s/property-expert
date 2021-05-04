@@ -46,8 +46,8 @@ app.set('json spaces', '  ');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        fs.mkdir('./public/iamges/TempUploads/',(err)=>{
-            cb(null, './public/iamges/TempUploads/');
+        fs.mkdir('./public/images/Reddit-F/',(err)=>{
+            cb(null, './public/images/Reddit-F/');
          });
     },
     filename: function (req, file, cb) {
