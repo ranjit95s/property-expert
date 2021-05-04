@@ -219,7 +219,9 @@ header .header-2 #menu{
         margin: 15px !important;
         
     }
-
+    header .header-2 .navbar ul a li, .share ul li a {
+        margin: 15px;
+    }
     /* .style_nav_icon , .style_nav_icons {
         margin: 15px;
     } */
