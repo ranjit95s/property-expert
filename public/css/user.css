@@ -80,13 +80,11 @@ border-radius: 10px;
 }
 
 .user-d > p {
-  font-family:cursive;
   font-weight: 700;
 }
 
 .user-d > p > span {
   margin: 0px 5px;
-  font-family:cursive;
 }
 
 .user-d > p > span > i {
@@ -309,8 +307,12 @@ border-radius: 10px;
     text-align: center;
     font-size: 1.4rem;
   }
+  .user-details > .user-infoo > p > img {
+    width: 150px;
+    height: 160px;
+  }
   .setting-icon{
-    right: 20px;
+    right: 10px;
     font-size: 1.3rem;
   }
   #id {
@@ -321,6 +323,9 @@ border-radius: 10px;
   }
   .post-section .postcard a > button {
     margin-top: 15px;
+  }
+  .user-d > p > span {
+    display: inline-block;
   }
  }
 

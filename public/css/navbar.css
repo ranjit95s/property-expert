@@ -293,7 +293,12 @@ header .header-2 #menu{
     .about .row .image img {
         width: 85%;
     }
-
+    .slogan h2{
+        font-size: 3.4rem;
+    }
+    .slogan h3{
+        font-size: 2.8rem;
+    }
  
 }
 
@@ -332,7 +337,12 @@ header .header-2 .navbar ul , .share ul {
     margin: 15px !important;
     
 }
-    
+.slogan h2{
+    font-size: 3.2rem;
+}
+.slogan h3{
+    font-size: 2.5rem;
+}
 }
 
 @media (max-width : 380px) {
@@ -344,6 +354,12 @@ header .header-2 .navbar ul , .share ul {
     }
     .wrapper h1 {
         font-size: 15px !important;
+    }
+    .slogan h2{
+        font-size: 3rem;
+    }
+    .slogan h3{
+        font-size: 2.5rem;
     }
 }
 

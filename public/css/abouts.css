@@ -52,15 +52,17 @@ html{
   text-decoration: underline !important;
 }
 .about .row .content .btnn {
-    color: var(--red);
+    color:white;
+    background: var(--red);
     border-color: var(--red);
     outline-color: var(--red);
     box-shadow: 0px 5px 20px rgba(46, 229, 157, 0.4);
-    
+    border-radius: 15px;
 }
 
 .about .row .content .btnn:hover{
-    color: #fff;;
+    color: #fff;
+    border-radius: 0px;
 }
 
 .head-info {
