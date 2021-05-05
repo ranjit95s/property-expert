@@ -126,10 +126,16 @@ border-radius: 10px;
   font-size: 2.2rem;
   width: 20rem;
   padding: 5px;
+  color: var(--red);
+  background: white;
   border-radius: 15px;
-  border:1px solid black;
+  border: 2.52px solid var(--red);
 }
 
+.post-section .postcard a > button:hover{
+  background: var(--red);
+  color: white;
+}
 
 .user-head-main {
   display: flex;

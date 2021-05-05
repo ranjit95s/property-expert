@@ -104,7 +104,6 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     font-size: 3rem;
     font-weight: 700;
     color: #291b1b;
-    font-family: cursive;
     padding: 10px;
     /* margin: auto; */
     text-decoration: underline !important;
@@ -198,14 +197,14 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .look-property .img-box .box .buttons a {
     border-radius: 8px;
     padding: 10px;
-    border: 2px solid blue;
-    color: blue;
+    border: 2px solid var(--red);
+    color: var(--red);
     transition: 150ms ease-in;
 }
 
 .look-property .img-box .box:hover > .buttons a {
     color:whitesmoke;
-    background-color: blue;
+    background-color: var(--red);
 }
 
 .look-property .img-box .box:hover {
