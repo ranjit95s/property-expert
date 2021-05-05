@@ -196,6 +196,9 @@ header .header-2 #menu{
     header .header-2 .navbar ul a li, .share ul li a {
         margin: 15px;
     }
+    .about .row .content h3 {
+        text-align: initial;
+    } 
     .about .row .content p {
         text-align: initial;
     }
