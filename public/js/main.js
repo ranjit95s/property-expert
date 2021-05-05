@@ -21,10 +21,8 @@ $(document).ready(function () {
     function myFunction() {
       if (window.pageYOffset > sticky) {
         header.classList.add("header-active");
-        document.getElementById("header-2").style.padding = ".9rem 0.1rem";
       } else {
         header.classList.remove("header-active");
-        document.getElementById("header-2").style.padding= "1.5rem 0.1rem";
       }
     }
 
