@@ -28,19 +28,30 @@
           <div class="user-infoo ud1">
             <p class="user_logo-user"><img src="/images/Reddit-F/<%=userPhoto%>"
                 onerror="this.src='/images/Reddit-F/d-1.png'"></p>
-            <div class="setting-icon">Logout <i class="fas fa-sign-out-alt"></i> </div>
+            <form action="/logout" method="POST">
+              <button type="submit">
+                  <div class="setting-icon">Logout <i class="fas fa-sign-out-alt"></i>
+                  </div>
+                </button>
+            </form>
           </div>
           <div class="user-infoo ud2">
             <div class="user-d">
-              <p><%= userName %></p>
+              <p>
+                <%= userName %>
+              </p>
             </div>
             <div class="user-d">
-              <p><%= userPhone%></p>
+              <p>
+                <%= userPhone%>
+              </p>
             </div>
             <div class="user-d">
               <p> <span><i class="fas fa-map-marker-alt"></i> hindustan</span> <span
-                  style="text-transform: lowercase;"><i class="fas fa-envelope"></i> <%= userEmail %> </span> <span>
-                  <i class="fas fa-calendar-alt"></i> Joined <%= moment(user.receivedAt).format('LL');  %></span></p>
+                  style="text-transform: lowercase;"><i class="fas fa-envelope"></i>
+                  <%= userEmail %>
+                </span> <span>
+                  <i class="fas fa-calendar-alt"></i> Joined <%= moment(user.receivedAt).format('LL'); %></span></p>
             </div>
           </div>
         </div>
@@ -48,11 +59,13 @@
           <div class="postcard">
             <h2>Post Your Properties !!</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="/postproperty"> <button style="cursor: pointer;"><i class="fas fa-bookmark"></i> Post Properties </button></a>
+            <a href="/postproperty"> <button style="cursor: pointer;"><i class="fas fa-bookmark"></i> Post Properties
+              </button></a>
           </div>
         </div>
         <div class="styleAvatar0">
-          <a  class="styleAvatar"> <button  id='hideshow'> <i class="fas fa-tshirt" style="margin-right: 20px;"></i> Style Avatar</button></a>
+          <a class="styleAvatar"> <button id='hideshow'> <i class="fas fa-tshirt" style="margin-right: 20px;"></i> Style
+              Avatar</button></a>
         </div>
         <div class="user-setting" id='content' hidden>
           <div class="hidden">

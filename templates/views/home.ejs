@@ -49,17 +49,17 @@
               <div class="header-top-info">
                 <div class="price-sec">
                   <div class="price"><i class="fas fa-rupee-sign"></i>
-                    <%= home.offered_at%> <span><small>
-                          <%= home.sellOrRent %> | <%= home.sq_ft %> sq-ft
+                    <%= home.BuildingInformation.offered_at%> <span><small>
+                          <%= home.BuildingInformation.sellOrRent %> | <%= home.BuildingInformation.sq_ft %> sq-ft
                         </small></span>
                   </div>
                 </div>
                 <div class="loc-sec">
                   <div class="location"><i class="fas fa-map-marker-alt"></i> Location :</div>
                   <div class="location-full">
-                    <%= home.house_number%> , <%= home.building_name%> building , <%= home.floor%> floor , <%=home.nearest_landmark%> , <br>
-                            <%= home.area_name%> , <%= home.city_name%> ,
-                                <%= home.state_name%> , <%= home.country_name%>
+                   HouseNo. <%= home.BuildingInformation.house_number%> , <%= home.BuildingInformation.building_name%> building , <%= home.BuildingInformation.floor%> floor , area: <%=home.BuildingInformation.Location.area_name%> , <br>
+                          near:  <%= home.BuildingInformation.Location.nearest_landmark%> , city: <%= home.BuildingInformation.Location.city_name%> , District: <%= home.BuildingInformation.Location.district_name%>  
+                               State: <%= home.BuildingInformation.Location.state_name%> , Country: <%= home.BuildingInformation.Location.country_name%>
                   </div>
                 </div>
               </div>
@@ -69,10 +69,10 @@
               <div class="body">
                 <div class="wrapper">
                   <div class="gallery">
-                    <div class="image"><span><img src="/images/TempUploads/<%=home.first_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
-                    <div class="image"><span><img src="/images/TempUploads/<%=home.second_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
-                    <div class="image"><span><img src="/images/TempUploads/<%=home.third_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
-                    <div class="image"><span><img src="/images/TempUploads/<%=home.fourth_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
+                    <div class="image"><span><img src="/images/TempUploads/<%=home.PropertyImages.first_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
+                    <div class="image"><span><img src="/images/TempUploads/<%=home.PropertyImages.second_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
+                    <div class="image"><span><img src="/images/TempUploads/<%=home.PropertyImages.third_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
+                    <div class="image"><span><img src="/images/TempUploads/<%=home.PropertyImages.fourth_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
 
                   </div>
                 </div>
@@ -104,7 +104,7 @@
                   </span></div>
                   <div class="owner-list over">
                     listed by : <span>
-                      <%= home.owner_name%>
+                      <%= home.UserInformation.owner_name%>
                     </span>
                   </div>
                 </div>
@@ -113,37 +113,37 @@
 
                     <div class="detail-cell">
                       <div class="info-head"><i class="fas fa-home lolololo"></i> Home Type</div>
-                      <div class="info-heads"><%= home.home_Type%></div>
+                      <div class="info-heads"><%= home.BuildingInformation.home_Type%></div>
                     </div>
                     <div class="detail-cell">
                       <div class="info-head"><i class="fas fa-tags lolololo"></i> sellOrRent</div>
-                      <div class="info-heads"><%= home.sellOrRent%></div>
+                      <div class="info-heads"><%= home.BuildingInformation.sellOrRent%></div>
                     </div>
                     <div class="detail-cell">
                       <div class="info-head" id="priceCell"><i class="fas fa-rupee-sign lolololo"></i> Offered At</div>
-                      <div class="info-heads"> <%= home.offered_at%></div>
+                      <div class="info-heads"> <%= home.BuildingInformation.offered_at%></div>
                     </div>
                     <% if( home.rentDeposit != null ){ %>
                       <div class="detail-cell">
                         <div class="info-head"><i class="fas fa-rupee-sign lolololo"></i> Rent Deposit</div>
-                        <div class="info-heads"><%= home.rentDeposit%></div>
+                        <div class="info-heads"><%= home.BuildingInformation.rentDeposit%></div>
                       </div>
                       <% } %>
                       <div class="detail-cell">
                         <div class="info-head"><i class="fas fa-parking lolololo"></i> Parking</div>
-                        <div class="info-heads"><%= home.parking%></div>
+                        <div class="info-heads"><%= home.BuildingInformation.parking%></div>
                       </div>
                     <div class="detail-cell">
                       <div class="info-head" id="sq_ftCell"><i class="fas fa-equals lolololo"></i> Sq_ft</div>
-                      <div class="info-heads"> <%= home.sq_ft%></div>
+                      <div class="info-heads"> <%= home.BuildingInformation.sq_ft%></div>
                     </div>
                     <div class="detail-cell">
                       <div class="info-head"><i class="fas fa-hand-holding-heart lolololo"></i> age</div>
-                      <div class="info-heads"><%= home.age%></div>
+                      <div class="info-heads"><%= home.BuildingInformation.age%></div>
                     </div>
                     <div class="detail-cell">
                       <div class="info-head" id="pricePsq_ft"> <i class="fas fa-ruler-combined lolololo"></i> price/sq_ft</div>
-                      <div class="info-heads" id="text9" ><%= (home.offered_at / home.sq_ft).toFixed(0)%></div>
+                      <div class="info-heads" id="text9" ><%= (home.BuildingInformation.offered_at / home.BuildingInformation.sq_ft).toFixed(0)%></div>
                     </div>
                   </div>
                 </div>
@@ -167,22 +167,22 @@
                 <div class="user_infos">
                   <div class="user-info">
                     <div class="userinfo">Name</div>
-                    <input type="text" class="input_filed" placeholder="enter name" value="<%= home.owner_name%>"
+                    <input type="text" class="input_filed" placeholder="enter name" value="<%= home.UserInformation.owner_name%>"
                       readonly>
                   </div>
                   <div class="user-info">
                     <div class="userinfo">Phone</div>
-                    <input type="text" class="input_filed" placeholder="enter phone" value="<%= home.owner_phone%>" readonly>
+                    <input type="text" class="input_filed" placeholder="enter phone" value="<%= home.UserInformation.owner_phone%>" readonly>
                   </div>
                   <div class="user-info">
                     <div class="userinfo">Email</div>
-                    <input type="text" class="input_filed" placeholder="enter email" value="<%= home.owner_email%>"
+                    <input type="text" class="input_filed" placeholder="enter email" value="<%= home.UserInformation.owner_email%>"
                       readonly>
                   </div>
                   <div class="user-info">
                     <div class="userinfo">Massage <small>(optional)</small></div>
                     <input type="text" name="message_add" class="input_filed" placeholder="enter msg"
-                      value="I am interested in <%= home.house_number%>,<%= home.building_name%> building,<%= home.floor%> floor,<%=home.nearest_landmark%>,<%= home.area_name%>,<%= home.city_name%>,<%= home.state_name%>,<%= home.country_name%>">
+                      value="I am interested in area: <%=home.BuildingInformation.Location.area_name%> ,near:  <%= home.BuildingInformation.Location.nearest_landmark%> , city: <%= home.BuildingInformation.Location.city_name%> , District: <%= home.BuildingInformation.Location.district_name%> State: <%= home.BuildingInformation.Location.state_name%> , Country: <%= home.BuildingInformation.Location.country_name%>">
                   </div>
                   <br>
                   <div class="header-popup">Give the agent more details !</div>
@@ -221,7 +221,7 @@
                   <!-- <button
                     onclick="DoFast('?home_id=<%= home._id %>&owner=<%= home.owner_name %>&sellOrRent=<%= home.sellOrRent %>&offered_at=<%= home.offered_at %>&first_image=<%= home.first_image %>&second_image=<%= home.second_image %>&third_image=<%= home.third_image %>&fourth_image=<%= home.fourth_image %>&home_Type=<%= home.home_Type %>&area_name=<%= home.area_name %>&city_name=<%= home.city_name %>&nearest_landmark=<%= home.nearest_landmark %>&sq_ft=<%= home.sq_ft %>&parking=<%= home.parking %>&floor=<%= home.floor %>&age=<%= home.age %>&user_id=<%= user %>&user_name=<%= userName %>&user_phone=<%= userPhone %>&state_name=<%= home.state_name %>&country_name=<%= home.country_name %>')"
                     style="text-align: center; display: none;" class="input" id="primaryButton" type="button">  Show Your Interest ❤️</button> -->
-                    <button onclick="DoFast('?home_id=<%= home._id %>&owner=<%= home.owner_name %>&sellOrRent=<%= home.sellOrRent %>&offered_at=<%= home.offered_at %>&first_image=<%= home.first_image %>&second_image=<%= home.second_image %>&third_image=<%= home.third_image %>&fourth_image=<%= home.fourth_image %>&home_Type=<%= home.home_Type %>&area_name=<%= home.area_name %>&city_name=<%= home.city_name %>&nearest_landmark=<%= home.nearest_landmark %>&sq_ft=<%= home.sq_ft %>&parking=<%= home.parking %>&floor=<%= home.floor %>&age=<%= home.age %>&user_id=<%= user %>&userName=<%= userName %>&userPhone=<%= userPhone %>&state_name=<%= home.state_name %>&country_name=<%= home.country_name %>&house_number=<%= home.house_number %>&building_name=<%= home.building_name %>')" class="input" id="button-2" type="submit">Show Your Interest ❤️</button>
+                    <button onclick="DoFast('?home_id=<%= home._id %>&owner=<%= home.UserInformation.owner_name %>&sellOrRent=<%= home.BuildingInformation.sellOrRent %>&offered_at=<%= home.BuildingInformation.offered_at %>&first_image=<%= home.PropertyImages.first_image %>&second_image=<%= home.PropertyImages.second_image %>&third_image=<%= home.PropertyImages.third_image %>&fourth_image=<%= home.PropertyImages.fourth_image %>&home_Type=<%= home.BuildingInformation.home_Type %>&area_name=<%= home.BuildingInformation.Location.area_name %>&district_name=<%= home.BuildingInformation.Location.district_name %>&city_name=<%= home.BuildingInformation.Location.city_name %>&nearest_landmark=<%= home.BuildingInformation.Location.nearest_landmark %>&sq_ft=<%= home.BuildingInformation.sq_ft %>&parking=<%= home.BuildingInformation.parking %>&floor=<%= home.BuildingInformation.floor %>&age=<%= home.BuildingInformation.age %>&user_id=<%= user %>&userName=<%= userName %>&userPhone=<%= userPhone %>&state_name=<%= home.BuildingInformation.Location.state_name %>&country_name=<%= home.BuildingInformation.Location.country_name %>&house_number=<%= home.house_number %>&building_name=<%= home.building_name %>')" class="input" id="button-2" type="submit">Show Your Interest ❤️</button>
                 </div>
 
               </form>

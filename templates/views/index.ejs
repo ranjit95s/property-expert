@@ -62,9 +62,9 @@
         <div class="wrapperss">
           <% getHome.forEach(function (home){ %>
             <div class="item">
-              <img src="/images/TempUploads/<%=home.first_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
-              <p>Area : <%= home.area_name %>, <%= home.city_name %></p>
-              <p><%= home.sellOrRent %> : <%= home.offered_at %></p>
+              <img src="/images/TempUploads/<%=home.PropertyImages.first_image%>" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
+              <p>Area :<%= home.BuildingInformation.Location.district_name %>, <%= home.BuildingInformation.Location.state_name%> </p>
+              <p><%= home.BuildingInformation.sellOrRent %> : <%= home.BuildingInformation.offered_at %></p>
             </div>
             <% }) %>
         </div>

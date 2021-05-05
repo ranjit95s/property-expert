@@ -131,40 +131,19 @@ app.post("/homeInterest", async (req, res) => {
     const buying_firstTime = req.body.buying_firstTime;
     const plan_on_buying_home = req.body.plan_on_buying_home;
     const active_military_status = req.body.active_military_status;
-
-    // const home_id = req.query.home_id;
-    // const owner = req.query.owner;
-    // const sellOrRent = req.query.sellOrRent;
-    // const offered_at = req.query.offered_at;
-    // const first_image = req.query.first_image;
-    // const second_image = req.query.second_image;
-    // const third_image = req.query.third_image;
-    // const fourth_image = req.query.fourth_image;
-    // const home_Type = req.query.home_Type;
-    // const area_name = req.query.area_name;
-    // const city_name = req.query.city_name;
-    // const state_name = req.query.state_name;
-    // const country_name = req.query.country_name;
-    // const nearest_landmark = req.query.nearest_landmark;
-    // const sq_ft = req.query.sq_ft;
-    // const parking = req.query.parking;
-    // const floor = req.query.floor;
-    // const age = req.query.age;
-    // const user_id = req.query.user_id;
-    // const user_name = req.query.user_name;
-    // const user_phone = req.query.user_phone;
-
-    // console.log(parking);
-    // console.log(message_add);
     
 
     try {
 
         const updateUser = await homeInterest.updateMany({ $set: {
-            message_add,
-            buying_firstTime,
-            plan_on_buying_home,
-            active_military_status,
+            
+            UserAdditionalDeatils: {
+                    message_add,
+                    buying_firstTime,
+                    plan_on_buying_home,
+                    active_military_status,
+                },
+            
         } })
         console.log(updateUser);
 
@@ -316,8 +295,8 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
 
 
 
-    var { uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit } = req.body;
-    console.log(uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit);
+    var { uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit } = req.body;
+    console.log(uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name , age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit);
     try {
         // // // // // // // const uploadsFolder = path.join(__dirname, "../public/images/property");
         // const image_1st = uploadsFolder + req.files.first_image[0].filename;
@@ -337,31 +316,39 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
 
 
         const addingProperty = new home({
-            uploader_name,
-            uploader_email,
-            uploader_phone,
-            owner_name,
-            owner_email,
-            owner_phone,
-            house_number,
-            building_name,
-            area_name,
-            city_name,
-            nearest_landmark,
-            home_Type,
-            parking,
-            floor,
-            sq_ft,
-            age,
-            first_image: image_1st_filename,
-            second_image: image_2nd_filename,
-            third_image: image_3rd_filename,
-            fourth_image: image_4th_filename,
-            sellOrRent,
-            offered_at,
-            state_name,
-            country_name,
-            rentDeposit
+            UserInformation: {
+                uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone,
+            },
+
+            BuildingInformation : {
+                house_number,
+                building_name,
+                home_Type,
+                parking,
+                Location : {
+                    area_name,
+                    nearest_landmark,
+                    city_name,
+                    district_name,
+                    state_name,
+                    country_name,
+                },
+                floor,
+                sq_ft,
+                age,
+                sellOrRent,
+                offered_at,
+                rentDeposit,
+
+            },
+
+            PropertyImages : {
+                first_image: image_1st_filename,
+                second_image: image_2nd_filename,
+                third_image: image_3rd_filename,
+                fourth_image: image_4th_filename,
+            },
+        
         });
 
 
@@ -401,6 +388,7 @@ app.get("/homeInterest", async (req, res) => {
     const building_name = req.query.building_name;
     const area_name = req.query.area_name;
     const city_name = req.query.city_name;
+    const district_name = req.query.district_name;
     const state_name = req.query.state_name;
     const country_name = req.query.country_name;
     const nearest_landmark = req.query.nearest_landmark;
@@ -423,33 +411,48 @@ app.get("/homeInterest", async (req, res) => {
 
 
         const addingHomeInterest = new homeInterest({
-            home_id,
-            owner,
-            sellOrRent,
-            offered_at,
-            first_image,
-            second_image,
-            third_image,
-            fourth_image,
-            home_Type,
-            building_name,
-            area_name,
-            house_number,
-            city_name,
-            state_name,
-            country_name,
-            nearest_landmark,
-            sq_ft,
-            parking,
-            floor,
-            age,
-            user_id,
-            userName,
-            userPhone,
-            message_add,
-            buying_firstTime,
-            plan_on_buying_home,
-            active_military_status,
+            PropertyOwner:{
+                owner,
+            },
+            OwnerPropertyInformation : {
+                home_id,
+                sellOrRent,
+                offered_at,
+                home_Type,
+                building_name,
+                sq_ft,
+                parking,
+                floor,
+                age,
+                house_number,
+                Locations : {
+
+                    area_name,
+                    city_name,
+                    state_name,
+                    district_name,
+                    country_name,
+                    nearest_landmark,
+                },
+                OwnerPropertyImages :{
+                    first_image,
+                    second_image,
+                    third_image,
+                    fourth_image,
+
+                },
+             },
+             InterestedUserInformation : {
+                 user_id,
+                 userName,
+                 userPhone,
+                },
+                UserAdditionalDeatils : {
+                    message_add,
+                    buying_firstTime,
+                    plan_on_buying_home,
+                    active_military_status,
+                },
 
         });
 
@@ -680,6 +683,15 @@ app.post("/users", async (req, res) => {
     }
 });
 
+app.post("/logout", (req, res) => {
+    try {
+      res.clearCookie("jwt")
+      res.redirect("/")
+    } catch (e) {
+      res.status(500).send("error! cant logout")
+    }
+  
+  })
 
 //getting api datas
 
