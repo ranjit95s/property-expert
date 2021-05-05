@@ -1,0 +1,48 @@
+:root{
+    --red:#e84118;
+}
+
+body{
+    background: white;
+    font-size: 100%;
+}
+
+.page-404 {
+    text-align: center;
+}
+
+.gif > img {
+    width: 50rem;
+}
+
+.title0 {
+    font-size: 4.9rem;
+    margin-bottom: 10px;
+}
+.title1 {
+    font-size: 2.9rem;
+    color: rgb(70, 70, 70);
+    margin-bottom: 10px;
+}
+
+.homebtn {
+    font-size: 2.5rem;
+    text-decoration: none;
+    background:var(--red);
+    padding: 8px;
+    color: #fff;
+    border-radius: 15px;
+}
+
+@media (max-width : 526px) {
+    .title0 {
+        font-size: 2.9rem;
+    }
+    .title1 {
+        font-size: 1.9rem;
+        color: rgb(70, 70, 70);
+    }
+    .gif > img {
+        width: 35rem;
+    }
+}

@@ -4,12 +4,17 @@
 	box-sizing: border-box;
 }
 
+:root{
+    --red:#e84118;
+}
+
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
+	height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background:linear-gradient(transparent,#38d39f);
+    background:var(--red);
     border-radius: 6px;
 }
 
@@ -132,7 +137,7 @@ form{
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	background-color: #38d39f;
+	background-color: var(--red);
 	transition: .4s;
 }
 
@@ -155,7 +160,7 @@ form{
 
 
 .input-div.focus > .i > i{
-	color: #38d39f;
+	color: var(--red);
 }
 
 .input-div > div > input {
@@ -189,11 +194,11 @@ form{
 }
 
 .input-div .send:focus , .input-div .verify:focus  {
-	background-color: teal;
+	background-color: var(--red);
 	color: #fff;
 }
 .input-div .send:hover , .input-div .verify:hover {
-	background-color: rgb(0, 179, 179);
+	background-color: var(--red);
 	color: #fff;
 }
 
@@ -213,7 +218,7 @@ a{
 }
 
 a:hover{
-	color: #38d39f;
+	color: var(--red);
 }
 
 .btn{
@@ -223,7 +228,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	background-image: linear-gradient(to right,#d65d3f, var(--red), #ca3b17);
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;

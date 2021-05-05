@@ -714,7 +714,19 @@ app.get("/homes", async (req, res) => {
 // app.listen(port, () => {
 //     console.log("server is running on " + port);
 // });
+app.get("*", async (req, res) => {
+try {
+    const userToken = req.cookies.jwt;
+    const verifyUser = jwt.verify(userToken, process.env.SECRET_KEY);
+    console.log(verifyUser._id);
+    const userDetails = await user.findOne({ _id: verifyUser._id })
+    res.render("404", {user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo  });
 
+  }
+  catch (e) {
+    res.render("404")
+  }
+});
 app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on 3000 port mode");
   });
