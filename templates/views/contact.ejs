@@ -67,7 +67,7 @@
 	</div> -->
 
 	<nav style="padding: 20px 5px;" class="navbar navbar-expand-lg navbar-light bg-light sticky-top ">
-		<h2 class="logoo">Property<span>Expert</span></h2>
+		<a href="/" style="cursor: pointer;"><h2 class="logoo">Property<span>Expert</span></h2></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -79,22 +79,25 @@
 
 			</ul>
 			<li class="nav-item active">
-				<a style="font-family: 'Balsamiq Sans', cursive; font-size: 1.5rem;" class="nav-link" href="#">Home
+				<a style="font-family: 'Balsamiq Sans', cursive; font-size: 1.5rem;" class="nav-link" href="/">Home
 					<span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
-				<a style="font-family: 'Balsamiq Sans', cursive; font-size: 1.5rem;" class="nav-link" href="#">About</a>
+				<a style="font-family: 'Balsamiq Sans', cursive; font-size: 1.5rem;" class="nav-link" href="/aboutmore">About</a>
 			</li>
 			<li class="nav-item">
-				<a style="font-family: 'Balsamiq Sans', cursive; font-size: 1.5rem;" class="nav-link" href="#">Contact
+				<a style="font-family: 'Balsamiq Sans', cursive; font-size: 1.5rem;" class="nav-link" href="/contact">Contact
 					Us</a>
 			</li>
-
-
-
-			<button style="font-family: 'Balsamiq Sans', cursive; font-size: 1.5rem;" class="btn btn__log"
-				type="submit"><a style="font-family: 'Balsamiq Sans', cursive; font-size: 1.5rem;" href="/login"
-					class="p-2">Login <i class="fas fa-sign-in-alt"></i></a></button>
+			
+			
+			<li class="nav-item">
+				<a href="/user">
+					<button type="button" id="user_btn_contact" onclick="userId('?_id=<%= user %>&userName=<%= userName %>')">
+						<img src="/images/Reddit-F/<%=userPhoto%>" onerror="this.src='/images/Reddit-F/d-1.png'">
+					</button>
+                </a>
+			</li>
 
 
 		</div>
@@ -115,14 +118,14 @@
 					Get in touch
 				</span>
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<input class="input100" type="text" name="nameM" placeholder="Name">
+					<input class="input100" type="text" name="nameM" placeholder="Name" value="<%=userName%>" readonly>
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-user" aria-hidden="true"></i>
 					</span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Valid email is required: abc246@gmail.com">
-					<input class="input100" type="text" name="phoneM" placeholder="eamil">
+					<input class="input100" type="text" name="phoneM" placeholder="email" value="<%=userEmail%>" readonly>
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-envelope" aria-hidden="true"></i>

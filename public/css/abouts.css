@@ -1,5 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+html{
+  scroll-behavior:smooth;
+}
+
+:root{
+  --red:#e84118;
+}
+
 .about {
     min-height: 100vh;
 }
@@ -30,12 +39,23 @@
     color: #666;
     padding: 1rem 0;
 }
-
+.about .row .content p .span0 {
+  color:var(--red);
+  font-weight: 700;
+  font-family: 'Reggae One', cursive;
+  text-decoration: underline !important;
+}
+.about .row .content p .span1 {
+  font-weight: 700;
+  color: black;
+  font-family: 'Reggae One', cursive;
+  text-decoration: underline !important;
+}
 .about .row .content .btnn {
     color: var(--red);
     border-color: var(--red);
     outline-color: var(--red);
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    box-shadow: 0px 5px 20px rgba(46, 229, 157, 0.4);
     
 }
 
@@ -105,13 +125,14 @@
 }
 
 .team .team_member p.role{
-  color: #ccc;
+  color: rgb(135, 135, 135);
   margin: 12px 0;
   font-size: 15px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 .team .team_member p{
-    color: rgb(153, 145, 145);
+    color: rgb(114, 114, 114);
     font-size: 12px;
   }
 
@@ -136,3 +157,4 @@
     box-shadow: 5px 5px 15px 5px rgb(255, 51, 0);
     border-radius: 50%;
 }
+

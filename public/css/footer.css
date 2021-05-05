@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Headland+One&display=swap');
+
+html{
+  scroll-behavior:smooth;
+}
 :root{
     --red:#e84118;
 }
@@ -26,11 +30,16 @@
   }
   
   .footer__logo {
+    color: rgb(0, 0, 0);
     font-family: 'Reggae One', cursive;
     font-weight: 800;
-    text-transform: capitalize;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+
+  }
+
+  .footer__logo span {
     color: var(--red);
+    font-family: 'Reggae One', cursive;
   }
 
   .footer__logo__des {
@@ -49,7 +58,7 @@
   
   .nav__title {
       font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: .9rem;
     font-family: 'Bevan', cursive;
   }
@@ -86,7 +95,7 @@
   
   .footer a {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: rgb(141, 141, 141) !important;
     font-weight: 700;
     font-family: 'Headland One', serif;
@@ -158,13 +167,21 @@
     .legal .legal__links {
       margin-left: auto;
     }
-
+    
   }
   
-  @media screen and (min-width: 40.375em) {
-    .footer__nav > * {
-      flex: 1;
+  @media screen and (min-width: 35.375em) {
+    .footer__nav {
+      flex: 0px 0px;
     }
+    .nav__title {
+      font-size: 2rem;
+    }
+    .footer__logo {
+      font-size: 3rem;
+    }
+  }
+  @media screen and (min-width: 40.375em) {
     
     .nav__item--extra {
       flex-grow: 1;

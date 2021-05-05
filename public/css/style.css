@@ -99,7 +99,21 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 
 
-
+.homelook {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #291b1b;
+    font-family: cursive;
+    padding: 10px;
+    /* margin: auto; */
+    text-decoration: underline !important;
+    background: whitesmoke;
+    border: 1px solid gainsboro;
+    border-radius: 25px;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
 
 
 
@@ -364,17 +378,13 @@ border-radius: 7.5px;
 }
 
 .agents .box-con::-webkit-scrollbar {
-    height: 12px;
+    height: 8px;
 }
 
 .agents .box-con::-webkit-scrollbar-thumb {
-    background:radial-gradient(#00fcff,#30ff00);
+    background: #e26e51;
     border-radius: 6px;
 }
-.agents .box-con::-webkit-scrollbar-thumb:hover {
-    background:radial-gradient(#30ff00,#00fcff);
-}
-
 
 .agents .box .image {
     width: 35rem;

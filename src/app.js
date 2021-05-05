@@ -195,13 +195,14 @@ app.get("/aboutmore", async (req, res) => {
 
 app.get("/contact", async (req, res) => {
     try {
+        var err;
         const token = req.cookies.jwt;
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
         const userDetails = await user.findOne({ _id: verifyUser._id });
         res.render("contact", {user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
     } catch (e) {
-        res.render("/");
+        res.render("login" , {err : "login required"});
     }
 });
 
