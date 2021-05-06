@@ -90,15 +90,11 @@ header .header-2 .navbar ul a li , .share ul li a {
     font-family: 'Balsamiq Sans', cursive;
     border-radius: 5px;
 }
-header .header-2 .navbar ul a li.active,
-header .header-2 .navbar ul a li:hover {
-    color: rgb(73, 0, 63);
-}
+
 
 header .header-2 .share a {
     display: contents;
     color: rgb(0, 0, 0);
-    /* margin: 1rem; */
 }
 header .header-2 .share a:hover {
     color: rgb(255, 239, 146);
@@ -132,58 +128,6 @@ header .header-2 #menu{
     transition: all .5s ease-in;
     margin: 0px;
 }
-
-
-
- .user {
-    position: absolute;
-    width: 30%;
-    top: 0;
-    right: -30%;
-    overflow: hidden;
-    z-index: 1000;
-    padding: 16px;
-    text-align: center;
-    border-radius: 15px 0 0px 15px;
-    min-height: 550px;
-    background: repeating-linear-gradient(rgb(255, 177, 163),rgb(255, 143, 69));
-}
-
-.user_header {
-   margin: 20px 0;
-   font-size: 2.2rem;
-   font-weight: 600;
-}
-
-.user_logo {
-    font-size: 5.5rem;
-}
-
-.user_menu {
-    text-align: left;
-    width: 100%;
-    padding: 5px;
-}
-
-.user_menu li {
-    margin: 5px;
-    padding: 20px;
-    font-size: 2rem;
-    text-decoration: none;
-}
-.user_menu li a {
-    color: black;
-    font-weight: 600;
-}
-.user_menu i {
-    margin-right: 12px;
-    color:rgb(31, 31, 31) ;
-}
-
-.user-toggle{
-    right: 0;
-}
-
 
 
 @media (max-width : 900px) {

@@ -16,7 +16,7 @@
   <title>home of page</title>
 </head>
 
-<body>
+<body style="user-select: none;">
   <%- include ("navbar.ejs") %>
     <% if( typeof foundHome !='undefined' && foundHome==false ){ %>
       <script>
@@ -46,7 +46,7 @@
               <div class="header-top-info">
                 <div class="price-sec">
                   <div class="price"><i class="fas fa-rupee-sign"></i>
-                    <%= home.BuildingInformation.offered_at%> <span><small>
+                    <%= home.BuildingInformation.offered_at%> <span style="font-size: 2rem; font-weight: 700;"><small>
                           <%= home.BuildingInformation.sellOrRent %> | <%= home.BuildingInformation.sq_ft %> sq-ft
                         </small></span>
                   </div>
@@ -54,9 +54,9 @@
                 <div class="loc-sec">
                   <div class="location"><i class="fas fa-map-marker-alt"></i> Location :</div>
                   <div class="location-full">
-                   HouseNo. <%= home.BuildingInformation.house_number%> , <%= home.BuildingInformation.building_name%> building , <%= home.BuildingInformation.floor%> floor , area: <%=home.BuildingInformation.Location.area_name%> , <br>
+                   HouseNo. <%= home.BuildingInformation.house_number%> , <%= home.BuildingInformation.building_name%> building , <%= home.BuildingInformation.floor%>th floor , area: <%=home.BuildingInformation.Location.area_name%> , <br>
                           near:  <%= home.BuildingInformation.Location.nearest_landmark%> , city: <%= home.BuildingInformation.Location.city_name%> , District: <%= home.BuildingInformation.Location.district_name%>  
-                               State: <%= home.BuildingInformation.Location.state_name%> , Country: <%= home.BuildingInformation.Location.country_name%>
+                              , State: <%= home.BuildingInformation.Location.state_name%> , Country: <%= home.BuildingInformation.Location.country_name%>
                   </div>
                 </div>
               </div>

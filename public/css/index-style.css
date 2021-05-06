@@ -1,16 +1,4 @@
 
-
-
-
-/* ---------------------------------------------------------------------------------- */
-
-
-
-
-
-
-
-
 .home {
     display: flex;
     align-items: center;
@@ -171,10 +159,7 @@
 .look-property .img-box .box:hover > .buttons a {
     color:whitesmoke;
     background-color: var(--red);
-}
-
-.look-property .img-box .box:hover {
-    transform: scaleY(1.1);
+    font-size: 2.2rem;
 }
 
 
