@@ -83,6 +83,7 @@ header .header-2 .navbar ul li , .share ul li {
 }
 header .header-2 .navbar ul a li , .share ul li a {
     font-size: 2rem;
+    text-align: center;
     font-weight: 800;
     color: rgb(0, 0, 0);
     padding: 0px 0px;

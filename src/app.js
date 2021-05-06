@@ -195,7 +195,7 @@ app.post("/contact", auth , async (req, res) => {
 
           const addNewMsg = new message ({
               name: req.body.nameM,
-              email: req.body.phoneM,
+              email: req.body.emailM,
               message: req.body.message,
           });
 
