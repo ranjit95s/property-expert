@@ -38,6 +38,7 @@
       </ul>
       <div class="img-con">
         <% getHome.forEach(function (home){ %>
+          <a href="/home?h_id=<%= home._id %>">
           <div class="image img-hover-zoom <%= home.BuildingInformation.home_Type%>">
             <img src="/images/Reddit-F/<%=home.PropertyImages.first_image%>" onerror="this.src='/images/property/1.jpg'" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
             <p class="building-name"><%= home.UserInformation.owner_name%>'s home</p>
@@ -48,9 +49,10 @@
               <p class="glass"> location :<%= home.BuildingInformation.Location.district_name %>, <%= home.BuildingInformation.Location.state_name%></p>
             </div>
             <div class="stick_to_bo">
-              <a href="/home?h_id=<%= home._id %>">View Full Details </a>
+              <a class="view" href="/home?h_id=<%= home._id %>">View Full Details </a>
             </div>
           </div>
+        </a>
           <% }) %>
       </div>
       <div id="no_data" class="no_data hidden">

@@ -311,7 +311,7 @@ border-radius: 10px;
 @media (max-width :526px) { 
   .user-d > p {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
   }
   .user-details > .user-infoo > p > img {
     width: 150px;

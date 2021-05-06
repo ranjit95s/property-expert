@@ -334,40 +334,7 @@ border-radius: 15px;
     width: fit-content;
 }
 
-.questionArrive {
-    margin: 3rem 15rem;
-    background: rgba(221, 221, 221, 0.55);
 
-border-radius: 10px;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.question {
-    font-size: 2rem;
-    font-family: 'Carter One', cursive;
-    margin-bottom: 5px;
-}
-
-.questionArrive input {
-    width: 100%;
-    padding: 7px;
-    word-spacing: 2px;
-    font-size: 2.6rem;
-    border-radius: 15px;
-    background: rgba(138, 92, 255, 0.603);
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    color: rgb(0, 0, 0);
-    transition: all .2s ease-in;
-}
-
-.questionArrive input:hover {
-    color: #fff;
-    background-color: blue;
-    border-color: cornsilk;
-    align-items: center;
-    justify-content: center;
-}
 
 .form {
     position: relative;
