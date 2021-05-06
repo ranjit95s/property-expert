@@ -65,7 +65,6 @@ header .header-2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     background:white;
     padding: 1.2rem 0.1rem;
     position: relative;
@@ -113,9 +112,6 @@ header .header-2 #menu{
     margin: 1rem;
 }
 .header-2.header-active {
-    position: fixed;
-    top: 0;
-    width: 100%;
     box-shadow: 0 .1rem .3rem rgb(0, 0, .3);
 }
 
