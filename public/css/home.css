@@ -12,7 +12,6 @@ html{
 .info-sec {
     display: flex;
     flex-direction: column;
-    margin: 10px 30px;
 }
 
 
@@ -336,6 +335,8 @@ border-radius: 15px;
 
 
 
+
+
 .form {
     position: relative;
     background: rgb(255, 255, 255);
@@ -444,9 +445,6 @@ border-radius: 15px;
     .timeadd , .owner-list {
         width: auto;
         font-size: 1.8rem;
-    }
-    .info-sec {
-        margin: 10px 10px;
     }
     
     .header-top-info {
