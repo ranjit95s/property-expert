@@ -61,30 +61,3 @@
 </body>
 
 </html>
-
-
-
-
-<!-- const gotUser = await user.findOne({ phone: phoneNo });
-if (!gotUser || !passwordLog) {
-    err = "Please enter mobile number and password";
-    res.render("login", {
-        err: err,
-    });
-}
-else {
-    const isMatch = await bcrypt.compare(passwordLog, gotUser.password);
-    const token = await gotUser.generateAuthToken();
-    console.log("the token part" + token);
-    res.cookie("jwt", token, {
-        expires: new Date(Date.now() + 6000000000),
-        httpOnly: true,
-    });
-}
-// console.log(cookie);
-if (isMatch) {
-    res.redirect("/");
-} else {
-    err = "Wrong Password! Please Try Again.";
-    res.render("login", { err: err, phone: phoneNo });
-} -->
