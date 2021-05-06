@@ -35,14 +35,14 @@ border-radius: 10px;
   justify-content: space-between;
 }
 
-.setting-icon {
+.setting-icon > button {
   position: absolute;
   top: 20px;
   right: 70px;
   font-size: 1.7rem;
   font-weight: 700;
   background-color: rgb(255, 247, 238);
-  padding: 8px;
+  padding: 5px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 15px;
   cursor: pointer;
@@ -292,7 +292,7 @@ border-radius: 10px;
 }
 
 @media (max-width : 789px) {
-  .setting-icon{
+  .setting-icon > button{
     right: 50px;
     font-size: 1.5rem;
   }
@@ -317,7 +317,7 @@ border-radius: 10px;
     width: 150px;
     height: 160px;
   }
-  .setting-icon{
+  .setting-icon > button{
     right: 10px;
     font-size: 1.3rem;
   }
