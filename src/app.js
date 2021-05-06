@@ -202,7 +202,7 @@ app.post("/contact", auth , async (req, res) => {
           const newMessage = await addNewMsg.save();
 
         //   console.log(newMessage);
-          res.render("contact", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, success: "true" })
+          res.render("contact", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email , success: "true" })
     
 
   } catch(e) {
