@@ -1,0 +1,225 @@
+
+
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(/images/Marjorie-Holmes.png);
+    
+    background-size: cover;
+    border-radius: 0 0 10px 10px;
+    background-position: center;
+    position: relative;
+}
+
+.home .content {
+    text-align: center;
+    padding: 1rem;
+}
+
+.home .content h1 {
+    font-size: 6rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Potta One', cursive;
+    font-weight: 800;
+}
+
+.home .content h1 span {
+    color: var(--red);
+    font-family: 'Potta One', cursive;
+}
+
+.home .content p {
+   
+    font-size: 2.5rem;
+    color: #000000;
+    text-align: center;
+    font-weight: 700;
+   
+
+    padding: 1rem 0;
+}
+
+.btnn{
+    height: 4.5rem;
+    width: 19rem;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    
+    border: .2rem solid var(--red);
+    outline: .2rem solid var(--red);
+    outline-offset: -.8rem;
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    background: none;
+    
+}
+.home .btnn {
+    
+    background: rgba( 255, 127, 0, 0.35 );
+    box-shadow: 10px 15px 32px 10px rgb(255, 255, 255);
+    color: white;
+    
+}
+
+.home .plus {
+    border-radius: 25px;
+    background-color:var(--red);
+}
+
+.btnn:hover{
+    outline-offset: .4rem;
+    background: var(--red);
+    border-radius: 0px;
+    color: white;
+}
+
+
+.homelook {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #291b1b;
+    padding: 10px;
+    /* margin: auto; */
+    text-decoration: underline !important;
+    background: whitesmoke;
+    border: 1px solid gainsboro;
+    border-radius: 25px;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
+
+
+.look-property {
+    min-height: 100vh;
+}
+
+.look-property .head {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 25px;
+    font-weight: 700;
+} 
+
+.look-property .img-box  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+
+.look-property .img-box .box {
+    width: 35rem;
+    margin: 2.5rem;
+    height: 45rem;
+    border: .5rem solid rgb(255, 255, 255);
+    box-shadow: 0 .5rem .5rem black;
+    transition: all .2s ease;
+}
+
+.look-property .img-box .box img {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.look-property .img-box .box h2{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 100 !important;
+    margin: 1.5rem;
+    font-family: 'Bevan', cursive;
+}
+
+.look-property .img-box .box p {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 1.5rem;
+    color: gray;
+}
+
+.look-property .img-box .box .buttons{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2.9rem;
+}
+
+.look-property .img-box .box .buttons a {
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid var(--red);
+    color: var(--red);
+    transition: 150ms ease-in;
+}
+
+.look-property .img-box .box:hover > .buttons a {
+    color:whitesmoke;
+    background-color: var(--red);
+}
+
+.look-property .img-box .box:hover {
+    transform: scaleY(1.1);
+}
+
+
+
+.index-prop {
+    padding: 60px 30px;
+
+}
+
+.wrapperss {
+    max-height: 294px;
+
+    display: flex;
+    margin-top: 50px;
+    overflow-x: scroll;
+    padding: 20px 5px;
+
+    width: 100%;
+
+}
+
+.wrapperss .item {
+    min-width: 225px;
+    min-height: 235px;
+    max-width: 225px;
+    max-height: 235px;
+    margin: 0px 10px;
+    line-height: 25px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba( 255, 255, 255, 0.75 );
+box-shadow: 0 8px 14px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 8.0px );
+-webkit-backdrop-filter: blur( 8.0px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.item img {
+    border-radius: 20px 20px 0px 0px;
+    width: 225px;
+    height: 170px;
+}
+
+.item p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+

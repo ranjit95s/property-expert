@@ -10,7 +10,17 @@ html{
 :root{
     --red:#e84118;
 }
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
   .footer {
+    width: 100vw !important;
+    margin-top: auto !important;
+    height: fit-content !important;
     display: flex;
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;

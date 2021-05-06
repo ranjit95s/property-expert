@@ -41,7 +41,22 @@
     font-family: 'Reggae One', cursive;
   }
   
+  .heading {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 .5rem;
+    padding-top: 2rem;
+    box-shadow: 0 .2rem .05rem rgb(0, 0, .3);
+}
 
+.heading span {
+    display: inline-block;
+    font-size: 3.5rem;
+    color: var(--red);
+    padding: 1rem 0;
+    box-shadow: 0 .2rem .05rem var(--red);
+}
 
 header .header-2 {
     display: flex;
@@ -330,7 +345,7 @@ header .header-2 #menu{
         right: 0;
     }
     .homelook {
-        font-size: 1.9rem;
+        font-size: 1.9rem !important;
     }
     .wrapper h1 {
         font-size: 20px !important;
