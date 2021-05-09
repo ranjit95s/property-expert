@@ -7,22 +7,17 @@ Here is the [REPO](https://github.com/ranjit95s/property-expert).
 Here is the [DEMO](https://property-expert.herokuapp.com/).
 
 ### How it works?
-Registered users are stored in mongoDB and their password is hashed by bcrypt. When the user POSTs their credentials to the server, they recieve 2 Json Web Token (access & refresh).
+Registered users are stored in mongoDB and their password is hashed by bcrypt. When the user POSTs their credentials to the server, they recieve 1 Json Web Token (access token & that will exprire certain time later!).
 
-On the client side user should set the authorization header(Bearer token) with access token. So user can be authorized by server with [middleware](#middleware). If the access token expired, renew the access token with refresh token by POSTing it to the "/token" endpoint.
-
-### Usage
-1. This server can be used as a standalone server. So the athentication system would be apart from the backend system. For authorization, JWT should be verified. JWT verification can be done in various programming languages. See: [libraries](https://jwt.io/#libraries-io).
-
-2. This server built with express.js. So it can be used on an existing express.js application.
+for safety purpose we are using firebase phone auth to verify user and then after proccesed next task.
+On the client side user have to re-login if token is exprire.
 
 -----
 
 ### Installation
 ```bash
-git clone https://github.com/coluck/authentication-server.git
-cd authentication-server
-# replace .env.example with .env and customize it
+git clone https://github.com/ranjit95s/property-expert.git
+cd property-expert
 npm i
 npm start
 ```
@@ -31,10 +26,10 @@ npm start
 
 | No  | Method | Endpoint    | Description                                                                   |
 | --- | ------ | ----------- | ----------------------------------------------------------------------------- |
-| #1  | `POST` | `/register` | Creates a new user in MongoDB and returns it with status 201                  |
+| #1  | `POST` | `/signup`   | Creates a new user in MongoDB and returns it with status 201                  |
 | #2  | `POST` | `/login`    | Returns access & refresh tokens if user credentials is valid                  |
 | #3  | `POST` | `/token`    | Returns a new access token if refresh token in body is verified               |
-| #4  | `GET`  | `/validate` | Returns user id if token in header is verified with [middleware](#middleware) |
+
 
 | No  | Request Body                         | Response Body                   |
 | --- | ------------------------------------ | ------------------------------- |
