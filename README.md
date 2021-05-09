@@ -2,9 +2,9 @@
 
 The authentication-server is a node app that handles user registration, authentication & authorization with [JWT](https://jwt.io/introduction).
 
-Here is the [REPO](https://github.com/coluck/authentication-server).
+Here is the [REPO](https://github.com/ranjit95s/property-expert).
 
-Here is the [DEMO](https://auth-serv.herokuapp.com/).
+Here is the [DEMO](https://property-expert.herokuapp.com/).
 
 ### How it works?
 Registered users are stored in mongoDB and their password is hashed by bcrypt. When the user POSTs their credentials to the server, they recieve 2 Json Web Token (access & refresh).
