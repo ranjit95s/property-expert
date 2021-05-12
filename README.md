@@ -1,5 +1,5 @@
 # Sell / Buy Property
-The :house_with_garden:**_Property-Expert.Com_**:house_with_garden: is a node app that handles user registration, authentication & authorization with [JWT](https://jwt.io/introduction).
+The :house_with_garden:**_Property-Expert.Com_**:house_with_garden: is a node app/site that handles user registration, authentication & authorization with [JWT](https://www.npmjs.com/package/jsonwebtoken). 
 
 Here is the [REPO](https://github.com/ranjit95s/property-expert).
 
