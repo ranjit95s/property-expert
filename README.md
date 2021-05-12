@@ -1,5 +1,5 @@
 # Sell / Buy Property
-The authentication-server is a node app that handles user registration, authentication & authorization with [JWT](https://jwt.io/introduction).
+The **_Property-Expert.Com_** is a node app that handles user registration, authentication & authorization with [JWT](https://jwt.io/introduction).
 
 Here is the [REPO](https://github.com/ranjit95s/property-expert).
 
