@@ -6,6 +6,7 @@ Here is the [REPO](https://github.com/ranjit95s/property-expert).
 Here is the [DEMO](https://property-expert.herokuapp.com/).
 
 ### How it works?
+
 Registered users are stored in mongoDB and their password is hashed by bcrypt. When the user POSTs their credentials to the server, they recieve 1 Json Web Token (access token & that will exprire certain time later!).
 for safety purpose we are using firebase phone auth to verify user and then after proccesed next task.
 On the client side user have to re-login if token is exprire.
