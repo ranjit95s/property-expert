@@ -24,16 +24,19 @@ npm start
 
 ### Routers
 
-| No  | Method | Endpoint          | Description                                                                   |
-| --- | ------ | -----------       | ----------------------------------------------------------------------------- |
-| #1  | `POST` | `/signup`         | Creates a new user in MongoDB and returns it with status 201                  |
-| #2  | `POST` | `/login`          | User login after successfully signup                                          |
-| #3  | `GET`  | `/property`       | All user uploaded property appears here                                       |
-| #4  | `GET`  | `/home?h=home.id` | Each property full details appear here with home ID                           |
-                                 (homeID generate automatically after posting property)                        
-| #5  | `POST` | `/post-property`  | User can post property here                                                   |
-| #3  | `GET`  | `/User`           | Registered users information + **_User can change his/her avatar_**           |
-
+| No  | Method | Endpoint          | Description                                                                      |
+| --- | ------ | ----------------- | -------------------------------------------------------------------------------- |
+| #1  | `POST` | `/signup`         | Creates a new user in MongoDB and returns it with status 201                     |
+| #2  | `POST` | `/verify`         | User have to verify his/her phone number then after can Browse through this site |
+| #3  | `POST` | `/login`          | User login after successfully signup                                             |
+| #4  | `GET`  | `/property`       | All user uploaded property appears here                                          |
+| #5  | `GET`  | `/home?h=home.id` | Each property full details appear here with home ID                              |
+|     |        |                   | (homeID generate automatically after posting property)                           |
+| #6  | `POST` | `/post-property`  | User can post property here                                                      |
+| #7  | `GET`  | `/User`           | Registered users information + **_User can change his/her avatar_**              |
+| #8  | `POST` | `/logout`         | Registered users can logout and after can login with same registered information |
+| #9  | `GET`  | `/aboutmore`      | About page                                                                       |
+| #10 | `POST` | `/contact`        | Only registered user can send message                                            |
 
 
 | No  | Request Body                         | Response Body                   |
