@@ -22,13 +22,18 @@ npm i
 npm start
 ```
 
-### API
+### Routers
 
-| No  | Method | Endpoint    | Description                                                                   |
-| --- | ------ | ----------- | ----------------------------------------------------------------------------- |
-| #1  | `POST` | `/signup`   | Creates a new user in MongoDB and returns it with status 201                  |
-| #2  | `POST` | `/login`    | Returns access & refresh tokens if user credentials is valid                  |
-| #3  | `POST` | `/token`    | Returns a new access token if refresh token in body is verified               |
+| No  | Method | Endpoint          | Description                                                                   |
+| --- | ------ | -----------       | ----------------------------------------------------------------------------- |
+| #1  | `POST` | `/signup`         | Creates a new user in MongoDB and returns it with status 201                  |
+| #2  | `POST` | `/login`          | User login after successfully signup                                          |
+| #3  | `GET`  | `/property`       | All user uploaded property appears here                                       |
+| #4  | `GET`  | `/home?h=home.id` | Each property full details appear here with home ID                           |
+|     |        |                   | (homeID generate automatically after posting property)                        |
+| #5  | `POST` | `/post-property`  | User can post property here                                                   |
+| #3  | `GET`  | `/User`           | Registered users information + > User can change his/her avatar               |
+
 
 
 | No  | Request Body                         | Response Body                   |
