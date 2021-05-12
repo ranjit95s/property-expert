@@ -1,5 +1,5 @@
 # Sell / Buy Property
-The :house_with_garden:**_Property-Expert.Com_**:house_with_garden: is a node app/site that handles user registration, authentication & authorization with [JWT](https://www.npmjs.com/package/jsonwebtoken), Home Sell Data in api form as well as User Home Interest Data
+The :house_with_garden:**_Property-Expert.Com_**:house_with_garden: is a node app/site that handles user registration, authentication & authorization with [JWT](https://www.npmjs.com/package/jsonwebtoken), home sell data in api form as well as user home interest data.
 
 Here is the [REPO](https://github.com/ranjit95s/property-expert).
 
@@ -10,7 +10,7 @@ Registered users are stored in mongoDB and their password is hashed by bcrypt. W
 
 for safety purpose we are using firebase phone auth to verify user and then after proccesed next task.
 On the client side user have to re-login if token is exprire.
-
+The :house_with_garden:**_Property-Expert.Com_**:house_with_garden: allow user to SELL(post) there Property Details and Property will display on site then user can show there interest in property, after clicking show interest button; user details along with property details save to dbs thats all we have in it
 -----
 
 ### Installation
