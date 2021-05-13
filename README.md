@@ -60,9 +60,9 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 .
 ├── public
 │   ├── css                    // All css styles
-│   |   ├── 404.css
-│   |   ├── abouts.css
-│   |   ├── contact.css
+│   │   │── 404.css
+│   |   │── abouts.css
+│   │   │── contact.css
 |   |   ├── footer.css
 |   |   ├── home.css
 |   |   ├── index-style.css
