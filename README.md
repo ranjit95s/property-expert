@@ -68,14 +68,13 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 |   |   └── conn.js           // Database connection
 │   ├── middleware
 |   |   └── auth.js           // Authentication of user
-│   ├── models                // **Mongoose schema**
+│   ├── models                // Mongoose schema
 |   |   └── home.js           // Home schema
 |   |   └── homeInterest.js   // home Interest schema
 |   |   └── message.js        // Message schema
 |   |   └── user.js           // User schema
+│   └── app.js 
 
-
-│   └── validation.js         // Joi validation for User Model
 ├── templates
 |   ├── views
 │   ├── mongoConnection.js    // "npm run dbtest" executes this
