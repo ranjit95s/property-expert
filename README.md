@@ -41,9 +41,10 @@ npm start
 | No  | Request Body                         | Response Body                   |
 | --- | ------------------------------------ | ------------------------------- |
 | #1  | { username, email, password }        | { username, email, createdAt }  |
-| #2  | { email, password }                  | { access_token}                 |
-| #3  | { expaire_token }                    | { User have to login to get { access_token }|
-| #4  | Authorization: Bearer <access_token> | User id that is logged in       |
+| #2  | { userphone , OTP verify code }      | { userphone , Auth userPhone No. }|
+| #3  | { email, password }                  | { access_token }                 |
+| #4  | { expaire_token }                    | { User have to login to get { access_token }}|
+| #5  | Authorization: Bearer <access_token> | User id that is logged in       |
 
 
 ### Configuration
@@ -51,31 +52,7 @@ Configuration should made in the .env file, before run. .env.example file is bel
 ```env
 PORT=3000
 MONGO_URL=mongodb://localhost:27017/<db_name>
-ACCESS_TOKEN_EXPIRES_IN=5m
-ACCESS_TOKEN_SECRET=c1ec3791140abfdddd...
-REFRESH_TOKEN_EXIPRES_IN=1d
-REFRESH_TOKEN_SECRET=2a4de696eb12838bc...
 ```
-
-### Scripts
-
-1. ACCESS_TOKEN_SECRET & REFRESH_TOKEN_SECRET (both should be **different**) can be securely created with:
-```bash
-npm run secret  # returns secret, paste it in .env
-```
-2. MongoDB connection can be tested with:
-```bash
-npm run dbtest
-```
-3. Start authentication-server:
-```bash
-npm start
-```
-4. Start development server with nodemon:
-```bash
-npm run dev
-```
-
 
 ### Project Structure
 
@@ -87,16 +64,20 @@ npm run dev
 │   │   ├── login.js          // No: #1 /login
 │   │   ├── register.js       // No: #2 /register
 │   │   └── tokenRefresh.js   // No: #3 /token 
-│   ├── public
+
+├── public
 │   │   └── index.html        // Mini User Interface built with vue
 │   ├── authRouter.js         // All routings 
 │   ├── middleware.js         // Authorize user with access token in header
 │   ├── mongo.js              // Initialize MongoDB connection
 │   ├── token.js              // Token Utils. Creates and verifies JWT
 │   ├── userModel.js          // Mongoose Model and Schema
+
 │   └── validation.js         // Joi validation for User Model
-├── test
+├── templates
+|   ├── views
 │   ├── mongoConnection.js    // "npm run dbtest" executes this
+
 │   └── ...                   // login and regiter tests
 ├── .env.exmaple              // Rename it with ".env"
 ├── index.js                  // Entry file
