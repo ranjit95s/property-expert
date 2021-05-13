@@ -79,7 +79,7 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 |   |   ├── mainlog.js
 |   |   ├── post-prop.js
 |   |   ├── user.js
-|   |   └── verifyOtp.js
+|   └── └── verifyOtp.js
 ├── src                       // Source Folder
 │   ├── db                    
 |   |   └── conn.js           // Database connection
