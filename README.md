@@ -58,20 +58,22 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 
 ```bash
 .
-├── src                       // Source Folder
-│   ├── controllers           // Controllers in the API
-│   │   ├── index.js
-│   │   ├── login.js          // No: #1 /login
-│   │   ├── register.js       // No: #2 /register
-│   │   └── tokenRefresh.js   // No: #3 /token 
-
 ├── public
-│   │   └── index.html        // Mini User Interface built with vue
-│   ├── authRouter.js         // All routings 
-│   ├── middleware.js         // Authorize user with access token in header
-│   ├── mongo.js              // Initialize MongoDB connection
-│   ├── token.js              // Token Utils. Creates and verifies JWT
-│   ├── userModel.js          // Mongoose Model and Schema
+│   ├── css                    // All css styles
+|   ├── images                 // All images
+|   ├── js                     // All js scripts
+
+├── src                       // Source Folder
+│   ├── db                    
+|   |   └── conn.js           // Database connection
+│   ├── middleware
+|   |   └── auth.js           // Authentication of user
+│   ├── models                // **Mongoose schema**
+|   |   └── home.js           // Home schema
+|   |   └── homeInterest.js   // home Interest schema
+|   |   └── message.js        // Message schema
+|   |   └── user.js           // User schema
+
 
 │   └── validation.js         // Joi validation for User Model
 ├── templates
