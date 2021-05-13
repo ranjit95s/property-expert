@@ -45,9 +45,7 @@ ________________________________________________________________________________
 {{{{{{_____________ BACKEND DATABASE WORK _____________}}}}}} ✔✔✔✔✔✔
 
 
-userName and userPhoone and userEmail rendering in /home instead ownerN,P,E
 
-On home hover ...hover view details
 
 
 
@@ -64,6 +62,13 @@ ________________________________________________________________________________
   what left ?????????????? 
       goes here - 
           ... what shit left ... even small to :-
+          
+          userName and userPhoone and userEmail rendering in /home instead ownerN,P,E
+
+          On home hover ...hover view details
+          
+          Your information in /user
+
 
 
 ___________________________________________________________________________________
