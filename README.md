@@ -41,8 +41,8 @@ npm start
 | No  | Request Body                         | Response Body                   |
 | --- | ------------------------------------ | ------------------------------- |
 | #1  | { username, email, password }        | { username, email, createdAt }  |
-| #2  | { email, password }                  | { access_token, refresh_token } |
-| #3  | { refresh_token }                    | { access_token }                |
+| #2  | { email, password }                  | { access_token}                 |
+| #3  | { expaire_token }                    | { User have to login to get { access_token }|
 | #4  | Authorization: Bearer <access_token> | User id that is logged in       |
 
 
