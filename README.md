@@ -25,7 +25,7 @@ npm start
 ### Routers
 
 | No  | Method | Endpoint          | Description                                                                      |
-| --- | ------ | ----------------- | -------------------------------------------------------------------------------- |
+|-----|--------|-------------------|----------------------------------------------------------------------------------|
 | #1  | `POST` | `/signup`         | Creates a new user in MongoDB and returns it with status 201                     |
 | #2  | `POST` | `/verify`         | User have to verify his/her phone number then after can Browse through this site |
 | #3  | `POST` | `/login`          | User login after successfully signup                                             |
