@@ -73,6 +73,7 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 |   |   ├── style.css
 |   |   └── user.css
 |   ├── images                 // All images
+│   │   └── ... 
 |   ├── js                     // All js scripts
 |   |   ├── home.js
 |   |   ├── main.js
