@@ -60,40 +60,40 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 .
 ├── public
 │   ├── css                    // All css styles
-│   │   │── 404.css
-│   |   │── abouts.css
-│   │   │── contact.css
-|   |   ├── footer.css
-|   |   ├── home.css
-|   |   ├── index-style.css
-|   |   ├── login.css
-|   |   ├── navbar.css
-|   |   ├── postprop.css
-|   |   ├── prop-style.css
-|   |   ├── style.css
-|   |   └── user.css
-|   ├── images                 // All images
+│   │   ├── 404.css
+│   │   ├── abouts.css
+│   │   ├── contact.css
+│   │   ├── footer.css
+│   │   ├── home.css
+│   │   ├── index-style.css
+│   │   ├── login.css
+│   │   ├── navbar.css
+│   │   ├── postprop.css
+│   │   ├── prop-style.css
+│   │   ├── style.css
+│   │   ├── user.css
+│   ├── images                 // All images
 │   │   └── ... 
-|   ├── js                     // All js scripts
-|   |   ├── home.js
-|   |   ├── main.js
-|   |   ├── mainlog.js
-|   |   ├── post-prop.js
-|   |   ├── user.js
-|   └── └── verifyOtp.js
+│   ├── js                     // All js scripts
+│   │   ├── home.js
+│   │   ├── main.js
+│   │   ├── mainlog.js
+│   │   ├── post-prop.js
+│   │   ├── user.js
+│   └── └── verifyOtp.js
 ├── src                       // Source Folder
 │   ├── db                    
-|   |   └── conn.js           // Database connection
+│   │   └── conn.js           // Database connection
 │   ├── middleware
-|   |   └── auth.js           // Authentication of user
+│   │   └── auth.js           // Authentication of user
 │   ├── models                // Mongoose schema
-|   |   ├── home.js           // Home schema
-|   |   ├── homeInterest.js   // home Interest schema
-|   |   ├── message.js        // Message schema
-|   |   └── user.js           // User schema
+│   │   ├── home.js           // Home schema
+│   │   ├── homeInterest.js   // home Interest schema
+│   │   ├── message.js        // Message schema
+│   │   └── user.js           // User schema
 │   └── app.js 
 ├── templates
-|   ├── views
+│   ├── views
 │   │   ├── 404.ejs
 │   │   ├── PostProperty.ejs
 │   │   ├── aboutmore.ejs
@@ -106,7 +106,7 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 │   │   ├── properties.ejs
 │   │   ├── signup.ejs
 │   │   ├── user.ejs
-|   └── └── verifyOtp.ejs
+│   └── └── verifyOtp.ejs
 ├── .env
 ├── .gitignore
 ├── README.md
