@@ -60,9 +60,26 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 .
 ├── public
 │   ├── css                    // All css styles
+|   |    ├── 404.css
+|   |    ├── abouts.css
+|   |    ├── contact.css
+|   |    ├── footer.css
+|   |    ├── home.css
+|   |    ├── index-style.css
+|   |    ├── login.css
+|   |    ├── navbar.css
+|   |    ├── postprop.css
+|   |    ├── prop-style.css
+|   |    ├── style.css
+|   |    ├── user.css
 |   ├── images                 // All images
 |   ├── js                     // All js scripts
-
+|   |   ├── home.js
+|   |   ├── main.js
+|   |   ├── mainlog.js
+|   |   ├── post-prop.js
+|   |   ├── user.js
+|   |   ├── verifyOtp.js
 ├── src                       // Source Folder
 │   ├── db                    
 |   |   └── conn.js           // Database connection
@@ -74,11 +91,9 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 |   |   └── message.js        // Message schema
 |   |   └── user.js           // User schema
 │   └── app.js 
-
 ├── templates
 |   ├── views
 │   ├── mongoConnection.js    // "npm run dbtest" executes this
-
 │   └── ...                   // login and regiter tests
 ├── .env.exmaple              // Rename it with ".env"
 ├── index.js                  // Entry file
