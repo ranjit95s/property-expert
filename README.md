@@ -93,11 +93,24 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 │   └── app.js 
 ├── templates
 |   ├── views
-│   ├── mongoConnection.js    // "npm run dbtest" executes this
-│   └── ...                   // login and regiter tests
-├── .env.exmaple              // Rename it with ".env"
-├── index.js                  // Entry file
-└── server.js                 // authentication-server app
+│   │   ├── 404.ejs
+│   │   ├── PostProperty.ejs
+│   │   ├── aboutmore.ejs
+│   │   ├── contact.ejs
+│   │   ├── footer.ejs
+│   │   ├── home.ejs
+│   │   ├── index.ejs
+│   │   ├── login.ejs
+│   │   ├── navbar.ejs
+│   │   ├── properties.ejs
+│   │   ├── signup.ejs
+│   │   ├── user.ejs
+|   └── └── verifyOtp.ejs
+├── .env
+├── .gitignore
+├── README.md
+├── package-lock.json
+└── package.json
 ```
 
 
