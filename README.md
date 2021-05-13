@@ -71,7 +71,7 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 |   |    ├── postprop.css
 |   |    ├── prop-style.css
 |   |    ├── style.css
-|   |    ├── user.css
+|   |    └── user.css
 |   ├── images                 // All images
 |   ├── js                     // All js scripts
 |   |   ├── home.js
@@ -79,16 +79,16 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 |   |   ├── mainlog.js
 |   |   ├── post-prop.js
 |   |   ├── user.js
-|   |   ├── verifyOtp.js
+|   |   └── verifyOtp.js
 ├── src                       // Source Folder
 │   ├── db                    
 |   |   └── conn.js           // Database connection
 │   ├── middleware
 |   |   └── auth.js           // Authentication of user
 │   ├── models                // Mongoose schema
-|   |   └── home.js           // Home schema
-|   |   └── homeInterest.js   // home Interest schema
-|   |   └── message.js        // Message schema
+|   |   ├── home.js           // Home schema
+|   |   ├── homeInterest.js   // home Interest schema
+|   |   ├── message.js        // Message schema
 |   |   └── user.js           // User schema
 │   └── app.js 
 ├── templates
