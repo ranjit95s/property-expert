@@ -13,7 +13,7 @@ $(document).ready(function () {
         $('.user').toggleClass('user-toggle');
     });
     
-    window.onscroll = function() {myFunction()};
+window.onscroll = function() {myFunction()}; 
 
     var header = document.getElementById("header-2");
     var sticky = header.offsetTop;

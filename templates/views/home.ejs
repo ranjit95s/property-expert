@@ -17,7 +17,9 @@
 </head>
 
 <body style="user-select: none;">
-  <%- include ("navbar.ejs") %>
+  <div style="height: 65px;">
+    <%- include ("navbar.ejs") %>
+  </div>
     <% if( typeof foundHome !='undefined' && foundHome==false ){ %>
       <script>
         window.location.href = "/"

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&display=swap');
 
 .navbarli a > #user_btn {
-    border: none;
+    border: 2px solid black;
     border-radius: 50px;
     background-color: #fff;
     cursor: pointer;
@@ -11,12 +11,17 @@
     color: darkolivegreen;
 }
 
+.navbarli a > #user_btn:hover {
+    border: 2px solid var(--red);
+}
+
+
 #user_btn > img {
     border-radius: 50px; 
     object-fit: cover;
     width: 60px;
     height: 55px;
-    border: 2px solid black;
+
 }
 
 .header {
@@ -64,7 +69,7 @@ header .header-2 {
     justify-content: space-between;
     width: 100%;
     background:white;
-    padding: 1.2rem 0.1rem;
+    padding: 0.2rem 0.1rem;
     position: relative;
     z-index: 1000;
     border-bottom: 1px solid rgb(197, 195, 195);
@@ -82,7 +87,7 @@ header .header-2 .navbar ul li , .share ul li {
     
 }
 header .header-2 .navbar ul a li , .share ul li a {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
     font-weight: 800;
     color: rgb(0, 0, 0);
@@ -110,7 +115,13 @@ header .header-2 #menu{
     position: fixed;
     top: 0;
     width: 100%;
-    box-shadow: 0 .1rem .3rem rgb(0, 0, .3);
+    
+background: rgba(230, 230, 230, 0.4);
+box-shadow: 0 4px 12px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10.5px );
+-webkit-backdrop-filter: blur( 10.5px );
+
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .navbarli li .icons  {
@@ -130,12 +141,17 @@ header .header-2 #menu{
 }
 
 
+
+header .header-2 .navbar ul a li:hover, .share ul li:hover {
+   color: var(--red);
+}
+
 @media (max-width : 900px) {
     .mainLogo a {
         padding-left: 0px;
     }
     header .header-2 .navbar ul a li, .share ul li {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -311,8 +327,8 @@ header .header-2 .navbar ul , .share ul {
 @media (max-width : 380px) {
     
     .mainLogo a {
-        top: 37px;
-    left: 44px;
+        top: 38px;
+    left: 50px;
     font-size: 1.8rem;
     }
     .wrapper h1 {
