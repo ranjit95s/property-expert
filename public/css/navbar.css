@@ -165,10 +165,7 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
     html {
         font-size: 55%;
     }
-    header .header-2 .navbar ul , .share ul {
-        margin: 15px !important;
-        
-    }
+
     header .header-2 .navbar ul a li, .share ul li a {
         margin: 15px;
     }
@@ -192,7 +189,7 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
 
     .mainLogo a {
     position: absolute;
-    top: 35px;
+    top: 23px;
     left: 60px;
     padding: 0;
     font-size: 2rem;
@@ -311,11 +308,7 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
     .wrapper h1 {
         font-size: 20px !important;
     }
-    
-header .header-2 .navbar ul , .share ul {
-    margin: 15px !important;
-    
-}
+
 .slogan h2{
     font-size: 3.2rem;
 }
@@ -327,7 +320,7 @@ header .header-2 .navbar ul , .share ul {
 @media (max-width : 380px) {
     
     .mainLogo a {
-        top: 38px;
+        top: 23px;
     left: 50px;
     font-size: 1.8rem;
     }
