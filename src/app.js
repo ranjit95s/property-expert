@@ -22,6 +22,7 @@ const fs = require('fs');
 
 
 var moment = require('moment');
+const { count } = require("console");
 const staticpath = path.join(__dirname, "../public");
 const temPath = path.join(__dirname, "../templates/views");
 
@@ -46,31 +47,31 @@ app.set('json spaces', '  ');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        fs.mkdir('./public/images/Reddit-F/',(err)=>{
+        fs.mkdir('./public/images/Reddit-F/', (err) => {
             cb(null, './public/images/Reddit-F/');
-         });
+        });
     },
     filename: function (req, file, cb) {
-      cb(
-        null,
-        file.fieldname + "__" + Date.now() + path.extname(file.originalname)
-      );
+        cb(
+            null,
+            file.fieldname + "__" + Date.now() + path.extname(file.originalname)
+        );
     },
-  });
+});
 var storage_user = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./public/images/Reddit-F/");
+        cb(null, "./public/images/Reddit-F/");
     },
     filename: function (req, file, cb) {
-      cb(
-        null,
-        file.fieldname  + "__" + file.originalname 
-      );
+        cb(
+            null,
+            file.fieldname + "__" + file.originalname
+        );
     },
-  });
-  
-  var upload = multer({ storage: storage });
-  var upload_user = multer({ storage: storage_user});
+});
+
+var upload = multer({ storage: storage });
+var upload_user = multer({ storage: storage_user });
 
 app.get("/", async (req, res) => {
 
@@ -80,11 +81,11 @@ app.get("/", async (req, res) => {
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
         const userDetails = await user.findOne({ _id: verifyUser._id });
-      
+
         res.render("index", { getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
     } catch (e) {
         const getHome = await home.find({}).sort({ _id: -1 }).limit(10);
-        res.render("index" , { getHome });
+        res.render("index", { getHome });
     }
     // const getProperties = await home.find({}).sort({ _id: -1 }).limit(10);
 });
@@ -106,7 +107,7 @@ app.get("/home", async (req, res) => {
 
 
         if (getHome.length == 1) {
-            res.render("home", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, foundHome: true, moment: moment , getHome });
+            res.render("home", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, foundHome: true, moment: moment, getHome });
         } else {
             res.render("home", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.user_photo, foundHome: false });
         }
@@ -131,20 +132,22 @@ app.post("/homeInterest", async (req, res) => {
     const buying_firstTime = req.body.buying_firstTime;
     const plan_on_buying_home = req.body.plan_on_buying_home;
     const active_military_status = req.body.active_military_status;
-    
+
 
     try {
 
-        const updateUser = await homeInterest.updateMany({ $set: {
-            
-            UserAdditionalDeatils: {
+        const updateUser = await homeInterest.updateMany({
+            $set: {
+
+                UserAdditionalDeatils: {
                     message_add,
                     buying_firstTime,
                     plan_on_buying_home,
                     active_military_status,
                 },
-            
-        } })
+
+            }
+        })
         console.log(updateUser);
 
 
@@ -179,37 +182,37 @@ app.get("/contact", async (req, res) => {
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
         const userDetails = await user.findOne({ _id: verifyUser._id });
-        res.render("contact", {user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
+        res.render("contact", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
     } catch (e) {
-        res.render("login" , {err : "login required"});
+        res.render("login", { err: "login required" });
     }
 });
 
 
-app.post("/contact", auth , async (req, res) => {
-  try {
-    const token = req.cookies.jwt;
-    const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
-    console.log(verifyUser);
-    const userDetails = await user.findOne({ _id: verifyUser._id });
+app.post("/contact", auth, async (req, res) => {
+    try {
+        const token = req.cookies.jwt;
+        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+        console.log(verifyUser);
+        const userDetails = await user.findOne({ _id: verifyUser._id });
 
-          const addNewMsg = new message ({
-              name: req.body.nameM,
-              email: req.body.emailM,
-              message: req.body.message,
-          });
+        const addNewMsg = new message({
+            name: req.body.nameM,
+            email: req.body.emailM,
+            message: req.body.message,
+        });
 
-          const newMessage = await addNewMsg.save();
+        const newMessage = await addNewMsg.save();
 
         //   console.log(newMessage);
-          res.render("contact", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email , success: "true" })
-    
+        res.render("contact", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, success: "true" })
 
-  } catch(e) {
-      res.send(e);
-      res.render("login", { err: "Login required" ,  success : "false" });
-      console.log(e);
-  }
+
+    } catch (e) {
+        res.send(e);
+        res.render("login", { err: "Login required", success: "false" });
+        console.log(e);
+    }
 })
 
 
@@ -227,20 +230,20 @@ app.get("/user", async (req, res) => {
     const getUsers = await user.find({ _id: verifyUser._id });
     try {
         if (getUsers.length == 1) {
-            res.render("user", { getUsers , getUser: true , user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
+            res.render("user", { getUsers, getUser: true, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
         } else {
-            res.render("user", { getUsers , getUser: false, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
+            res.render("user", { getUsers, getUser: false, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
         }
 
     } catch (e) {
         res.render("login", { err: "Login required" });
         console.log(e);
     }
-  })
+})
 
 
-app.post("/user" ,upload_user.fields([{ name: "user_photo", maxCount: 1 }]), async (req,res) => {
-    
+app.post("/user", upload_user.fields([{ name: "user_photo", maxCount: 1 }]), async (req, res) => {
+
     const token = req.cookies.jwt;
     const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
     console.log(verifyUser);
@@ -248,18 +251,18 @@ app.post("/user" ,upload_user.fields([{ name: "user_photo", maxCount: 1 }]), asy
     const getHome = await home.find({});
     const getUsers = await user.find({ _id: verifyUser._id });
     try {
-        var {user_photo} = req.body;
+        var { user_photo } = req.body;
         console.log(user_photo);
-        var {newphone} = req.body;
+        var { newphone } = req.body;
         console.log(newphone);
 
-        const updateUserPhoto = await user.updateOne({ phone: req.body.newphone },{ user_photo: req.body.user_photo });
-        console.log (updateUserPhoto);
-    
-                res.render("user", {getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.userPhoto , newAvatarSet: "done", head: "Awesome Avatar", message: " Avatar soon reflect to your profile ", type: "success"});
+        const updateUserPhoto = await user.updateOne({ phone: req.body.newphone }, { user_photo: req.body.user_photo });
+        console.log(updateUserPhoto);
 
-            
-        }catch(e){
+        res.render("user", { getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.userPhoto, newAvatarSet: "done", head: "Awesome Avatar", message: " Avatar soon reflect to your profile ", type: "success" });
+
+
+    } catch (e) {
         res.send(e);
         console.log(e);
     }
@@ -296,7 +299,7 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
 
 
     var { uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit } = req.body;
-    console.log(uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name , age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit);
+    console.log(uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit);
     try {
         // // // // // // // const uploadsFolder = path.join(__dirname, "../public/images/property");
         // const image_1st = uploadsFolder + req.files.first_image[0].filename;
@@ -320,12 +323,12 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
                 uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone,
             },
 
-            BuildingInformation : {
+            BuildingInformation: {
                 house_number,
                 building_name,
                 home_Type,
                 parking,
-                Location : {
+                Location: {
                     area_name,
                     nearest_landmark,
                     city_name,
@@ -342,22 +345,22 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
 
             },
 
-            PropertyImages : {
+            PropertyImages: {
                 first_image: image_1st_filename,
                 second_image: image_2nd_filename,
                 third_image: image_3rd_filename,
                 fourth_image: image_4th_filename,
             },
-        
+
         });
 
 
         const insertHome = await addingProperty.save();
 
 
-        res.status(200).render("PostProperty", {  user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email , isDone: "done", head: "Home Registered!", message: "Your home registered successfully on our website. We will soon contact you. Thank You! ", type: "success"  });
+        res.status(200).render("PostProperty", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, isDone: "done", head: "Home Registered!", message: "Your home registered successfully on our website. We will soon contact you. Thank You! ", type: "success" });
     } catch (e) {
-        res.status(400).render("PostProperty", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email , isDone: "done", head: "Cant Register Home!", message: "Due to some internel error we cant upload home details to server. Pleaase try again later. ", type: "error" });
+        res.status(400).render("PostProperty", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, isDone: "done", head: "Cant Register Home!", message: "Due to some internel error we cant upload home details to server. Pleaase try again later. ", type: "error" });
 
         console.log(e);
     }
@@ -411,10 +414,10 @@ app.get("/homeInterest", async (req, res) => {
 
 
         const addingHomeInterest = new homeInterest({
-            PropertyOwner:{
+            PropertyOwner: {
                 owner,
             },
-            OwnerPropertyInformation : {
+            OwnerPropertyInformation: {
                 home_id,
                 sellOrRent,
                 offered_at,
@@ -425,7 +428,7 @@ app.get("/homeInterest", async (req, res) => {
                 floor,
                 age,
                 house_number,
-                Locations : {
+                Locations: {
 
                     area_name,
                     city_name,
@@ -434,30 +437,30 @@ app.get("/homeInterest", async (req, res) => {
                     country_name,
                     nearest_landmark,
                 },
-                OwnerPropertyImages :{
+                OwnerPropertyImages: {
                     first_image,
                     second_image,
                     third_image,
                     fourth_image,
 
                 },
-             },
-             InterestedUserInformation : {
-                 user_id,
-                 userName,
-                 userPhone,
-                },
-                UserAdditionalDeatils : {
-                    message_add,
-                    buying_firstTime,
-                    plan_on_buying_home,
-                    active_military_status,
-                },
+            },
+            InterestedUserInformation: {
+                user_id,
+                userName,
+                userPhone,
+            },
+            UserAdditionalDeatils: {
+                message_add,
+                buying_firstTime,
+                plan_on_buying_home,
+                active_military_status,
+            },
 
         });
 
         const insertHomeInterest = await addingHomeInterest.save();
-        res.render("home", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.userPhoto});
+        res.render("home", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userEmail: userDetails.email, userPhoto: userDetails.userPhoto });
 
 
 
@@ -468,99 +471,79 @@ app.get("/homeInterest", async (req, res) => {
 })
 
 
-app.get("/receivedHomeInterests", async (req, res) => {
-    try {
-      const getHomeInterest = await homeInterest.find({}).sort({ _id: -1 });
-      res.status(201).send(getHomeInterest);
-    } catch (e) {
-      res.send(e);
-    }
-  });
-  
-
-
-
-
-
-
-
-
-
-
-
 
 app.post("/signup", async (req, res) => {
 
-    var { firstname , signUpPhone , signUpEmail , pass , cpass } = req.body
-    var err ;
+    var { firstname, signUpPhone, signUpEmail, pass, cpass } = req.body
+    var err;
     var validatePhone = /^\d{10}$/;
     var validateEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     var phoneLength = signUpPhone.length;
 
     if (!firstname || !signUpEmail || !signUpPhone || !pass || !cpass) {
         err = " Please fill full details ! ";
-        res.render("signup" , {err : err});
+        res.render("signup", { err: err });
 
-    }  else if (!signUpEmail.match(validateEmail)) {
+    } else if (!signUpEmail.match(validateEmail)) {
         err = "Please enter Email Id properly";
         res.render("signup", {
-          err: err,
-          signUpEmail : signUpEmail,
-          firstname : firstname,
-          signUpPhone : signUpPhone,
+            err: err,
+            signUpEmail: signUpEmail,
+            firstname: firstname,
+            signUpPhone: signUpPhone,
         });
     }
     else if (!signUpPhone.match(validatePhone) || phoneLength > 10 || phoneLength < 10) {
         err = " please enter phone numbers properly ! ";
-        res.render("signup" , {
-            err : err,
-            signUpEmail : signUpEmail,
-            firstname : firstname,
-            signUpPhone : signUpPhone,
+        res.render("signup", {
+            err: err,
+            signUpEmail: signUpEmail,
+            firstname: firstname,
+            signUpPhone: signUpPhone,
         });
     } else if (pass != cpass) {
         err = "Password doesn't match with comfirm password !";
-        res.render("signup" , {
-            err : err,
-            signUpEmail : signUpEmail,
-            firstname : firstname,
-            signUpPhone : signUpPhone,
+        res.render("signup", {
+            err: err,
+            signUpEmail: signUpEmail,
+            firstname: firstname,
+            signUpPhone: signUpPhone,
         });
     } else {
 
         try {
-    
-    
-            
-                const regiUser = new user({
-                    name: req.body.firstname,
-                    phone: req.body.signUpPhone,
-                    email: req.body.signUpEmail,
-                    password : req.body.pass,
-                    confirmpassword: req.body.cpass,
-                })
-    
-                const token = await regiUser.generateAuthToken();
-                console.log("the token part" + token);
-                res.cookie("jwt", token, {
-                    expires: new Date(Date.now() + 6000000),
-                    httpOnly: true
-                });
-                // console.log(cookie);
-    
-                const registerUser = await regiUser.save();
-                console.log("the page part " + registerUser);
-                res.redirect(`/verifyOtp?phoneNo=${signUpPhone}`);
-    
-            
+
+
+
+            const regiUser = new user({
+                name: req.body.firstname,
+                phone: req.body.signUpPhone,
+                email: req.body.signUpEmail,
+                password: req.body.pass,
+                confirmpassword: req.body.cpass,
+            })
+
+            const token = await regiUser.generateAuthToken();
+            console.log("the token part" + token);
+            res.cookie("jwt", token, {
+                expires: new Date(Date.now() + 6000000),
+                httpOnly: true
+            });
+            // console.log(cookie);
+
+            const registerUser = await regiUser.save();
+            console.log("the page part " + registerUser);
+            res.redirect(`/verifyOtp?phoneNo=${signUpPhone}`);
+
+
         } catch (e) {
             if (e.code == 11000) {
                 err = "This mobile number already registered !";
-                res.render("signup" , {
-                    err : err,
-                    signUpEmail : signUpEmail,
-                    firstname : firstname,
-                    signUpPhone : signUpPhone,
+                res.render("signup", {
+                    err: err,
+                    signUpEmail: signUpEmail,
+                    firstname: firstname,
+                    signUpPhone: signUpPhone,
                 });
             } else {
                 console.log(e);
@@ -577,46 +560,46 @@ app.post("/login", async (req, res) => {
     var phoneNo = req.body.phone;
     var passwordLog = req.body.password;
 
-    if(!phoneNo || !passwordLog) {
+    if (!phoneNo || !passwordLog) {
         err = " please enter mobile number and password ";
-        res.render("login" , {
-            err : err
+        res.render("login", {
+            err: err
         });
     } else if (!phoneNo.match(validPhone)) {
         err = " phone number is invalid ";
-        res.render("login" , {
-            err : err,
-            phone : phoneNo,
+        res.render("login", {
+            err: err,
+            phone: phoneNo,
         });
     } else {
         try {
             const gotUser = await user.findOne({ phone: phoneNo });
             const isPasswordMatch = await bcrypt.compare(passwordLog, gotUser.password);
             if (isPasswordMatch) {
-              if (gotUser.isVerified != true) {
-                console.log("user not verified")
-                // err = "Your account is not verified yet. Please contact support."
-                // res.render("verifyOtp", { mobile_no: phoneNo, verifyMsg: "Your Mobile number is not verified yet. Please Verify Mobile Number." });
-                res.redirect(`/verifyOtp?phoneNo=${phoneNo}`);
-              }
-              else {
-                const token = await gotUser.token;
-                console.log(token);
-                res.cookie("jwt", token, {
-                  expires: new Date(Date.now() + 60000000000),
-                  httpOnly: true
-                })
-                // err = "Logged in Successfully!";
-                // res.render("login", { err: err });
-                res.redirect("/");
-              }
+                if (gotUser.isVerified != true) {
+                    console.log("user not verified")
+                    // err = "Your account is not verified yet. Please contact support."
+                    // res.render("verifyOtp", { mobile_no: phoneNo, verifyMsg: "Your Mobile number is not verified yet. Please Verify Mobile Number." });
+                    res.redirect(`/verifyOtp?phoneNo=${phoneNo}`);
+                }
+                else {
+                    const token = await gotUser.token;
+                    console.log(token);
+                    res.cookie("jwt", token, {
+                        expires: new Date(Date.now() + 60000000000),
+                        httpOnly: true
+                    })
+                    // err = "Logged in Successfully!";
+                    // res.render("login", { err: err });
+                    res.redirect("/");
+                }
             } else {
-              err = "Wrong Password! Please Try Again.";
-              res.render("login", { err: err});
+                err = "Wrong Password! Please Try Again.";
+                res.render("login", { err: err });
             }
         } catch (e) {
             err = "Entered Mobile number is not registered. Please registered first!";
-            res.render("signup", { err: err, });
+            res.render("signup", { err: err });
             console.log(e);
         }
     }
@@ -641,29 +624,29 @@ app.get("/properties", async (req, res) => {
 
 app.post("/verifyOtp", async (req, res) => {
     try {
-      const updateUser = await user.updateOne({ phone: req.body.mobileNo }, { $set: { isVerified: true } });
-      console.log (updateUser);
-      res.redirect("/login")
+        const updateUser = await user.updateOne({ phone: req.body.mobileNo }, { $set: { isVerified: true } });
+        console.log(updateUser);
+        res.redirect("/login")
     } catch (e) {
-      console.log(e);
-      res.send(e)
+        console.log(e);
+        res.send(e)
     }
-  })
-  
-  
-  app.get("/verifyOtp", async (req, res) => {
+})
+
+
+app.get("/verifyOtp", async (req, res) => {
     try {
-      console.log("im in verify otp")
-      var phoneNos = req.query.phoneNo;
-      console.log(phoneNos);
-      res.render("verifyOtp", { phoneNos })
-  
-  
+        console.log("im in verify otp")
+        var phoneNos = req.query.phoneNo;
+        console.log(phoneNos);
+        res.render("verifyOtp", { phoneNos })
+
+
     } catch (e) {
-      res.status(400).send("Got Error")
-      console.log(e)
+        res.status(400).send("Got Error")
+        console.log(e)
     }
-  })
+})
 
 
 app.post("/users", async (req, res) => {
@@ -685,17 +668,38 @@ app.post("/users", async (req, res) => {
 
 app.post("/logout", (req, res) => {
     try {
-      res.clearCookie("jwt")
-      res.redirect("/")
+        res.clearCookie("jwt")
+        res.redirect("/")
     } catch (e) {
-      res.status(500).send("error! cant logout")
+        res.status(500).send("error! cant logout")
     }
-  
-  })
+
+})
 
 //getting api datas
 
-app.get("/users", async (req, res) => {
+
+app.get("/database", async (req, res) => {
+    try {
+        const getCountUsers = await user.count({}, function (err, count) {
+            console.log("Number of users:", count);
+        })
+        const getCountHome = await home.count({}, function (err, countHome) {
+            console.log("Number of home:", countHome);
+        })
+        const getCountMeg = await message.count({}, function (err, countMsg) {
+            console.log("Number of msg:", countMsg);
+        })
+        const getCountinterest = await homeInterest.count({}, function (err, countInterest) {
+            console.log("Number of homeInterest:", countInterest);
+        })
+        res.render("database", { count: getCountUsers, countHome: getCountHome, countMsg: getCountMeg, countInterest: getCountinterest });
+    } catch (e) {
+        res.render(e);
+    }
+});
+
+app.get("/database/users", async (req, res) => {
     try {
         const getUsers = await user.find({}).sort({ _id: -1 });
         res.status(201).send(getUsers);
@@ -703,7 +707,7 @@ app.get("/users", async (req, res) => {
         res.send(e);
     }
 });
-app.get("/messages", async (req, res) => {
+app.get("/database/messages", async (req, res) => {
     try {
         const getMsg = await message.find({}).sort({ _id: -1 });
         res.status(201).send(getMsg);
@@ -711,7 +715,7 @@ app.get("/messages", async (req, res) => {
         res.send(e);
     }
 });
-app.get("/homes", async (req, res) => {
+app.get("/database/homes", async (req, res) => {
     try {
         const getHome = await home.find({}).sort({ _id: -1 });
         res.status(201).send(getHome);
@@ -720,6 +724,14 @@ app.get("/homes", async (req, res) => {
     }
 });
 
+app.get("/database/receivedHomeInterests", async (req, res) => {
+    try {
+        const getHomeInterest = await homeInterest.find({}).sort({ _id: -1 });
+        res.status(201).send(getHomeInterest);
+    } catch (e) {
+        res.send(e);
+    }
+});
 
 //server create
 
@@ -727,18 +739,18 @@ app.get("/homes", async (req, res) => {
 //     console.log("server is running on " + port);
 // });
 app.get("*", async (req, res) => {
-try {
-    const userToken = req.cookies.jwt;
-    const verifyUser = jwt.verify(userToken, process.env.SECRET_KEY);
-    console.log(verifyUser._id);
-    const userDetails = await user.findOne({ _id: verifyUser._id })
-    res.render("404", {user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo  });
+    try {
+        const userToken = req.cookies.jwt;
+        const verifyUser = jwt.verify(userToken, process.env.SECRET_KEY);
+        console.log(verifyUser._id);
+        const userDetails = await user.findOne({ _id: verifyUser._id })
+        res.render("404", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo });
 
-  }
-  catch (e) {
-    res.render("404")
-  }
+    }
+    catch (e) {
+        res.render("404")
+    }
 });
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3000, function () {
     console.log("Express server listening on 3000 port mode");
-  });
+});

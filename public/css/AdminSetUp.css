@@ -1,0 +1,115 @@
+body {
+    background-color: rgb(98, 151, 153);
+}
+
+#admin {
+    background-color: rgb(255, 255, 255);
+    height: max-content;
+    width: 80%;
+    margin: 1% 0% 1% 10%;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.headOfPage h1 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.headOfPage span {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(104, 104, 104);
+}
+
+
+
+.container-box{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.container-box .box {
+    width: 40rem;
+    margin: 1.5rem;
+    height:max-content;
+    border: .2rem solid rgb(255, 255, 255);
+    box-shadow: 0 .5rem .5rem black;
+}
+
+.container-box .box .headSet {
+    font-size: 1.4rem;
+    padding: 5px 15px;
+}
+
+.container-box .box .headSet h2 {
+    color: white;
+    font-style: italic;
+    font-family: cursive;
+}
+.container-box .box .headSet h4 {
+    color: rgb(0, 0, 0) !important;
+    font-style:oblique;
+    font-family: cursive;
+}
+
+.container-box .box .mainTot {
+    width: 100%;
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.container-box .box .mainTot .leftSide {
+    width: 50%;
+
+}
+.container-box .box .mainTot .leftSide h1 {
+    font-size: 5rem;
+    padding: 10px;
+}
+.container-box .box .mainTot .leftSide h3 {
+    font-size: 2.5rem;
+    padding: 10px;
+}
+.container-box .box .mainTot .rightSide {
+    width: 50%;
+}
+.container-box .box .mainTot .rightSide h2{
+    font-size: 11rem;
+    text-align: center !important ;
+
+}
+
+
+.container-box .box .des {
+    padding: 5px;
+    color: rgb(77, 77, 77);
+}
+.container-box .box .des h5 {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn {
+    padding: 10px;
+    text-align: center;
+}
+
+.btn button {
+    border: none;
+    font-size: 2.2rem;
+    background: none;
+}
+.btn button a {
+  color: aliceblue;
+}
+
+.btn button a:hover {
+    color: #003a16;
+    font-weight: 700;
+}

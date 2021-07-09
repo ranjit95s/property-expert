@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/AdminSetUp.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <section id="admin">
+        <div class="headOfPage">
+            <h1>Dashboard <span>Control Panel</span> </h1>
+        </div>
+    
+    
+            <div class="container-box">
+                <div class="box">
+                    <div class="headSet" style="
+                    background-color: #27bb60;">
+                        <h2>Users</h2>
+                        <h4>Database Of Users</h4>
+                    </div>
+        
+                    <div class="mainTot" style="background-color: #66DE93;">
+                        <div class="leftSide">
+                            <div class="numOfUsers"> 
+
+                               
+                                        <h1> <%= count %> </h1>
+                                
+
+                            </div>
+                            <h3>total users</h3>
+                        </div>
+                        <div class="rightSide">
+                          <h2 style="color: #34ac62;"> <i class="fas fa-users"></i> </h2>  
+                        </div>
+                    </div>
+        
+                    <div class="des" style="background-color: #66DE93;">
+                        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rerum.</h5>
+                    </div>
+                    
+                    <div class="btn" style="background-color: #25dd6c;">
+                        <button> <a href="/database/users"> Visit Users <i class="fas fa-arrow-circle-right"></i> </a> </button>
+                    </div>
+                </div>
+
+
+            <div class="container-box">
+                <div class="box">
+                    <div class="headSet" style="
+                    background-color: #FB9300;">
+                        <h2>Homes</h2>
+                        <h4>Database Of Homes</h4>
+                    </div>
+        
+                    <div class="mainTot" style="background-color: #ebab51;">
+                        <div class="leftSide">
+                            <div class="numOfUsers"> 
+
+                               
+                                        <h1> <%= countHome %> </h1>
+                                
+
+                            </div>
+                            <h3>total Homes</h3>
+                        </div>
+                        <div class="rightSide">
+                          <h2 style="color: #FB9300;"> <i class="fas fa-city"></i> </h2>  
+                        </div>
+                    </div>
+        
+                    <div class="des" style="background-color: #ebab51;">
+                        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rerum.</h5>
+                    </div>
+                    
+                    <div class="btn" style="background-color: #fca326;">
+                        <button> <a href="/database/homes"> Visit Users <i class="fas fa-arrow-circle-right"></i> </a> </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-box">
+                <div class="box">
+                    <div class="headSet" style="
+                    background-color: #D83A56;">
+                        <h2>Feedback/Enquiry</h2>
+                        <h4>Database Of Messages</h4>
+                    </div>
+        
+                    <div class="mainTot" style="background-color: #d8576e;">
+                        <div class="leftSide">
+                            <div class="numOfUsers"> 
+
+                               
+                                        <h1> <%= countMsg %> </h1>
+                                
+
+                            </div>
+                            <h3>total Messages</h3>
+                        </div>
+                        <div class="rightSide">
+                          <h2 style="color: #D83A56;"> <i class="fas fa-comment-dots"></i> </h2>  
+                        </div>
+                    </div>
+        
+                    <div class="des" style="background-color: #d8576e;">
+                        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rerum.</h5>
+                    </div>
+                    
+                    <div class="btn" style="background-color: #dc3c59;">
+                        <button> <a href="/database/messages"> Visit Users <i class="fas fa-arrow-circle-right"></i> </a> </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-box">
+                <div class="box">
+                    <div class="headSet" style="
+                    background-color: #BB371A;">
+                        <h2>Home Interest</h2>
+                        <h4>Database of users interested in homes</h4>
+                    </div>
+        
+                    <div class="mainTot" style="background-color: #bf5942;">
+                        <div class="leftSide">
+                            <div class="numOfUsers"> 
+
+                               
+                                        <h1> <%= countInterest %> </h1>
+                                
+
+                            </div>
+                            <h3>total interested</h3>
+                        </div>
+                        <div class="rightSide">
+                          <h2 style="color: #BB371A;"> <i class="fas fa-heart"></i> </h2>  
+                        </div>
+                    </div>
+        
+                    <div class="des" style="background-color: #bf5942;">
+                        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, rerum.</h5>
+                    </div>
+                    
+                    <div class="btn" style="background-color: #b5432a;">
+                        <button> <a href="/database/receivedHomeInterests"> Visit Users <i class="fas fa-arrow-circle-right"></i> </a> </button>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+  
+</body>
+</html>
