@@ -744,6 +744,23 @@ app.get("/database/homes", async (req, res) => {
         res.send(e);
     }
 });
+app.get("/database/homes/delete", async (req, res) => {
+    try {
+        const id = req.query._id;
+        const getdelete = await home.findByIdAndRemove(id, function(err){
+            if(err){
+                res.status(200).json({
+                    message: 'fail to delete',
+                });
+            } else {
+                res.redirect("/database/homes");
+            }
+         });
+       
+    } catch (e) {
+        res.send(e);
+    }
+});
 
 app.get("/database/receivedHomeInterests", async (req, res) => {
     try {
