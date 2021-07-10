@@ -51,17 +51,11 @@
                   style="text-transform: lowercase;"><i class="fas fa-envelope"></i>
                   <%= userEmail %>
                 </span> <span>
-                  <i class="fas fa-calendar-alt"></i> Joined <%= moment(user.receivedAt).format('LL'); %></span></p>
+                  <i class="fas fa-calendar-alt"></i> Joined <%= moment(user.created_at).format('LL');  %></span></p>
             </div>
           </div>
         </div>
         <div class="post-section">
-          <div class="postcard">
-            <h2>Post Your Properties !!</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="/postproperty"> <button style="cursor: pointer;"><i class="fas fa-bookmark"></i> Post Properties
-              </button></a>
-          </div>
           <div class="postcard">
             <h2>Post Your Properties !!</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

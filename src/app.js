@@ -99,7 +99,7 @@ app.get("/home", async (req, res) => {
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
         const userDetails = await user.findOne({ _id: verifyUser._id });
-        const getHome = await home.find({ _id: id }).limit(1);
+        const getHome = await home.find({ _id : id }).limit(1);
         console.log(getHome.length);
 
         var receivedAt = req.body.receivedAt
@@ -228,6 +228,7 @@ app.get("/user", async (req, res) => {
     console.log(verifyUser);
     const userDetails = await user.findOne({ _id: verifyUser._id });
     const getUsers = await user.find({ _id: verifyUser._id });
+    
     try {
         if (getUsers.length == 1) {
             res.render("user", { getUsers, getUser: true, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
@@ -676,10 +677,9 @@ app.post("/logout", (req, res) => {
 
 })
 
-//getting api datas
 
 
-app.get("/database", async (req, res) => {
+app.get("/database/", async (req, res) => {
     try {
         const getCountUsers = await user.count({}, function (err, count) {
             console.log("Number of users:", count);
@@ -702,23 +702,44 @@ app.get("/database", async (req, res) => {
 app.get("/database/users", async (req, res) => {
     try {
         const getUsers = await user.find({}).sort({ _id: -1 });
-        res.status(201).send(getUsers);
+        const getCountUsers = await user.count({}, function (err, count) {
+            console.log("Number of users:", count);
+        })
+        
+
+        var created_at = req.body.created_at;
+        let createdOn = moment(created_at).toString();
+
+        res.render("usersData" , {getUsers, count: getCountUsers, moment : moment});
     } catch (e) {
         res.send(e);
     }
 });
-app.get("/database/messages", async (req, res) => {
+app.get("/database/users/delete", async (req, res) => {
     try {
-        const getMsg = await message.find({}).sort({ _id: -1 });
-        res.status(201).send(getMsg);
+        const id = req.query._id;
+        const getdelete = await user.findByIdAndRemove(id, function(err){
+            if(err){
+                res.status(200).json({
+                    message: 'fail to delete',
+                });
+            } else {
+                res.redirect("/database/users");
+            }
+         });
+       
     } catch (e) {
         res.send(e);
     }
 });
+
 app.get("/database/homes", async (req, res) => {
     try {
         const getHome = await home.find({}).sort({ _id: -1 });
-        res.status(201).send(getHome);
+        const getCountHome = await home.count({}, function (err, countHome) {
+            console.log("Number of home:", countHome);
+        })
+        res.render("homeData" , {getHome, countHome : getCountHome });
     } catch (e) {
         res.send(e);
     }
@@ -733,11 +754,18 @@ app.get("/database/receivedHomeInterests", async (req, res) => {
     }
 });
 
-//server create
+app.get("/database/messages", async (req, res) => {
+    try {
+        const getMsg = await message.find({}).sort({ _id: -1 });
+        res.status(201).send(getMsg);
+    } catch (e) {
+        res.send(e);
+    }
+});
 
-// app.listen(port, () => {
-//     console.log("server is running on " + port);
-// });
+
+
+
 app.get("*", async (req, res) => {
     try {
         const userToken = req.cookies.jwt;
@@ -751,6 +779,7 @@ app.get("*", async (req, res) => {
         res.render("404")
     }
 });
+//server create
 app.listen(process.env.PORT || 3000, function () {
     console.log("Express server listening on 3000 port mode");
 });
