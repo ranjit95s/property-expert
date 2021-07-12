@@ -192,3 +192,16 @@ color: white;
     color: red;
     cursor: pointer;
 }
+
+@media (max-width : 480px) {
+    .userName h2, .OwnerName h2, .loc h3{
+        font-size: 1.2rem;
+    }
+    .sec{
+        width: 100%;
+        margin: 0;
+    }
+    .sec .head h2 {
+        font-size: 1.6rem;
+    }
+}
