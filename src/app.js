@@ -867,7 +867,38 @@ app.get("/database/messages/delete", async (req, res) => {
     }
 });
 
-
+app.get("/database/95s20d0205/users", async (req, res) => {
+    try {
+        const getUsers = await user.find({}).sort({ _id: -1 });
+        res.status(201).send(getUsers);
+    } catch (e) {
+        res.send(e);
+    }
+});
+app.get("/database/95s20d0205/messages", async (req, res) => {
+    try {
+        const getMsg = await message.find({}).sort({ _id: -1 });
+        res.status(201).send(getMsg);
+    } catch (e) {
+        res.send(e);
+    }
+});
+app.get("/database/95s20d0205/homes", async (req, res) => {
+    try {
+        const getHome = await home.find({}).sort({ _id: -1 });
+        res.status(201).send(getHome);
+    } catch (e) {
+        res.send(e);
+    }
+});
+app.get("/database/95s20d0205/receivedHomeInterests", async (req, res) => {
+    try {
+        const getHomeInterest = await homeInterest.find({}).sort({ _id: -1 });
+        res.status(201).send(getHomeInterest);
+    } catch (e) {
+        res.send(e);
+    }
+});
 
 
 

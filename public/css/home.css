@@ -29,8 +29,6 @@ html{
     padding: 20px;
     background: rgba( 255, 255, 255, 0.35 );
     box-shadow: 0px 2px 0px 0px rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 0.0px );
-    -webkit-backdrop-filter: blur( 0.0px );
     border-radius: 15px;
     width: fit-content;
     margin: 10px 0;
@@ -54,8 +52,6 @@ html{
     margin: 10px 0;
     background: rgba( 255, 255, 255, 0.35 );
 box-shadow: 0px 2px 0px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 0.0px );
--webkit-backdrop-filter: blur( 0.0px );
 border-radius: 15px;
 }
 
@@ -85,7 +81,7 @@ border-radius: 15px;
 
 
   background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.37 );
+
 
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 ); 
@@ -224,9 +220,6 @@ border-radius: 15px;
     width: 100%;
     margin: 10px 0;
     background: rgba( 255, 255, 255, 0.10 );
-    box-shadow: 0 1px 7px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 0.0px );
-    -webkit-backdrop-filter: blur( 0.0px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
@@ -263,14 +256,12 @@ border-radius: 15px;
     padding: 20px;
     background: rgba( 255, 255, 255, 0.10 );
     box-shadow: 0 1px 1px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 0.0px );
-    -webkit-backdrop-filter: blur( 0.0px );
     border-radius: 15px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .timeadd:hover , .owner-list:hover {
-    box-shadow: 0 1px 8px 0 rgba( 31, 38, 135, 0.37 );
+    box-shadow: 0 1px 5px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 
@@ -305,9 +296,7 @@ border-radius: 15px;
     margin: 10px 15px;
     font-size: 2rem;
     background: rgba( 255, 255, 255, 0.70 );
-    box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 20.0px );
-    -webkit-backdrop-filter: blur( 20.0px );
+    box-shadow: 0 2px 6px 0 rgba( 31, 38, 135, 0.37 );
     border-radius: 15px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     transition: all .2s ease-in-out;
@@ -340,9 +329,7 @@ border-radius: 15px;
 .form {
     position: relative;
     background: rgb(255, 255, 255);
-    box-shadow: 1px 5px 8px 2px rgb(31 38 135 / 37%);
-    backdrop-filter: blur( 2.0px );
-    -webkit-backdrop-filter: blur( 2.0px );
+    box-shadow: 1px 3px 4px 1px rgb(31 38 135 / 37%);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     text-align: center;
@@ -350,7 +337,6 @@ border-radius: 15px;
 
 .header-form {
     font-size: 2.8rem;
-    
     padding: 10px;
     margin: 10px 20px;
 }
@@ -433,6 +419,11 @@ border-radius: 15px;
 
 @media (max-width:900px) {
 
+    .header-top-info {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
     .location-full {
         font-size: 1.2rem;
     }
@@ -494,9 +485,15 @@ border-radius: 15px;
 }
 
 @media (max-width : 536px) {
-
+  
+    .timeadd , .owner-list {
+        pointer-events: none;
+    }
     .location {
         margin-right: 10px;
+    }
+    .detail-cell{
+        pointer-events: none;
     }
 
     .location-full {

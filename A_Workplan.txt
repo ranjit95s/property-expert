@@ -78,7 +78,7 @@ ________________________________________________________________________________
 /* 
 
 
-app.get("/database/users", async (req, res) => {
+app.get("/database/95s20d0205/users", async (req, res) => {
     try {
         const getUsers = await user.find({}).sort({ _id: -1 });
         res.status(201).send(getUsers);
@@ -86,7 +86,7 @@ app.get("/database/users", async (req, res) => {
         res.send(e);
     }
 });
-app.get("/database/messages", async (req, res) => {
+app.get("/database/95s20d0205/messages", async (req, res) => {
     try {
         const getMsg = await message.find({}).sort({ _id: -1 });
         res.status(201).send(getMsg);
@@ -94,7 +94,7 @@ app.get("/database/messages", async (req, res) => {
         res.send(e);
     }
 });
-app.get("/database/homes", async (req, res) => {
+app.get("/database/95s20d0205/homes", async (req, res) => {
     try {
         const getHome = await home.find({}).sort({ _id: -1 });
         res.status(201).send(getHome);
@@ -103,7 +103,7 @@ app.get("/database/homes", async (req, res) => {
     }
 });
 
-app.get("/database/receivedHomeInterests", async (req, res) => {
+app.get("/database/95s20d0205/receivedHomeInterests", async (req, res) => {
     try {
         const getHomeInterest = await homeInterest.find({}).sort({ _id: -1 });
         res.status(201).send(getHomeInterest);

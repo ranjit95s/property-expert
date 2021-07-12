@@ -18,10 +18,15 @@
 
 #user_btn > img {
     border-radius: 50px; 
-    object-fit: cover;
+    object-fit: fill;
     width: 60px;
     height: 55px;
 
+}
+
+#fixed {
+    height: 64px;
+    border-radius: 20px;
 }
 
 .header {
@@ -165,7 +170,9 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
     html {
         font-size: 55%;
     }
-
+    #fixed3 {
+        margin-top: 7px;
+    }
     header .header-2 .navbar ul a li, .share ul li a {
         margin: 15px;
     }
@@ -279,6 +286,14 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
 }
 
 @media ( max-width :526px){
+
+    .header-2.header-active {
+    background: rgb(226, 226, 226);
+    box-shadow: 0 4px 8px 0 rgba( 31, 38, 135, 0.37 );
+    
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
     html {
         font-size: 50%;
     }
