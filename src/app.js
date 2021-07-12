@@ -200,6 +200,9 @@ app.post("/contact", auth, async (req, res) => {
             name: req.body.nameM,
             email: req.body.emailM,
             message: req.body.message,
+            userId : req.body.userId,
+            userPhoto : req.body.userPhoto,
+            phone : req.body.phone,
         });
 
         const newMessage = await addNewMsg.save();
@@ -381,8 +384,10 @@ app.get("/homeInterest", async (req, res) => {
 
     const home_id = req.query.home_id;
     const owner = req.query.owner;
+    const ownerPhone = req.query.ownerPhone;
     const sellOrRent = req.query.sellOrRent;
     const offered_at = req.query.offered_at;
+    const rentDeposit = req.query.rentDeposit;
     const first_image = req.query.first_image;
     const second_image = req.query.second_image;
     const third_image = req.query.third_image;
@@ -417,6 +422,7 @@ app.get("/homeInterest", async (req, res) => {
         const addingHomeInterest = new homeInterest({
             PropertyOwner: {
                 owner,
+                ownerPhone,
             },
             OwnerPropertyInformation: {
                 home_id,
@@ -424,6 +430,7 @@ app.get("/homeInterest", async (req, res) => {
                 offered_at,
                 home_Type,
                 building_name,
+                rentDeposit,
                 sq_ft,
                 parking,
                 floor,
@@ -677,7 +684,41 @@ app.post("/logout", (req, res) => {
 
 })
 
-
+app.get("/deptlogin/", async (req, res) => {
+    try {
+        res.render("deptlogin");
+    } catch (e) {
+        res.render(e);
+    }
+});
+app.post("/deptlogin/", async (req, res) => {
+    try {
+            admin0 = req.body.ad0;
+            admin1 = req.body.ad1;
+            var err;
+            const getCountUsers = await user.count({}, function (err, count) {
+                console.log("Number of users:", count);
+            })
+            const getCountHome = await home.count({}, function (err, countHome) {
+                console.log("Number of home:", countHome);
+            })
+            const getCountMeg = await message.count({}, function (err, countMsg) {
+                console.log("Number of msg:", countMsg);
+            })
+            const getCountinterest = await homeInterest.count({}, function (err, countInterest) {
+                console.log("Number of homeInterest:", countInterest);
+            })
+            if (admin0 == "admin" && admin1 == "admin") {
+                res.render("database", { success: "true" , count: getCountUsers, countHome: getCountHome, countMsg: getCountMeg, countInterest: getCountinterest });
+            } else {
+                err = " username or password is wrong, please try again ! ";
+               res.render("deptlogin", { success: "false" , err : err });
+            }
+    } catch (e) {
+        res.send(e);
+        res.render("deptlogin", { success: "false" });
+    }
+});
 
 app.get("/database/", async (req, res) => {
     try {
@@ -765,7 +806,30 @@ app.get("/database/homes/delete", async (req, res) => {
 app.get("/database/receivedHomeInterests", async (req, res) => {
     try {
         const getHomeInterest = await homeInterest.find({}).sort({ _id: -1 });
-        res.status(201).send(getHomeInterest);
+        const getCountinterest = await homeInterest.count({}, function (err, countInterest) {
+            console.log("Number of homeInterest:", countInterest);
+        })
+        var requestedAt = req.body.requestedAt;
+        let createdOn = moment(requestedAt).toString();
+        res.render("homeInt" , {getHomeInterest, countInterest : getCountinterest , moment : moment });
+    } catch (e) {
+        res.send(e);
+    }
+});
+
+app.get("/database/receivedHomeInterests/delete", async (req, res) => {
+    try {
+        const id = req.query._id;
+        const getdelete = await homeInterest.findByIdAndRemove(id, function(err){
+            if(err){
+                res.status(200).json({
+                    message: 'fail to delete',
+                });
+            } else {
+                res.redirect("/database/receivedHomeInterests");
+            }
+         });
+       
     } catch (e) {
         res.send(e);
     }
@@ -774,11 +838,35 @@ app.get("/database/receivedHomeInterests", async (req, res) => {
 app.get("/database/messages", async (req, res) => {
     try {
         const getMsg = await message.find({}).sort({ _id: -1 });
-        res.status(201).send(getMsg);
+        const getCountMsg = await message.count({}, function (err, countMsg) {
+            console.log("Number of msg:", countMsg);
+        })
+        var receivedAt = req.body.receivedAt;
+        let createdOn = moment(receivedAt).toString();
+        res.render("userDB_Msg" , {getMsg , countMsg : getCountMsg , moment : moment });
     } catch (e) {
         res.send(e);
     }
 });
+
+app.get("/database/messages/delete", async (req, res) => {
+    try {
+        const id = req.query._id;
+        const getdelete = await message.findByIdAndRemove(id, function(err){
+            if(err){
+                res.status(200).json({
+                    message: 'fail to delete',
+                });
+            } else {
+                res.redirect("/database/messages");
+            }
+         });
+       
+    } catch (e) {
+        res.send(e);
+    }
+});
+
 
 
 

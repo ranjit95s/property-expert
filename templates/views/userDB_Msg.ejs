@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link rel="stylesheet" href="/css/userdata.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Admin Panel - Users Data</title>
+    <style>
+        .main1 {
+    height: 15.5rem !important;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+
+                <div class="info-de">
+                    <h1>Users Messages </h1>
+                    <br>
+                    <h3>Total <%= countMsg %> users Messages <span><a href="#" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span></h3>
+                </div>
+                
+                <div class="usermain">
+
+                    <!-- here -->
+                    <% getMsg.forEach(function (message){ %>
+                    <div class="userbox">
+                        <div class="username-box1">
+                            <div class="main1">
+                                <div class="img">
+                                    <img src="/images/Reddit-F/<%=message.userPhoto %>" alt="" srcset="" onerror="this.src='/images/Reddit-F/d-1.png'">
+                                </div>
+                                <div class="user">
+                                    <h2>
+                                       name : <%=message.name %>
+                                    </h2>
+                                    <h2>
+                                       phone : <%=message.phone %>
+                                    </h2>
+                                    <h2>
+                                       email : <span style="text-transform: lowercase;"><%=message.email %></span>
+                                    </h2>
+                                    <h3>
+                                      User id : <%= message.userId %>
+                                    </h3>
+                                    <form action="/database/messages/delete" method="POST">
+                                    <button title="Are You Sure Want to delete <%= message.name %>'s record ?" class="trash" type="button" onclick="userId('?_id=<%= message._id %>')"> <i class="fas fa-trash"></i> </button>
+                                    </form>
+                                    <h3>
+                                       messaged on : <%= moment(message.receivedAt).format('LL');  %>
+                                    </h3>
+                                    
+                                </div>
+                            </div>
+                            <div class="username-box2">
+                                <h1>
+                                   <i class="fas fa-comment-dots"></i> <%= message.message %>
+                                </h1>
+                            </div>
+
+                        </div>
+                    </div>
+                    <% }) %>
+                    <!-- here -->
+                </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="js/mainlog.js"></script>
+<script>
+
+function userId(str2) {
+    var inputString2 = str2;
+    // window.location.href = "/homeInterest"+inputString;
+    var href2 = "/database/messages/delete" + inputString2 ;
+    console.log(href2)
+    window.location.href = href2;
+  }
+
+// You could easily add more colors to this array.
+var colors = ['royalblue', '#69e23a', 'green', '#dfc800', '#df3f00', '#4e00df', '#df00af', 'saddlebrown'];
+var boxes = document.querySelectorAll(".userbox");
+
+for (i = 0; i < boxes.length; i++) {
+  // Pick a random color from the array 'colors'.
+  boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+}
+</script>
+</html>

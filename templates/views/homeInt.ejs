@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/homeInt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Admin Panel - Home Interest !</title>
+</head>
+<body>
+    <div class="sec">
+        <div class="head">
+            <h1>Interest</h1>
+            <h2>Total <%= countInterest %> users Interest <span style="font-size: 1.7rem;"><a href="#" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span></h2>
+        </div>
+        <div class="container">
+            
+            <% getHomeInterest.forEach(function (homeInterest){ %>
+            <div class="box">
+                <div class="box4User box2">
+                    <div class="idbox">
+                        <h3> <i class="fas fa-heart"></i> Interested User</h3>
+                        <form class="form" action="/database/receivedHomeInterests/delete" method="POST">
+                            <button title="Are You Sure Want to delete  <%= homeInterest.InterestedUserInformation.userName%>'s home Interest record ?" class="trash" type="button" onclick="userId('?_id=<%= homeInterest._id %>')"> <i class="fas fa-trash"></i> </button>
+                            </form>
+                    </div>
+                    <div class="boxU">
+                        <div class="userName">
+                            <h2> <i class="fas fa-user-circle"></i> <%= homeInterest.InterestedUserInformation.userName%></h2>
+                            <h2> <i class="fas fa-phone-alt"></i>  <%= homeInterest.InterestedUserInformation.userPhone%></h2>
+                            <h2> <i class="fas fa-id-card"></i> <%= homeInterest.InterestedUserInformation.user_id%> </h2>
+                            <h2> <i class="fas fa-info-circle"></i> <%= moment(homeInterest.requestedAt).format('LL');  %> </h2>
+                        </div>
+                        <div class="addition-info">
+                            <div class="ans">
+                                    <h1><%= homeInterest.UserAdditionalDeatils.buying_firstTime%></h1>
+                                    <h2>Buying First Time</h2>
+                            </div>
+                            <div class="ans">
+                                <h1><%= homeInterest.UserAdditionalDeatils.plan_on_buying_home%></h1>
+                                <h2>Plan to Buy Home !</h2>
+                            </div>
+                            <div class="ans" style="border-bottom: none;">
+                                    <h1><%= homeInterest.UserAdditionalDeatils.active_military_status%></h1>
+                                    <h2>Active Military Status</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box4Owner">
+                        <div class="idbox">
+                            <h3> <i class="fas fa-heart"></i> User Have shown Interest in </h3>
+                            <h3> <a href="/home?h_id=<%= homeInterest.OwnerPropertyInformation.home_id%> " target="_blank" rel="noopener noreferrer"> <i class="fas fa-link"> view home </i> </a></h3>
+                        </div>
+                        <div class="boxU">
+                            <div class="OwnerName">
+                                <h2> <i class="fas fa-city"></i> <%= homeInterest.PropertyOwner.owner%></h2>
+                                <h2> <i class="fas fa-phone-alt"></i> <%= homeInterest.PropertyOwner.ownerPhone%></h2>
+                                <div class="loc">
+                                    <h3><i class="fas fa-search-location"></i> Location :</h3>
+                                    <h3><%= homeInterest.OwnerPropertyInformation.building_name%> building, <%= homeInterest.OwnerPropertyInformation.floor%>th floor , house no. <%= homeInterest.OwnerPropertyInformation.house_number%> ,  <%= homeInterest.OwnerPropertyInformation.Locations.area_name%> area , near <%= homeInterest.OwnerPropertyInformation.Locations.nearest_landmark%> , <%= homeInterest.OwnerPropertyInformation.Locations.city_name%> city , <%= homeInterest.OwnerPropertyInformation.Locations.district_name%> , <%= homeInterest.OwnerPropertyInformation.Locations.state_name%> , <%= homeInterest.OwnerPropertyInformation.Locations.country_name%> </h3>
+                                </div>
+                            </div>
+                            <div class="addition-info">
+                                <div class="ans">
+                                        <h1> <%= homeInterest.OwnerPropertyInformation.home_Type%></h1>
+                                        <h2>Home Type</h2>
+                                </div>
+                                <div class="ans">
+                                    <h1> <%= homeInterest.OwnerPropertyInformation.sellOrRent%></h1>
+                                    <h2>Sell Or Rent</h2>
+                                </div>
+                                <div class="ans">
+                                        <h1>  <%= homeInterest.OwnerPropertyInformation.sq_ft%> sqft</h1>
+                                        <h2>Square Foot</h2>
+                                </div>
+                                <% if( homeInterest.OwnerPropertyInformation.rentDeposit != null ){ %>
+                                <div class="ans">
+                                        <h1>  <%= homeInterest.OwnerPropertyInformation.rentDeposit %></h1>
+                                        <h2>Rent Deposit</h2>
+                                </div>
+                                <% } %>
+                                <div class="ans" style="border-bottom: none;">
+                                        <h1> <i class="fas fa-rupee-sign"></i> <%= homeInterest.OwnerPropertyInformation.offered_at%></h1>
+                                        <h2>Offered At</h2>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+
+</body>
+<script>
+    var colors = ['royalblue', '#69e23a', 'green', '#dfc800', '#df3f00', '#4e00df', '#df00af', 'saddlebrown'];
+var boxes = document.querySelectorAll(".box4User");
+
+for (i = 0; i < boxes.length; i++) {
+  // Pick a random color from the array 'colors'.
+  boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+}
+
+function userId(str2) {
+    var inputString2 = str2;
+    // window.location.href = "/homeInterest"+inputString;
+    var href2 = "/database/receivedHomeInterests/delete" + inputString2 ;
+    console.log(href2)
+    window.location.href = href2;
+  }
+</script>
+</html>

@@ -7,8 +7,9 @@ body {
     height: max-content;
     width: 80%;
     margin: 1% 0% 1% 10%;
-    border-radius: 30px;
+    border-radius: 30px 30px 10px 10px;
     padding: 20px;
+    box-shadow: 0 .2rem .5rem black;
 }
 
 .headOfPage h1 {
@@ -113,3 +114,51 @@ body {
     color: #003a16;
     font-weight: 700;
 }
+@media (max-width : 786px) {
+    #admin {
+        width: 90%;
+        margin: 1% 0% 1% 5%;
+    }
+
+}
+
+
+@media (max-width : 510px) {
+    .container-box .box {
+        width: 30rem !important;
+    }
+    
+    .headOfPage h1 {
+        font-size: 20px;
+    }
+    .headOfPage span {
+        font-size: 15px;
+    }
+
+    .container-box .box .mainTot .rightSide h2{
+        font-size: 7rem;
+    }
+    .container-box .box .des h5 {
+        font-size: 0.8rem;
+    }
+    .container-box .box .mainTot .leftSide h1 {
+        font-size: 3.5rem;
+    }
+    
+    .container-box .box .mainTot .leftSide h3 {
+        font-size: 1.5rem;
+    }
+    .container-box .box .headSet {
+        font-size: 1rem;
+    }
+}
+    @media (max-width : 300px) {
+        #admin {
+            width: 100%;
+            margin: 1% 0% 1% 0%;
+        }
+        .container-box .box .mainTot .rightSide h2{
+            font-size: 5rem !important;
+        }
+    
+    }

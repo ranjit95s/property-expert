@@ -8,6 +8,10 @@ const homeInterestSchema = mongoose.Schema({
       type: String,
       trim: true,
     },
+    ownerPhone: {
+      type: String,
+      trim: true,
+    },
   },
   
   OwnerPropertyInformation: {
@@ -124,14 +128,17 @@ const homeInterestSchema = mongoose.Schema({
     buying_firstTime: {
       type: String,
       trim: true,
+      default: 'No',
     },
     plan_on_buying_home: {
       type: String,
       trim: true,
+      default: 'I Am Not Sure',
     },
     active_military_status: {
       type: String,
       trim: true,
+      default: 'No',
     },
   },
 
