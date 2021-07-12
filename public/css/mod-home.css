@@ -1,0 +1,66 @@
+.container-main {
+    width: 90%;
+    margin: 1% 0% 0% 5%;
+    height: max-content;
+}
+
+.container-main .head {
+    background-color: rgb(238, 67, 101);
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.container-main .head h1{
+    color: #ffffff;
+font-size: 3rem;
+}
+.container-main .head h2{
+    color: #ffffff;
+font-size: 2rem;
+}
+.container-main .head h2 span {
+    color: #ffffff;
+font-size: 1.5rem;
+}
+
+.container-main .head2 {
+    background-color: rgb(241, 241, 238);
+    border-radius: 0px 0px 15px 15px;
+
+}
+.form {
+    position: relative;
+}
+.form .trash {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: red;
+    border-radius: 10px;
+    padding: 5px;
+    border: 2px solid rgb(255, 0, 0);
+    cursor:pointer;
+}
+.form .trash:hover {
+    background-color: black;
+
+}
+
+
+@media (max-width : 526px) {
+    .container-main {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .property .img-con .image {
+        width: 29rem !important;
+    }
+    .property .glass {
+        font-size: 1rem !important;
+    }
+    .property .img-con .image .view {
+        font-size: 1.5rem;
+    }
+}
