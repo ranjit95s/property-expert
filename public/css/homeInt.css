@@ -208,9 +208,15 @@ color: white;
       
         letter-spacing: 0px;
         background: rgba( 70, 70, 70, 0.70 );
-        box-shadow: 0 8px 8px 0 rgb(31 38 135 / 37%);
+        box-shadow: 0 3px 8px 0 rgb(31 38 135 / 37%);
         backdrop-filter: blur( 0px );
         -webkit-backdrop-filter: blur( 0px );
         padding: 5px;
+    }
+    .addition-info h1 {
+        font-size: 1.5rem;
+    }
+    .addition-info h2 {
+        font-size: 1rem;
     }
 }
