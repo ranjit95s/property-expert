@@ -20,62 +20,62 @@
 				<img src="images/avatar.svg">
 				<% if(typeof err !='undefined' ){ %>
 
-                    <div class="alert alert-<%= typeof errType != 'undefined' ? errType : " warning" %>
-                        alert-dismissible fade show" role="alert">
-                        <strong>
-                            <%= typeof errHead !='undefined' ? errHead : "Error!" %>
-                        </strong><br>
-                        <%= err %>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <% }%>
-				<div class="input-div one">
-					<div class="i">
-						<i class="fas fa-user"></i>
+					<div class="alert alert-<%= typeof errType != 'undefined' ? errType : " warning" %>
+						alert-dismissible fade show" role="alert">
+						<strong>
+							<%= typeof errHead !='undefined' ? errHead : "Error!" %>
+						</strong><br>
+						<%= err %>
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
-					<div class="div">
-						<h5>FullName</h5>
-						<input class="input" type="text" name="firstname" id="name" autocomplete="OFF" >
-					</div>
-				</div>
-				<div class="input-div one">
-					<div class="i">
-						<i class="fas fa-phone"></i>
-					</div>
-					<div class="div">
-						<h5>Phone Number</h5>
-						<input class="input" type="tel" name="signUpPhone" id="phone" autocomplete="OFF" >
-					</div>
-				</div>
-				<div class="input-div one">
-					<div class="i">
-						<i class="fas fa-envelope"></i>
-					</div>
-					<div class="div">
-						<h5>Email Id</h5>
-						<input class="input" type="email" name="signUpEmail" id="email" autocomplete="OFF" >
-					</div>
-				</div>
-				<div class="input-div pass">
-					<div class="i">
-						<i class="fas fa-lock"></i>
-					</div>
-					<div class="div">
-						<h5>Password</h5>
-						<input class="input" type="password" name="pass" id="password">
-					</div>
-				</div>
-				<div class="input-div pass">
-					<div class="i">
-						<i class="fas fa-lock"></i>
-					</div>
-					<div class="div">
-						<h5>Comfirm Password</h5>
-						<input class="input" type="password" name="cpass" id="passwordw">
-					</div>
-				</div>
-				<a href="/login">have account?</a>
-				<input type="submit" class="btn" value="Sign Up">
+					<% }%>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<h5>FullName</h5>
+								<input class="input" type="text" name="firstname" id="name" autocomplete="OFF">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-phone"></i>
+							</div>
+							<div class="div">
+								<h5>Phone Number</h5>
+								<input class="input" type="tel" name="signUpPhone" id="phone" autocomplete="OFF">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-envelope"></i>
+							</div>
+							<div class="div">
+								<h5>Email Id</h5>
+								<input class="input" type="email" name="signUpEmail" id="email" autocomplete="OFF">
+							</div>
+						</div>
+						<div class="input-div pass">
+							<div class="i">
+								<i class="fas fa-lock"></i>
+							</div>
+							<div class="div">
+								<h5>Password</h5>
+								<input class="input" type="password" name="pass" id="password">
+							</div>
+						</div>
+						<div class="input-div pass">
+							<div class="i">
+								<i class="fas fa-lock"></i>
+							</div>
+							<div class="div">
+								<h5>Comfirm Password</h5>
+								<input class="input" type="password" name="cpass" id="passwordw">
+							</div>
+						</div>
+						<a href="/login">have account?</a>
+						<input type="submit" class="btn" value="Sign Up">
 			</form>
 		</div>
 	</div>

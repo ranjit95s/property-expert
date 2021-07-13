@@ -1,6 +1,6 @@
-function sameAsAbove(){
+function sameAsAbove() {
     var sameAsAbove = document.querySelector("#switch:checked");
-    if(sameAsAbove != null){
+    if (sameAsAbove != null) {
         var uploaderName = document.getElementById("user_name");
         var uploaderContact = document.getElementById("user_phone");
         var uploaderEmail = document.getElementById("user_email");
@@ -14,7 +14,7 @@ function sameAsAbove(){
         ownerEmail.value = uploaderEmail.value;
         console.log("added")
     }
-    else{
+    else {
         var ownerName = document.getElementById("owner_name");
         var ownerContact = document.getElementById("owner_phone");
         var ownerEmail = document.getElementById("owner_email");
@@ -47,28 +47,28 @@ function validateFormInfo() {
     var thirdImage = document.getElementById("image3").value;
     var fourthImage = document.getElementById("image4").value;
     var sellOrRent = document.getElementById("amount_value");
-    
+
     var submit_two = document.getElementById("submit");
 
     var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
     var phoneno = /^\d{10}$/;
 
-    if (owner_name == null || owner_phone == null || owner_phone ==null || owner_email ==null || 
-        home_Type == null || house_number == null ||  floor == "null" || 
-        building_name == null ||sq_ft == null || parkingSpace == null || 
-        nearest_landmark == null || age == null ||  area_name == null || 
-        city_name == null || state_name == null || country_name == null || 
-        firstImage == null || secondImage == null || thirdImage == null || 
-        fourthImage == null || owner_name == "" || 
-        owner_phone == "" || owner_phone == "" || owner_email == "" || 
-        home_Type == "" || house_number == "" ||  floor == "" || 
-        building_name == "" ||sq_ft == "" || parkingSpace == "" || 
-        nearest_landmark == "" || age == "" ||  area_name == "" || 
-        city_name == "" || state_name == "" || country_name == "" || 
-        firstImage == "" || secondImage == "" || thirdImage == "" || 
+    if (owner_name == null || owner_phone == null || owner_phone == null || owner_email == null ||
+        home_Type == null || house_number == null || floor == "null" ||
+        building_name == null || sq_ft == null || parkingSpace == null ||
+        nearest_landmark == null || age == null || area_name == null ||
+        city_name == null || state_name == null || country_name == null ||
+        firstImage == null || secondImage == null || thirdImage == null ||
+        fourthImage == null || owner_name == "" ||
+        owner_phone == "" || owner_phone == "" || owner_email == "" ||
+        home_Type == "" || house_number == "" || floor == "" ||
+        building_name == "" || sq_ft == "" || parkingSpace == "" ||
+        nearest_landmark == "" || age == "" || area_name == "" ||
+        city_name == "" || state_name == "" || country_name == "" ||
+        firstImage == "" || secondImage == "" || thirdImage == "" ||
         fourthImage == "") {
-        
-        
+
+
         var errMessage = document.getElementById("message");
         errMessage.innerHTML = '<div class="alert alert-warning" role="alert"> Note: All details are required! Please fill all details.Then you can able to enter ammount of sell / rent.</div > ';
         sellOrRent.setAttribute("disabled", true);

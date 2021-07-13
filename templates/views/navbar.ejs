@@ -3,72 +3,78 @@
 
     <div id="menu" class="fas fa-house-user" style="color: black;"></div>
     <!-- <nav class="navbar"> -->
-      <ul>
+    <ul>
 
-        <div class="mainLogo">
-          <a href="/" class="Mainlogo"><span>Property</span>Experts</a>
+      <div class="mainLogo">
+        <a href="/" class="Mainlogo"><span>Property</span>Experts</a>
 
-        </div>
+      </div>
 
-      </ul>
+    </ul>
     <!-- </nav> -->
     <div class="demo">
-  
+
       <div class="share">
-        <ul>  
+        <ul>
           <nav class="navbar">
             <ul>
-              
+
               <div class="navbarli style_nav_icon">
                 <a href="/">
-                  <li> <i class=" ico fas fa-home"></i>  <br/>
-                 <i class="fas fa-home icons"></i> Home</li>
+                  <li> <i class=" ico fas fa-home"></i> <br />
+                    <i class="fas fa-home icons"></i> Home
+                  </li>
                 </a>
               </div>
-                <div class="navbarli style_nav_icon">
-                  <a href="/properties">
-                    <li> <i class="ico fas fa-building"></i> <br/>
-                   <i class="fas fa-building icons"></i> property</li>
-                  </a>
-                </div>
-                <div class="navbarli style_nav_icon">
-                  <a href="/contact">
-                    <li> <i class=" ico fas fa-headset"></i>  <br/>
-                   <i class="fas fa-headset icons"></i> contact us</li>
-                  </a>
-                </div>
-              </ul>
-              
-            </nav>
-            <% if( typeof user != 'undefined' ){ %>
               <div class="navbarli style_nav_icon">
-                <!-- <a href="/user" type="butt" onclick="userId('?_id=<%= user %>&userName=<%= userName %>')"> -->
-                  <a>
-                <button type="button" id="user_btn" onclick="userId('?_id=<%= user %>&userName=<%= userName %>&userPhone=<%= userPhone %>')">
+                <a href="/properties">
+                  <li> <i class="ico fas fa-building"></i> <br />
+                    <i class="fas fa-building icons"></i> property
+                  </li>
+                </a>
+              </div>
+              <div class="navbarli style_nav_icon">
+                <a href="/contact">
+                  <li> <i class=" ico fas fa-headset"></i> <br />
+                    <i class="fas fa-headset icons"></i> contact us
+                  </li>
+                </a>
+              </div>
+            </ul>
+
+          </nav>
+          <% if( typeof user !='undefined' ){ %>
+            <div class="navbarli style_nav_icon">
+              <!-- <a href="/user" type="butt" onclick="userId('?_id=<%= user %>&userName=<%= userName %>')"> -->
+              <a>
+                <button type="button" id="user_btn"
+                  onclick="userId('?_id=<%= user %>&userName=<%= userName %>&userPhone=<%= userPhone %>')">
                   <img src="/images/Reddit-F/<%=userPhoto%>" onerror="this.src='/images/Reddit-F/d-1.png'">
                 </button>
-                </a>
-              </div>
-              <% } %>
-             <% if( typeof user == 'undefined' ){ %>
-              <div id="fixed" >
-                <a href="/login" style="cursor: pointer; color: black;">
-                <li id="fixed3" style="text-align: center;"> <i id="menuz" class="fas fa-sign-in-alt style_nav_icon" style="cursor: pointer; margin: 5px 0px !important;"></i>  <br/>
-                Login</a></li>
-              
-          </div>
-              <% } %>
-          </ul>
+              </a>
+            </div>
+            <% } %>
+              <% if( typeof user=='undefined' ){ %>
+                <div id="fixed">
+                  <a href="/login" style="cursor: pointer; color: black;">
+                    <li id="fixed3" style="text-align: center;"> <i id="menuz" class="fas fa-sign-in-alt style_nav_icon"
+                        style="cursor: pointer; margin: 5px 0px !important;"></i> <br />
+                      Login
+                  </a></li>
+
+                </div>
+                <% } %>
+        </ul>
       </div>
     </div>
 </header>
 
 <script>
 
-function userId(str2) {
+  function userId(str2) {
     var inputString2 = str2;
     // window.location.href = "/homeInterest"+inputString;
-    var href2 = "/user" + inputString2 ;
+    var href2 = "/user" + inputString2;
     console.log(href2)
     window.location.href = href2;
   }

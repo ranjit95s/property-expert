@@ -2,82 +2,86 @@
 <html>
 
 <head>
-     <title>Verification Page</title>
-     <link rel="stylesheet" type="text/css" href="css/login.css">
-     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <title>Verification Page</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <body>
-     <div id="recaptcha-container"></div>
-     <img class="wave" src="images/wave.png">
-     <div class="container">
-         <div class="img">
-             <img src="images/bg.svg">
-         </div>
-         <div class="login-content">
-             <form action="/verifyOtp" method="POST">
-                 <img src="images/avatar.svg">
-                 <% if(typeof err !='undefined' ){ %>
- 
-                     <div class="alert alert-<%= typeof errType != 'undefined' ? errType : " warning" %>
-                         alert-dismissible fade show" role="alert">
-                         <strong>
-                             <%= typeof errHead !='undefined' ? errHead : "Error!" %>
-                         </strong><br>
-                         <%= err %>
-                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                     </div>
-                     <% }%>
+    <div id="recaptcha-container"></div>
+    <img class="wave" src="images/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="images/bg.svg">
+        </div>
+        <div class="login-content">
+            <form action="/verifyOtp" method="POST">
+                <img src="images/avatar.svg">
+                <% if(typeof err !='undefined' ){ %>
 
-                                 <div class="input-div one">
-                                     <div class="i">
-                                         <i class="fas fa-phone"></i>
-                                     </div>
-                                     <div class="div">
-                                         
-                                         <input id="num" class="input" name="mobileNo" type="phone"  value="<%= typeof phoneNos != 'undefined' ? phoneNos : "" %>" name="phone" id="phone" autocomplete="off" readonly>
-                                     </div>
-                                 </div>
-                                 <div class="input-div pass hidden" id="otp">
-                                     <div class="i">
-                                         <i class="fas fa-lock"></i>
-                                     </div>
-                                     <div class="div">
-                                          <input type="text" class="input otpField" id="otps" placeholder="Enter OTP"  autocomplete="new-password">
-                                     </div>
-                                 </div>
-                                 <div class="input-div pass" id="send">
-                                     <div class="i">
-                                         <i class="fas fa-lock"></i>
-                                     </div>
-                                     <div class="div">
-                                          <input style="cursor: pointer;" class="input send" id="sendo" value="Send OTP" readonly>
-                                     </div>
-                                 </div>
-                                 <div class="input-div pass hidden" id="verify">
-                                     <div class="i">
-                                         <i class="fas fa-lock"></i>
-                                     </div>
-                                     <div class="div">
-                                          <input style="cursor: pointer;" class="input send" id="gggg" type="text" value="Verify OTP" readonly>
-                                     </div>
-                                 </div>
-                                 <div class="div hidden" id="submit">
+                    <div class="alert alert-<%= typeof errType != 'undefined' ? errType : " warning" %>
+                        alert-dismissible fade show" role="alert">
+                        <strong>
+                            <%= typeof errHead !='undefined' ? errHead : "Error!" %>
+                        </strong><br>
+                        <%= err %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <% }%>
 
-                                     <input style="cursor: pointer;" type="submit" class="btn" value="submit">
-                                 </div>
-                                 
-             </form>
-         </div>
-     </div>
-     
-     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-     <script type="text/javascript" src="js/verifyOtp.js"></script>
-     <script type="text/javascript" src="js/mainlog.js"></script>
- </body>
+                        <div class="input-div one">
+                            <div class="i">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="div">
+
+                                <input id="num" class="input" name="mobileNo" type="phone"
+                                    value="<%= typeof phoneNos != 'undefined' ? phoneNos : "" %>" name="phone"
+                                    id="phone" autocomplete="off" readonly>
+                            </div>
+                        </div>
+                        <div class="input-div pass hidden" id="otp">
+                            <div class="i">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="div">
+                                <input type="text" class="input otpField" id="otps" placeholder="Enter OTP"
+                                    autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="input-div pass" id="send">
+                            <div class="i">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="div">
+                                <input style="cursor: pointer;" class="input send" id="sendo" value="Send OTP" readonly>
+                            </div>
+                        </div>
+                        <div class="input-div pass hidden" id="verify">
+                            <div class="i">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="div">
+                                <input style="cursor: pointer;" class="input send" id="gggg" type="text"
+                                    value="Verify OTP" readonly>
+                            </div>
+                        </div>
+                        <div class="div hidden" id="submit">
+
+                            <input style="cursor: pointer;" type="submit" class="btn" value="submit">
+                        </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/verifyOtp.js"></script>
+    <script type="text/javascript" src="js/mainlog.js"></script>
+</body>
 
 </html>
 
@@ -96,4 +100,4 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use -->
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.0.1/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.0.1/firebase.js"></script>

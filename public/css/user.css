@@ -1,344 +1,339 @@
-html{
-  scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
-
 
 #thumb_img .img {
     cursor: pointer;
     filter: grayscale(100%);
     transition: .1s ease-in;
-  }
-  
-  #thumb_img .img:hover{
+}
+
+#thumb_img .img:hover {
     filter: grayscale(0);
-  }
-  
-  #thumb_img .img:focus {
+}
+
+#thumb_img .img:focus {
     filter: grayscale(0);
     background-color: rgb(194, 194, 194);
     border-radius: 5px;
-  }
+}
 
 .user-details {
-  padding: 10px 0px;
-  background: rgb(255,255,255);
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 17.5px );
--webkit-backdrop-filter: blur( 17.5px );
-border-radius: 10px;
-
-
-  position: relative;
-  display: flex;
-  margin: 20px 20px;
-  align-items: center;
-  justify-content: space-between;
+    padding: 10px 0px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 17.5px);
+    -webkit-backdrop-filter: blur( 17.5px);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    margin: 20px 20px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.setting-icon > button {
-  position: absolute;
-  top: 20px;
-  right: 70px;
-  font-size: 1.7rem;
-  font-weight: 700;
-  background-color: rgb(255, 247, 238);
-  padding: 5px;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 15px;
-  cursor: pointer;
+.setting-icon>button {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    background-color: rgb(255, 247, 238);
+    padding: 5px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    cursor: pointer;
 }
 
-.user-details > .user-infoo > p > img {
-  width: 170px;
-  height: 170px;
-  border-radius: 20px;
+.user-details>.user-infoo>p>img {
+    width: 170px;
+    height: 170px;
+    border-radius: 20px;
 }
 
 .user-infoo {
-  /* background-color: chartreuse; */
-  width: 100%;
-  margin: 0px 10px;
+    /* background-color: chartreuse; */
+    width: 100%;
+    margin: 0px 10px;
 }
 
 .ud2 {
-  text-align: start !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 65%;
+    text-align: start !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 65%;
 }
 
 .ud1 {
-  text-align: end !important;
-  align-items: flex-end !important;
-  justify-content: end !important;
-  width: 35%;
+    text-align: end !important;
+    align-items: flex-end !important;
+    justify-content: end !important;
+    width: 35%;
 }
 
-.user-infoo > .user-d {
-  font-size: 2rem;
-  margin: 8.5px;
+.user-infoo>.user-d {
+    font-size: 2rem;
+    margin: 8.5px;
 }
 
-.user-d > p {
-  font-weight: 700;
+.user-d>p {
+    font-weight: 700;
 }
 
-.user-d > p > span {
-  margin: 0px 5px;
+.user-d>p>span {
+    margin: 0px 5px;
 }
 
-.user-d > p > span > i {
-  font-size: 2rem;
+.user-d>p>span>i {
+    font-size: 2rem;
 }
 
 .post-section {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
 }
 
 .post-section .postcard {
-  padding: 20px;
-  margin: 15px;
-  background: rgba( 255, 255, 255, 0.65 );
-  box-shadow: 0 8px 24px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 13.0px );
-  -webkit-backdrop-filter: blur( 13.0px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 20px;
+    margin: 15px;
+    background: rgba( 255, 255, 255, 0.65);
+    box-shadow: 0 8px 24px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 13.0px);
+    -webkit-backdrop-filter: blur( 13.0px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
 .post-section .postcard h2 {
-  font-size: 2.5rem;
-  margin: 10px;
+    font-size: 2.5rem;
+    margin: 10px;
 }
 
 .post-section .postcard p {
-  margin: 5px;
-  font-size: 1.3rem;
+    margin: 5px;
+    font-size: 1.3rem;
 }
 
-.post-section .postcard a > button {
-  margin: 5px;
-  font-size: 2.2rem;
-  width: 20rem;
-  padding: 5px;
-  color: var(--red);
-  background: white;
-  border-radius: 15px;
-  border: 2.52px solid var(--red);
+.post-section .postcard a>button {
+    margin: 5px;
+    font-size: 2.2rem;
+    width: 20rem;
+    padding: 5px;
+    color: var(--red);
+    background: white;
+    border-radius: 15px;
+    border: 2.52px solid var(--red);
 }
 
-.post-section .postcard a > button:hover{
-  background: var(--red);
-  color: white;
+.post-section .postcard a>button:hover {
+    background: var(--red);
+    color: white;
 }
 
 .user-head-main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .user-setting .user-head {
-  font-size: 2.7rem;
-  margin: 0px 20px;
-  padding-top: 20px;
-  padding-left: 25px;
+    font-size: 2.7rem;
+    margin: 0px 20px;
+    padding-top: 20px;
+    padding-left: 25px;
 }
 
 .user-avatar {
-  width: 100%;
+    width: 100%;
 }
 
 .user-avatar-main {
-  text-align: center;
-  margin: auto;
-  width: fit-content;
-  background: rgba( 255, 255, 255, 0.65 );
-  box-shadow: 0 8px 26px 0 rgba( 31, 38, 135, 0.37 );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-  padding:10px;
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+    background: rgba( 255, 255, 255, 0.65);
+    box-shadow: 0 8px 26px 0 rgba( 31, 38, 135, 0.37);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    padding: 10px;
 }
 
-.user-avatar-main > h5 {
-  font-size: 2rem;
-  margin-bottom: 5px;
+.user-avatar-main>h5 {
+    font-size: 2rem;
+    margin-bottom: 5px;
 }
 
 .user-avatars {
-  margin-top: 10px !important;
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
+    margin-top: 10px !important;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
 }
 
-
 .avatar-head {
-  font-size: 2rem;
-  padding: 20px;
-  text-decoration: underline !important;
+    font-size: 2rem;
+    padding: 20px;
+    text-decoration: underline !important;
 }
 
 .subbtn {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
+
 #id {
-  width:100% !important;
-  height:21rem !important;
+    width: 100% !important;
+    height: 21rem !important;
 }
+
 #avatarbtn {
-  border-radius: 20px;
-  color: var(--red);
-  border: 2px solid var(--red);
-  background:white;
-  font-size: 2rem;
-  padding: 15px;
-  font-weight: 700;
+    border-radius: 20px;
+    color: var(--red);
+    border: 2px solid var(--red);
+    background: white;
+    font-size: 2rem;
+    padding: 15px;
+    font-weight: 700;
 }
 
 #avatarbtn:hover {
-  color: white;
-  background: var(--red);
+    color: white;
+    background: var(--red);
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-  border: 1px solid #aaa;
-  display: none !important;
+    border: 1px solid #aaa;
+    display: none !important;
 }
-
 
 .main-op {
-  padding: 10px;
+    padding: 10px;
 }
 
-.main-op-2{
-  background: rgba( 255, 255, 255, 0.30 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-  width: fit-content;
-  padding: 5px;
-  margin: auto;
+.main-op-2 {
+    background: rgba( 255, 255, 255, 0.30);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    width: fit-content;
+    padding: 5px;
+    margin: auto;
 }
 
 .select2-search--dropdown {
-  display: none !important;
+    display: none !important;
 }
 
 .select2-container {
-  width: 27rem !important;
+    width: 27rem !important;
 }
 
-.select2-selection .select2-selection--single{
-  height: fit-content !important;
+.select2-selection .select2-selection--single {
+    height: fit-content !important;
 }
 
 .select2-container--default .select2-selection--single {
-  border: none !important;
+    border: none !important;
 }
 
 .styleAvatar0 {
-  width: fit-content;
-  margin: auto;
-}
-
-.styleAvatar > button {
-  cursor: pointer;
-  font-size: 3rem;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: none;
-  color: #fff;
-  text-align: center;
-  width: 30rem;
-  font-weight: 700;
-  background: rgb(255,0,0);
-  background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,158,0,1) 65%);
-  border-radius: 15px;
-}
-
-
-@media (max-width : 900px) {
-  .user-details {
-    display: block;
-  }
-  .ud1 {
     width: fit-content;
     margin: auto;
-  }
-  .ud2 {
-    width: fit-content;
-    margin: auto;
-  }
-  .user-d > p {
+}
+
+.styleAvatar>button {
+    cursor: pointer;
+    font-size: 3rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    color: #fff;
     text-align: center;
-    font-size: 1.8rem;
-  }
-  .post-section {
-    display: block;
-    width: fit-content;
-    margin: auto;
-  }
+    width: 30rem;
+    font-weight: 700;
+    background: rgb(255, 0, 0);
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 158, 0, 1) 65%);
+    border-radius: 15px;
 }
 
-@media (max-width : 789px) {
-  .setting-icon > button{
-    right: 50px;
-    font-size: 1.5rem;
-  }
-  #id {
-    height: 25rem !important;
-  }
-  .user-setting .user-head {
-    padding-left: 0;
-  }
-  .post-section .postcard a > button {
-    margin-top: 10px;
-  }
+@media (max-width: 900px) {
+    .user-details {
+        display: block;
+    }
+    .ud1 {
+        width: fit-content;
+        margin: auto;
+    }
+    .ud2 {
+        width: fit-content;
+        margin: auto;
+    }
+    .user-d>p {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .post-section {
+        display: block;
+        width: fit-content;
+        margin: auto;
+    }
 }
 
+@media (max-width: 789px) {
+    .setting-icon>button {
+        right: 50px;
+        font-size: 1.5rem;
+    }
+    #id {
+        height: 25rem !important;
+    }
+    .user-setting .user-head {
+        padding-left: 0;
+    }
+    .post-section .postcard a>button {
+        margin-top: 10px;
+    }
+}
 
-@media (max-width :526px) { 
-  .user-d > p {
-    text-align: center;
-    font-size: 1.7rem;
-  }
-  .user-details > .user-infoo > p > img {
-    width: 150px;
-    height: 160px;
-  }
-  .setting-icon > button{
-    right: 10px;
-    font-size: 1.3rem;
-  }
-  #id {
-    height: 27rem !important;
-  }
-  .user-setting .user-head {
-    padding-left: 0;
-  }
-  .post-section .postcard a > button {
-    margin-top: 15px;
-  }
-  .user-d > p > span {
-    display: inline-block;
-  }
- }
+@media (max-width :526px) {
+    .user-d>p {
+        text-align: center;
+        font-size: 1.7rem;
+    }
+    .user-details>.user-infoo>p>img {
+        width: 150px;
+        height: 160px;
+    }
+    .setting-icon>button {
+        right: 10px;
+        font-size: 1.3rem;
+    }
+    #id {
+        height: 27rem !important;
+    }
+    .user-setting .user-head {
+        padding-left: 0;
+    }
+    .post-section .postcard a>button {
+        margin-top: 15px;
+    }
+    .user-d>p>span {
+        display: inline-block;
+    }
+}
 
- @media (max-width :421px) {
-  .post-section .postcard a > button {
-    margin-top: 18px;
-  }
-  .post-section .postcard h2 {
-    font-size: 2rem;
-  }
-  .post-section .postcard p {
-    font-size: 1.5rem;
-  }
- }
+@media (max-width :421px) {
+    .post-section .postcard a>button {
+        margin-top: 18px;
+    }
+    .post-section .postcard h2 {
+        font-size: 2rem;
+    }
+    .post-section .postcard p {
+        font-size: 1.5rem;
+    }
+}

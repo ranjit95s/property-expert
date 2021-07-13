@@ -21,45 +21,57 @@
   <div style="height: 65px;">
     <%- include ("navbar.ejs") %>
   </div>
-    <section class="property" id="property">
-      <h1 class="heading"><span>property</span></h1>
-      <div class="slogan">
+  <section class="property" id="property">
+    <h1 class="heading"><span>property</span></h1>
+    <div class="slogan">
 
-        <h2>Shave Time.. Shave Money..</h2>
-        <h3>The Quicker Picker Upper!!! </h3>
-      </div>
-      <ul class="control">
-        <li class="button button-active" data-filter="all">all</li>
-        <li class="button" data-filter="luxery">luxery house</li>
-        <li class="button" data-filter="4bhk">4 BHK</li>
-        <li class="button" data-filter="3bhk">3 BHK</li>
-        <li class="button" data-filter="2bhk">2 BHK</li>
-        <li class="button" data-filter="1bhk">1 BHK</li>
-        <li class="button" data-filter="1rk">1 RK</li>
-      </ul>
-      <div class="img-con">
-        <% getHome.forEach(function (home){ %>
-          <a href="/home?h_id=<%= home._id %>">
+      <h2>Shave Time.. Shave Money..</h2>
+      <h3>The Quicker Picker Upper!!! </h3>
+    </div>
+    <ul class="control">
+      <li class="button button-active" data-filter="all">all</li>
+      <li class="button" data-filter="luxery">luxery house</li>
+      <li class="button" data-filter="4bhk">4 BHK</li>
+      <li class="button" data-filter="3bhk">3 BHK</li>
+      <li class="button" data-filter="2bhk">2 BHK</li>
+      <li class="button" data-filter="1bhk">1 BHK</li>
+      <li class="button" data-filter="1rk">1 RK</li>
+    </ul>
+    <div class="img-con">
+      <% getHome.forEach(function (home){ %>
+        <a href="/home?h_id=<%= home._id %>">
           <div class="image img-hover-zoom <%= home.BuildingInformation.home_Type%>">
-            <img src="/images/Reddit-F/<%=home.PropertyImages.first_image%>" onerror="this.src='/images/property/1.jpg'" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
-            <p class="building-name" style="text-decoration: underline !important;"><%= home.UserInformation.owner_name%>'s home</p>
-            <p><%=home.BuildingInformation.sellOrRent%> Amount: <i class="fas fa-rupee-sign"></i> <%=home.BuildingInformation.offered_at%> </p>
+            <img src="/images/Reddit-F/<%=home.PropertyImages.first_image%>" onerror="this.src='/images/property/1.jpg'"
+              alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
+            <p class="building-name" style="text-decoration: underline !important;">
+              <%= home.UserInformation.owner_name%>'s home
+            </p>
+            <p>
+              <%=home.BuildingInformation.sellOrRent%> Amount: <i class="fas fa-rupee-sign"></i>
+                <%=home.BuildingInformation.offered_at%>
+            </p>
             <div class="conatiner">
-              <p class="glass"><%= home.BuildingInformation.home_Type%></p>
-              <p class="glass"> <%=home.BuildingInformation.sq_ft%> sq.ft </p>
-              <p class="glass"> location :<%= home.BuildingInformation.Location.district_name %>, <%= home.BuildingInformation.Location.state_name%></p>
+              <p class="glass">
+                <%= home.BuildingInformation.home_Type%>
+              </p>
+              <p class="glass">
+                <%=home.BuildingInformation.sq_ft%> sq.ft
+              </p>
+              <p class="glass"> location :<%= home.BuildingInformation.Location.district_name %>, <%=
+                    home.BuildingInformation.Location.state_name%>
+              </p>
             </div>
             <div class="stick_to_bo">
               <a class="view" href="/home?h_id=<%= home._id %>">View Full Details </a>
             </div>
           </div>
         </a>
-          <% }) %>
-      </div>
-    </section>
+        <% }) %>
+    </div>
+  </section>
 
 
-    <%- include ("footer.ejs") %>
+  <%- include ("footer.ejs") %>
 </body>
 
 
@@ -75,11 +87,3 @@
 <script src="js/main.js"></script>
 
 </html>
-
-
-<!-- 
-        <div id="no_data" class="no_data hidden">
-        <i class="far fa-sad-tear"></i>
-        <p>Sorry! No Data Found.</p>
-    </div>
- -->

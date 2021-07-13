@@ -46,12 +46,12 @@ app.set('json spaces', '  ');
 // set Storage Engine 
 
 var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
+    destination: function(req, file, cb) {
         fs.mkdir('./public/images/Reddit-F/', (err) => {
             cb(null, './public/images/Reddit-F/');
         });
     },
-    filename: function (req, file, cb) {
+    filename: function(req, file, cb) {
         cb(
             null,
             file.fieldname + "__" + Date.now() + path.extname(file.originalname)
@@ -59,10 +59,10 @@ var storage = multer.diskStorage({
     },
 });
 var storage_user = multer.diskStorage({
-    destination: function (req, file, cb) {
+    destination: function(req, file, cb) {
         cb(null, "./public/images/Reddit-F/");
     },
-    filename: function (req, file, cb) {
+    filename: function(req, file, cb) {
         cb(
             null,
             file.fieldname + "__" + file.originalname
@@ -73,7 +73,7 @@ var storage_user = multer.diskStorage({
 var upload = multer({ storage: storage });
 var upload_user = multer({ storage: storage_user });
 
-app.get("/", async (req, res) => {
+app.get("/", async(req, res) => {
 
     try {
         const getHome = await home.find({}).sort({ _id: -1 }).limit(10);
@@ -91,7 +91,7 @@ app.get("/", async (req, res) => {
 });
 
 
-app.get("/home", async (req, res) => {
+app.get("/home", async(req, res) => {
     // console.log(`this is the cookie awesome ${req.cookies.jwt}`);
     try {
         var id = req.query.h_id;
@@ -99,7 +99,7 @@ app.get("/home", async (req, res) => {
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
         const userDetails = await user.findOne({ _id: verifyUser._id });
-        const getHome = await home.find({ _id : id }).limit(1);
+        const getHome = await home.find({ _id: id }).limit(1);
         console.log(getHome.length);
 
         var receivedAt = req.body.receivedAt
@@ -120,7 +120,7 @@ app.get("/home", async (req, res) => {
     }
 });
 
-app.post("/homeInterest", async (req, res) => {
+app.post("/homeInterest", async(req, res) => {
     var id = req.query.h_id;
     const token = req.cookies.jwt;
     const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
@@ -163,7 +163,7 @@ app.post("/homeInterest", async (req, res) => {
     }
 })
 
-app.get("/aboutmore", async (req, res) => {
+app.get("/aboutmore", async(req, res) => {
     try {
         const token = req.cookies.jwt;
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
@@ -175,7 +175,7 @@ app.get("/aboutmore", async (req, res) => {
     }
 });
 
-app.get("/contact", async (req, res) => {
+app.get("/contact", async(req, res) => {
     try {
         var err;
         const token = req.cookies.jwt;
@@ -189,7 +189,7 @@ app.get("/contact", async (req, res) => {
 });
 
 
-app.post("/contact", auth, async (req, res) => {
+app.post("/contact", auth, async(req, res) => {
     try {
         const token = req.cookies.jwt;
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
@@ -200,9 +200,9 @@ app.post("/contact", auth, async (req, res) => {
             name: req.body.nameM,
             email: req.body.emailM,
             message: req.body.message,
-            userId : req.body.userId,
-            userPhoto : req.body.userPhoto,
-            phone : req.body.phone,
+            userId: req.body.userId,
+            userPhoto: req.body.userPhoto,
+            phone: req.body.phone,
         });
 
         const newMessage = await addNewMsg.save();
@@ -225,24 +225,27 @@ app.get("/login", (req, res) => {
     res.render("login");
 });
 
-app.get("/user", async (req, res) => {
+app.get("/user", async(req, res) => {
     const token = req.cookies.jwt;
     const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
     console.log(verifyUser);
     const userDetails = await user.findOne({ _id: verifyUser._id });
     const getUsers = await user.find({ _id: verifyUser._id });
-    
+
     try {
         var id = req.query._id;
-        const foundUser = await user.find({ _id : id }).limit(1);
+        const foundUser = await user.find({ _id: id }).limit(1);
+
+        const foundUserUp = await home.find({ user_idbyUp: id });
+        console.log(foundUserUp.length);
         var created_at = req.body.created_at;
         let createdOn = moment(created_at).toString();
 
         if (foundUser.length == 1) {
             console.log(foundUser.length);
-            res.render("user", { foundUser, getUser: true, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, moment : moment });
+            res.render("user", { foundUserUp, foundUser, getUser: true, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, moment: moment });
         } else {
-            res.render("user", { foundUser, getUser: false, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email , moment : moment });
+            res.render("user", { foundUserUp, foundUser, getUser: false, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, moment: moment });
         }
 
     } catch (e) {
@@ -252,7 +255,7 @@ app.get("/user", async (req, res) => {
 })
 
 
-app.post("/user", upload_user.fields([{ name: "user_photo", maxCount: 1 }]), async (req, res) => {
+app.post("/user", upload_user.fields([{ name: "user_photo", maxCount: 1 }]), async(req, res) => {
 
     const token = req.cookies.jwt;
     const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
@@ -283,7 +286,7 @@ app.get("/signup", (req, res) => {
 });
 
 
-app.get("/PostProperty", async (req, res) => {
+app.get("/PostProperty", async(req, res) => {
     try {
 
         const token = req.cookies.jwt;
@@ -297,7 +300,7 @@ app.get("/PostProperty", async (req, res) => {
     }
 })
 
-app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, { name: "second_image", maxCount: 1 }, { name: "third_image", maxCount: 1 }, { name: "fourth_image", maxCount: 1 }]), async (req, res) => {
+app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, { name: "second_image", maxCount: 1 }, { name: "third_image", maxCount: 1 }, { name: "fourth_image", maxCount: 1 }]), async(req, res) => {
 
 
     const userToken = req.cookies.jwt;
@@ -308,8 +311,8 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
 
 
 
-    var { uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit } = req.body;
-    console.log(uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit);
+    var { user_idbyUp, uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit } = req.body;
+    console.log(user_idbyUp, uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone, house_number, building_name, area_name, city_name, nearest_landmark, home_Type, parking, floor, sq_ft, district_name, age, first_image, second_image, third_image, fourth_image, sellOrRent, offered_at, state_name, country_name, rentDeposit);
     try {
         // // // // // // // const uploadsFolder = path.join(__dirname, "../public/images/property");
         // const image_1st = uploadsFolder + req.files.first_image[0].filename;
@@ -329,8 +332,14 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
 
 
         const addingProperty = new home({
+            user_idbyUp,
             UserInformation: {
-                uploader_name, uploader_email, uploader_phone, owner_name, owner_email, owner_phone,
+                uploader_name,
+                uploader_email,
+                uploader_phone,
+                owner_name,
+                owner_email,
+                owner_phone,
             },
 
             BuildingInformation: {
@@ -377,7 +386,7 @@ app.post("/PostProperty", upload.fields([{ name: "first_image", maxCount: 1 }, {
 })
 
 
-app.get("/homeInterest", async (req, res) => {
+app.get("/homeInterest", async(req, res) => {
 
     var { message_add, buying_firstTime, active_military_status, plan_on_buying_home } = req.body;
     console.log(message_add, buying_firstTime, active_military_status, plan_on_buying_home);
@@ -486,7 +495,7 @@ app.get("/homeInterest", async (req, res) => {
 
 
 
-app.post("/signup", async (req, res) => {
+app.post("/signup", async(req, res) => {
 
     var { firstname, signUpPhone, signUpEmail, pass, cpass } = req.body
     var err;
@@ -506,8 +515,7 @@ app.post("/signup", async (req, res) => {
             firstname: firstname,
             signUpPhone: signUpPhone,
         });
-    }
-    else if (!signUpPhone.match(validatePhone) || phoneLength > 10 || phoneLength < 10) {
+    } else if (!signUpPhone.match(validatePhone) || phoneLength > 10 || phoneLength < 10) {
         err = " please enter phone numbers properly ! ";
         res.render("signup", {
             err: err,
@@ -567,7 +575,7 @@ app.post("/signup", async (req, res) => {
     }
 
 })
-app.post("/login", async (req, res) => {
+app.post("/login", async(req, res) => {
 
     var err;
     var validPhone = /^\d{10}$/;
@@ -592,19 +600,18 @@ app.post("/login", async (req, res) => {
             if (isPasswordMatch) {
                 if (gotUser.isVerified != true) {
                     console.log("user not verified")
-                    // err = "Your account is not verified yet. Please contact support."
-                    // res.render("verifyOtp", { mobile_no: phoneNo, verifyMsg: "Your Mobile number is not verified yet. Please Verify Mobile Number." });
+                        // err = "Your account is not verified yet. Please contact support."
+                        // res.render("verifyOtp", { mobile_no: phoneNo, verifyMsg: "Your Mobile number is not verified yet. Please Verify Mobile Number." });
                     res.redirect(`/verifyOtp?phoneNo=${phoneNo}`);
-                }
-                else {
+                } else {
                     const token = await gotUser.token;
                     console.log(token);
                     res.cookie("jwt", token, {
-                        expires: new Date(Date.now() + 60000000000),
-                        httpOnly: true
-                    })
-                    // err = "Logged in Successfully!";
-                    // res.render("login", { err: err });
+                            expires: new Date(Date.now() + 60000000000),
+                            httpOnly: true
+                        })
+                        // err = "Logged in Successfully!";
+                        // res.render("login", { err: err });
                     res.redirect("/");
                 }
             } else {
@@ -619,7 +626,7 @@ app.post("/login", async (req, res) => {
     }
 })
 
-app.get("/properties", async (req, res) => {
+app.get("/properties", async(req, res) => {
     try {
 
         const getHome = await home.find({});
@@ -636,7 +643,7 @@ app.get("/properties", async (req, res) => {
 })
 
 
-app.post("/verifyOtp", async (req, res) => {
+app.post("/verifyOtp", async(req, res) => {
     try {
         const updateUser = await user.updateOne({ phone: req.body.mobileNo }, { $set: { isVerified: true } });
         console.log(updateUser);
@@ -648,7 +655,7 @@ app.post("/verifyOtp", async (req, res) => {
 })
 
 
-app.get("/verifyOtp", async (req, res) => {
+app.get("/verifyOtp", async(req, res) => {
     try {
         console.log("im in verify otp")
         var phoneNos = req.query.phoneNo;
@@ -663,7 +670,7 @@ app.get("/verifyOtp", async (req, res) => {
 })
 
 
-app.post("/users", async (req, res) => {
+app.post("/users", async(req, res) => {
     try {
         const regiUser = new user(req.body);
         console.log(req.body);
@@ -690,54 +697,54 @@ app.post("/logout", (req, res) => {
 
 })
 
-app.get("/deptlogin/", async (req, res) => {
+app.get("/deptlogin/", async(req, res) => {
     try {
         res.render("deptlogin");
     } catch (e) {
         res.render(e);
     }
 });
-app.post("/deptlogin/", async (req, res) => {
+app.post("/deptlogin/", async(req, res) => {
     try {
-            admin0 = req.body.ad0;
-            admin1 = req.body.ad1;
-            var err;
-            const getCountUsers = await user.count({}, function (err, count) {
-                console.log("Number of users:", count);
-            })
-            const getCountHome = await home.count({}, function (err, countHome) {
-                console.log("Number of home:", countHome);
-            })
-            const getCountMeg = await message.count({}, function (err, countMsg) {
-                console.log("Number of msg:", countMsg);
-            })
-            const getCountinterest = await homeInterest.count({}, function (err, countInterest) {
-                console.log("Number of homeInterest:", countInterest);
-            })
-            if (admin0 == "admin" && admin1 == "admin") {
-                res.render("database", { success: "true" , count: getCountUsers, countHome: getCountHome, countMsg: getCountMeg, countInterest: getCountinterest });
-            } else {
-                err = " username or password is wrong, please try again ! ";
-               res.render("deptlogin", { success: "false" , err : err });
-            }
+        admin0 = req.body.ad0;
+        admin1 = req.body.ad1;
+        var err;
+        const getCountUsers = await user.count({}, function(err, count) {
+            console.log("Number of users:", count);
+        })
+        const getCountHome = await home.count({}, function(err, countHome) {
+            console.log("Number of home:", countHome);
+        })
+        const getCountMeg = await message.count({}, function(err, countMsg) {
+            console.log("Number of msg:", countMsg);
+        })
+        const getCountinterest = await homeInterest.count({}, function(err, countInterest) {
+            console.log("Number of homeInterest:", countInterest);
+        })
+        if (admin0 == "admin" && admin1 == "admin") {
+            res.render("database", { success: "true", count: getCountUsers, countHome: getCountHome, countMsg: getCountMeg, countInterest: getCountinterest });
+        } else {
+            err = " username or password is wrong, please try again ! ";
+            res.render("deptlogin", { success: "false", err: err });
+        }
     } catch (e) {
         res.send(e);
         res.render("deptlogin", { success: "false" });
     }
 });
 
-app.get("/database/", async (req, res) => {
+app.get("/database/", async(req, res) => {
     try {
-        const getCountUsers = await user.count({}, function (err, count) {
+        const getCountUsers = await user.count({}, function(err, count) {
             console.log("Number of users:", count);
         })
-        const getCountHome = await home.count({}, function (err, countHome) {
+        const getCountHome = await home.count({}, function(err, countHome) {
             console.log("Number of home:", countHome);
         })
-        const getCountMeg = await message.count({}, function (err, countMsg) {
+        const getCountMeg = await message.count({}, function(err, countMsg) {
             console.log("Number of msg:", countMsg);
         })
-        const getCountinterest = await homeInterest.count({}, function (err, countInterest) {
+        const getCountinterest = await homeInterest.count({}, function(err, countInterest) {
             console.log("Number of homeInterest:", countInterest);
         })
         res.render("database", { count: getCountUsers, countHome: getCountHome, countMsg: getCountMeg, countInterest: getCountinterest });
@@ -746,134 +753,134 @@ app.get("/database/", async (req, res) => {
     }
 });
 
-app.get("/database/users", async (req, res) => {
+app.get("/database/users", async(req, res) => {
     try {
         const getUsers = await user.find({}).sort({ _id: -1 });
-        const getCountUsers = await user.count({}, function (err, count) {
+        const getCountUsers = await user.count({}, function(err, count) {
             console.log("Number of users:", count);
         })
-        
+
 
         var created_at = req.body.created_at;
         let createdOn = moment(created_at).toString();
 
-        res.render("usersData" , {getUsers, count: getCountUsers, moment : moment});
+        res.render("usersData", { getUsers, count: getCountUsers, moment: moment });
     } catch (e) {
         res.send(e);
     }
 });
-app.get("/database/users/delete", async (req, res) => {
+app.get("/database/users/delete", async(req, res) => {
     try {
         const id = req.query._id;
-        const getdelete = await user.findByIdAndRemove(id, function(err){
-            if(err){
+        const getdelete = await user.findByIdAndRemove(id, function(err) {
+            if (err) {
                 res.status(200).json({
                     message: 'fail to delete',
                 });
             } else {
                 res.redirect("/database/users");
             }
-         });
-       
+        });
+
     } catch (e) {
         res.send(e);
     }
 });
 
-app.get("/database/homes", async (req, res) => {
+app.get("/database/homes", async(req, res) => {
     try {
         const getHome = await home.find({}).sort({ _id: -1 });
-        const getCountHome = await home.count({}, function (err, countHome) {
+        const getCountHome = await home.count({}, function(err, countHome) {
             console.log("Number of home:", countHome);
         })
-        res.render("homeData" , {getHome, countHome : getCountHome });
+        res.render("homeData", { getHome, countHome: getCountHome });
     } catch (e) {
         res.send(e);
     }
 });
-app.get("/database/homes/delete", async (req, res) => {
+app.get("/database/homes/delete", async(req, res) => {
     try {
         const id = req.query._id;
-        const getdelete = await home.findByIdAndRemove(id, function(err){
-            if(err){
+        const getdelete = await home.findByIdAndRemove(id, function(err) {
+            if (err) {
                 res.status(200).json({
                     message: 'fail to delete',
                 });
             } else {
                 res.redirect("/database/homes");
             }
-         });
-       
+        });
+
     } catch (e) {
         res.send(e);
     }
 });
 
-app.get("/database/receivedHomeInterests", async (req, res) => {
+app.get("/database/receivedHomeInterests", async(req, res) => {
     try {
         const getHomeInterest = await homeInterest.find({}).sort({ _id: -1 });
-        const getCountinterest = await homeInterest.count({}, function (err, countInterest) {
+        const getCountinterest = await homeInterest.count({}, function(err, countInterest) {
             console.log("Number of homeInterest:", countInterest);
         })
         var requestedAt = req.body.requestedAt;
         let createdOn = moment(requestedAt).toString();
-        res.render("homeInt" , {getHomeInterest, countInterest : getCountinterest , moment : moment });
+        res.render("homeInt", { getHomeInterest, countInterest: getCountinterest, moment: moment });
     } catch (e) {
         res.send(e);
     }
 });
 
-app.get("/database/receivedHomeInterests/delete", async (req, res) => {
+app.get("/database/receivedHomeInterests/delete", async(req, res) => {
     try {
         const id = req.query._id;
-        const getdelete = await homeInterest.findByIdAndRemove(id, function(err){
-            if(err){
+        const getdelete = await homeInterest.findByIdAndRemove(id, function(err) {
+            if (err) {
                 res.status(200).json({
                     message: 'fail to delete',
                 });
             } else {
                 res.redirect("/database/receivedHomeInterests");
             }
-         });
-       
+        });
+
     } catch (e) {
         res.send(e);
     }
 });
 
-app.get("/database/messages", async (req, res) => {
+app.get("/database/messages", async(req, res) => {
     try {
         const getMsg = await message.find({}).sort({ _id: -1 });
-        const getCountMsg = await message.count({}, function (err, countMsg) {
+        const getCountMsg = await message.count({}, function(err, countMsg) {
             console.log("Number of msg:", countMsg);
         })
         var receivedAt = req.body.receivedAt;
         let createdOn = moment(receivedAt).toString();
-        res.render("userDB_Msg" , {getMsg , countMsg : getCountMsg , moment : moment });
+        res.render("userDB_Msg", { getMsg, countMsg: getCountMsg, moment: moment });
     } catch (e) {
         res.send(e);
     }
 });
 
-app.get("/database/messages/delete", async (req, res) => {
+app.get("/database/messages/delete", async(req, res) => {
     try {
         const id = req.query._id;
-        const getdelete = await message.findByIdAndRemove(id, function(err){
-            if(err){
+        const getdelete = await message.findByIdAndRemove(id, function(err) {
+            if (err) {
                 res.status(200).json({
                     message: 'fail to delete',
                 });
             } else {
                 res.redirect("/database/messages");
             }
-         });
-       
+        });
+
     } catch (e) {
         res.send(e);
     }
 });
 
-app.get("/database/95s20d0205/users", async (req, res) => {
+app.get("/database/95s20d0205/users", async(req, res) => {
     try {
         const getUsers = await user.find({}).sort({ _id: -1 });
         res.status(201).send(getUsers);
@@ -881,7 +888,7 @@ app.get("/database/95s20d0205/users", async (req, res) => {
         res.send(e);
     }
 });
-app.get("/database/95s20d0205/messages", async (req, res) => {
+app.get("/database/95s20d0205/messages", async(req, res) => {
     try {
         const getMsg = await message.find({}).sort({ _id: -1 });
         res.status(201).send(getMsg);
@@ -889,7 +896,7 @@ app.get("/database/95s20d0205/messages", async (req, res) => {
         res.send(e);
     }
 });
-app.get("/database/95s20d0205/homes", async (req, res) => {
+app.get("/database/95s20d0205/homes", async(req, res) => {
     try {
         const getHome = await home.find({}).sort({ _id: -1 });
         res.status(201).send(getHome);
@@ -897,7 +904,7 @@ app.get("/database/95s20d0205/homes", async (req, res) => {
         res.send(e);
     }
 });
-app.get("/database/95s20d0205/receivedHomeInterests", async (req, res) => {
+app.get("/database/95s20d0205/receivedHomeInterests", async(req, res) => {
     try {
         const getHomeInterest = await homeInterest.find({}).sort({ _id: -1 });
         res.status(201).send(getHomeInterest);
@@ -908,7 +915,7 @@ app.get("/database/95s20d0205/receivedHomeInterests", async (req, res) => {
 
 
 
-app.get("*", async (req, res) => {
+app.get("*", async(req, res) => {
     try {
         const userToken = req.cookies.jwt;
         const verifyUser = jwt.verify(userToken, process.env.SECRET_KEY);
@@ -916,12 +923,11 @@ app.get("*", async (req, res) => {
         const userDetails = await user.findOne({ _id: verifyUser._id })
         res.render("404", { user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo });
 
-    }
-    catch (e) {
+    } catch (e) {
         res.render("404")
     }
 });
 //server create
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Express server listening on 3000 port mode");
 });

@@ -20,211 +20,246 @@
   <div style="height: 65px;">
     <%- include ("navbar.ejs") %>
   </div>
-    <% if( typeof foundHome !='undefined' && foundHome==false ){ %>
-      <script>
-        window.location.href = "/"
-      </script>
-      <% } %>
-
-      <% if( typeof interestSubmitted != 'undefined' && interestSubmitted == true ){ %>
-        <script>
-                        swal("Grabbed Your Interest!", "We have successfully registered your interest for this home. We will soon contact you. Thank You", "success")
-                            .then((value) => {
-                                if (value == true) {
-                                    window.location.href = "/"
-                                } else {
-                                    window.location.href = "/"
-                                }
-                            });
-                    
-         </script>
+  <% if( typeof foundHome !='undefined' && foundHome==false ){ %>
+    <script>
+      window.location.href = "/"
+    </script>
     <% } %>
 
-        <% if( typeof foundHome !='undefined' && foundHome==true ){ %>
-          <% getHome.forEach(function (home){ %>
+      <% if( typeof interestSubmitted !='undefined' && interestSubmitted==true ){ %>
+        <script>
+          swal("Grabbed Your Interest!", "We have successfully registered your interest for this home. We will soon contact you. Thank You", "success")
+            .then((value) => {
+              if (value == true) {
+                window.location.href = "/"
+              } else {
+                window.location.href = "/"
+              }
+            });
 
-            <div class="info-sec">
-              <hr>
-              <div class="header-top-info">
-                <div class="price-sec">
-                  <div class="price"><i class="fas fa-rupee-sign"></i>
-                    <%= home.BuildingInformation.offered_at%> <span style="font-size: 2rem; font-weight: 700;"><small>
-                          <%= home.BuildingInformation.sellOrRent %> | <%= home.BuildingInformation.sq_ft %> sq-ft
-                        </small></span>
-                  </div>
-                </div>
-                <div class="loc-sec">
-                  <div class="location"><i class="fas fa-map-marker-alt"></i> Location :</div>
-                  <div class="location-full">
-                   HouseNo. <%= home.BuildingInformation.house_number%> , <%= home.BuildingInformation.building_name%> building , <%= home.BuildingInformation.floor%>th floor , area: <%=home.BuildingInformation.Location.area_name%> , <br>
-                          near:  <%= home.BuildingInformation.Location.nearest_landmark%> , city: <%= home.BuildingInformation.Location.city_name%> , District: <%= home.BuildingInformation.Location.district_name%>  
-                              , State: <%= home.BuildingInformation.Location.state_name%> , Country: <%= home.BuildingInformation.Location.country_name%>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <!-- image gallary -->
-              <h2 class="heading"> <span> Property Images </span></h2>
-              <div class="body">
-                <div class="wrapper">
-                  <div class="gallery">
-                    <div class="image"><span><img src="/images/Reddit-F/<%=home.PropertyImages.first_image%>" onerror="this.src='/images/property/2.jpg'" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
-                    <div class="image"><span><img src="/images/Reddit-F/<%=home.PropertyImages.second_image%>" onerror="this.src='/images/property/3.jpg'" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
-                    <div class="image"><span><img src="/images/Reddit-F/<%=home.PropertyImages.third_image%>" onerror="this.src='/images/property/4.jpg'" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
-                    <div class="image"><span><img src="/images/Reddit-F/<%=home.PropertyImages.fourth_image%>" onerror="this.src='/images/property/5.jpg'" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span></div>
+        </script>
+        <% } %>
 
-                  </div>
-                </div>
-                <div class="preview-box">
-                  <div class="details">
-                    <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
-                    <span class="icon fas fa-times"></span>
-                  </div>
-                  <div class="image-box">
-                    <div class="slide prev"><i class="fas fa-angle-left"></i></div>
-                    <div class="slide next"><i class="fas fa-angle-right"></i></div>
-                    <img src="" alt="">
-                  </div>
-                </div>
-                <div class="shadow"></div>
+          <% if( typeof foundHome !='undefined' && foundHome==true ){ %>
+            <% getHome.forEach(function (home){ %>
 
-              </div>
-
-              
-
-
-              <!-- image gallary -->
-
-              <div class="overview-sec">
-                <div class="overview"> Overviews :</div>
-                <div class="clear-over">
-
-                  <div class="timeadd over">Time added PropertyExpert.Com : <span> <%= moment(home.receivedAt).format('LL');  %>
-                  </span></div>
-                  <div class="owner-list over">
-                    listed by : <span>
-                      <%= home.UserInformation.owner_name%>
-                    </span>
-                  </div>
-                </div>
-                <div class="complete-info">
-                  <div class="details-cell">
-
-                    <div class="detail-cell">
-                      <div class="info-head"><i class="fas fa-home lolololo"></i> Home Type</div>
-                      <div class="info-heads"><%= home.BuildingInformation.home_Type%></div>
+              <div class="info-sec">
+                <hr>
+                <div class="header-top-info">
+                  <div class="price-sec">
+                    <div class="price"><i class="fas fa-rupee-sign"></i>
+                      <%= home.BuildingInformation.offered_at%> <span style="font-size: 2rem; font-weight: 700;"><small>
+                            <%= home.BuildingInformation.sellOrRent %> | <%= home.BuildingInformation.sq_ft %> sq-ft
+                          </small></span>
                     </div>
-                    <div class="detail-cell">
-                      <div class="info-head"><i class="fas fa-tags lolololo"></i> sellOrRent</div>
-                      <div class="info-heads"><%= home.BuildingInformation.sellOrRent%></div>
+                  </div>
+                  <div class="loc-sec">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Location :</div>
+                    <div class="location-full">
+                      HouseNo. <%= home.BuildingInformation.house_number%> , <%=
+                          home.BuildingInformation.building_name%> building , <%= home.BuildingInformation.floor%>th
+                            floor , area: <%=home.BuildingInformation.Location.area_name%> , <br>
+                              near: <%= home.BuildingInformation.Location.nearest_landmark%> , city: <%=
+                                  home.BuildingInformation.Location.city_name%> , District: <%=
+                                    home.BuildingInformation.Location.district_name%>
+                                    , State: <%= home.BuildingInformation.Location.state_name%> , Country: <%=
+                                        home.BuildingInformation.Location.country_name%>
                     </div>
-                    <div class="detail-cell">
-                      <div class="info-head" id="priceCell"><i class="fas fa-rupee-sign lolololo"></i> Offered At</div>
-                      <div class="info-heads"> <%= home.BuildingInformation.offered_at%></div>
-                    </div>
-                    <% if( home.BuildingInformation.rentDeposit != null ){ %>
-                      <div class="detail-cell">
-                        <div class="info-head"><i class="fas fa-rupee-sign lolololo"></i> Rent Deposit</div>
-                        <div class="info-heads"><%= home.BuildingInformation.rentDeposit%></div>
+                  </div>
+                </div>
+                <hr>
+                <!-- image gallary -->
+                <h2 class="heading"> <span> Property Images </span></h2>
+                <div class="body">
+                  <div class="wrapper">
+                    <div class="gallery">
+                      <div class="image"><span><img src="/images/Reddit-F/<%=home.PropertyImages.first_image%>"
+                            onerror="this.src='/images/property/2.jpg'"
+                            alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span>
                       </div>
-                      <% } %>
-                      <div class="detail-cell">
-                        <div class="info-head"><i class="fas fa-parking lolololo"></i> Parking</div>
-                        <div class="info-heads"><%= home.BuildingInformation.parking%></div>
+                      <div class="image"><span><img src="/images/Reddit-F/<%=home.PropertyImages.second_image%>"
+                            onerror="this.src='/images/property/3.jpg'"
+                            alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span>
                       </div>
-                    <div class="detail-cell">
-                      <div class="info-head" id="sq_ftCell"><i class="fas fa-equals lolololo"></i> Sq_ft</div>
-                      <div class="info-heads"> <%= home.BuildingInformation.sq_ft%></div>
-                    </div>
-                    <div class="detail-cell">
-                      <div class="info-head"><i class="fas fa-hand-holding-heart lolololo"></i> age</div>
-                      <div class="info-heads"><%= home.BuildingInformation.age%></div>
-                    </div>
-                    <div class="detail-cell">
-                      <div class="info-head" id="pricePsq_ft"> <i class="fas fa-ruler-combined lolololo"></i> price/sq_ft</div>
-                      <div class="info-heads" id="text9" ><%= (home.BuildingInformation.offered_at / home.BuildingInformation.sq_ft).toFixed(0)%></div>
+                      <div class="image"><span><img src="/images/Reddit-F/<%=home.PropertyImages.third_image%>"
+                            onerror="this.src='/images/property/4.jpg'"
+                            alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span>
+                      </div>
+                      <div class="image"><span><img src="/images/Reddit-F/<%=home.PropertyImages.fourth_image%>"
+                            onerror="this.src='/images/property/5.jpg'"
+                            alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day)."></span>
+                      </div>
+
                     </div>
                   </div>
+                  <div class="preview-box">
+                    <div class="details">
+                      <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
+                      <span class="icon fas fa-times"></span>
+                    </div>
+                    <div class="image-box">
+                      <div class="slide prev"><i class="fas fa-angle-left"></i></div>
+                      <div class="slide next"><i class="fas fa-angle-right"></i></div>
+                      <img src="" alt="">
+                    </div>
+                  </div>
+                  <div class="shadow"></div>
+
                 </div>
 
-              <form action="/homeInterest" method="POST" class="form">
-                <div class="header-form">Interested in touring and buying/Renting Home?</div>
-                <div class="user_infos">
-                  <div class="user-info">
-                    <div class="userinfo">Name</div>
-                    <input type="text" class="input_filed" placeholder="enter name" value="<%= userName%>"
-                      readonly>
+
+
+
+                <!-- image gallary -->
+
+                <div class="overview-sec">
+                  <div class="overview"> Overviews :</div>
+                  <div class="clear-over">
+
+                    <div class="timeadd over">Time added PropertyExpert.Com : <span>
+                        <%= moment(home.receivedAt).format('LL'); %>
+                      </span></div>
+                    <div class="owner-list over">
+                      listed by : <span>
+                        <%= home.UserInformation.owner_name%>
+                      </span>
+                    </div>
                   </div>
-                  <div class="user-info">
-                    <div class="userinfo">Phone</div>
-                    <input type="text" class="input_filed" placeholder="enter phone" value="<%= userPhone%>" readonly>
+                  <div class="complete-info">
+                    <div class="details-cell">
+
+                      <div class="detail-cell">
+                        <div class="info-head"><i class="fas fa-home lolololo"></i> Home Type</div>
+                        <div class="info-heads">
+                          <%= home.BuildingInformation.home_Type%>
+                        </div>
+                      </div>
+                      <div class="detail-cell">
+                        <div class="info-head"><i class="fas fa-tags lolololo"></i> sellOrRent</div>
+                        <div class="info-heads">
+                          <%= home.BuildingInformation.sellOrRent%>
+                        </div>
+                      </div>
+                      <div class="detail-cell">
+                        <div class="info-head" id="priceCell"><i class="fas fa-rupee-sign lolololo"></i> Offered At
+                        </div>
+                        <div class="info-heads">
+                          <%= home.BuildingInformation.offered_at%>
+                        </div>
+                      </div>
+                      <% if( home.BuildingInformation.rentDeposit !=null ){ %>
+                        <div class="detail-cell">
+                          <div class="info-head"><i class="fas fa-rupee-sign lolololo"></i> Rent Deposit</div>
+                          <div class="info-heads">
+                            <%= home.BuildingInformation.rentDeposit%>
+                          </div>
+                        </div>
+                        <% } %>
+                          <div class="detail-cell">
+                            <div class="info-head"><i class="fas fa-parking lolololo"></i> Parking</div>
+                            <div class="info-heads">
+                              <%= home.BuildingInformation.parking%>
+                            </div>
+                          </div>
+                          <div class="detail-cell">
+                            <div class="info-head" id="sq_ftCell"><i class="fas fa-equals lolololo"></i> Sq_ft</div>
+                            <div class="info-heads">
+                              <%= home.BuildingInformation.sq_ft%>
+                            </div>
+                          </div>
+                          <div class="detail-cell">
+                            <div class="info-head"><i class="fas fa-hand-holding-heart lolololo"></i> age</div>
+                            <div class="info-heads">
+                              <%= home.BuildingInformation.age%>
+                            </div>
+                          </div>
+                          <div class="detail-cell">
+                            <div class="info-head" id="pricePsq_ft"> <i class="fas fa-ruler-combined lolololo"></i>
+                              price/sq_ft</div>
+                            <div class="info-heads" id="text9">
+                              <%= (home.BuildingInformation.offered_at / home.BuildingInformation.sq_ft).toFixed(0)%>
+                            </div>
+                          </div>
+                    </div>
                   </div>
-                  <div class="user-info">
-                    <div class="userinfo">Email</div>
-                    <input type="text" class="input_filed" placeholder="enter email" value="<%= userEmail%>"
-                      readonly>
-                  </div>
-                  <div class="user-info">
-                    <div class="userinfo">Massage <small>(optional)</small></div>
-                    <input type="text" name="message_add" class="input_filed" placeholder="enter msg"
-                      value="I am interested in area: <%=home.BuildingInformation.Location.area_name%> ,near:  <%= home.BuildingInformation.Location.nearest_landmark%> , city: <%= home.BuildingInformation.Location.city_name%> , District: <%= home.BuildingInformation.Location.district_name%> State: <%= home.BuildingInformation.Location.state_name%> , Country: <%= home.BuildingInformation.Location.country_name%>">
-                  </div>
-                  <br>
-                  <div class="header-popup">Give the agent more details !</div>
-                  <div class="user-info">
-                    <div class="userinfo">is this your first time buying home?</div>
-                    <select name="buying_firstTime" id="select" required>
-                      <option value="Choose" selected disabled>CHOOSE</option>
-                      <option value="YES">YES</option>
-                      <option value="NO">NO</option>
-                    </select>
-                  </div>
-                  <div class="user-info">
-                    <div class="userinfo">When do you plan on buying/Renting a home?</div>
-                    <select name="plan_on_buying_home" id="select2" required>
-                      <option value="Choose" selected disabled>CHOOSE</option>
-                      <option value="0-3 month"> 0-3 month </option>
-                      <option value="3-6 month"> 3-6 month </option>
-                      <option value="6-12 month"> 6-12 month </option>
-                      <option value="12+ month"> 12+ month </option>
-                      <option value="I am not sure">I am not sure</option>
-                    </select>
-                  </div>
-                  <div class="user-info">
-                    <div class="userinfo">Are you or your spouse a veteran or active military?</div>
-                    <select name="active_military_status" id="select3" required>
-                      <option value="Choose" selected disabled>CHOOSE</option>
-                      <option value="YES">YES</option>
-                      <option value="NO">NO</option>
-                    </select>
-                  </div>
+
+                  <form action="/homeInterest" method="POST" class="form">
+                    <div class="header-form">Interested in touring and buying/Renting Home?</div>
+                    <div class="user_infos">
+                      <div class="user-info">
+                        <div class="userinfo">Name</div>
+                        <input type="text" class="input_filed" placeholder="enter name" value="<%= userName%>" readonly>
+                      </div>
+                      <div class="user-info">
+                        <div class="userinfo">Phone</div>
+                        <input type="text" class="input_filed" placeholder="enter phone" value="<%= userPhone%>"
+                          readonly>
+                      </div>
+                      <div class="user-info">
+                        <div class="userinfo">Email</div>
+                        <input type="text" class="input_filed" placeholder="enter email" value="<%= userEmail%>"
+                          readonly>
+                      </div>
+                      <div class="user-info">
+                        <div class="userinfo">Massage <small>(optional)</small></div>
+                        <input type="text" name="message_add" class="input_filed" placeholder="enter msg"
+                          value="I am interested in area: <%=home.BuildingInformation.Location.area_name%> ,near:  <%= home.BuildingInformation.Location.nearest_landmark%> , city: <%= home.BuildingInformation.Location.city_name%> , District: <%= home.BuildingInformation.Location.district_name%> State: <%= home.BuildingInformation.Location.state_name%> , Country: <%= home.BuildingInformation.Location.country_name%>">
+                      </div>
+                      <br>
+                      <div class="header-popup">Give the agent more details !</div>
+                      <div class="user-info">
+                        <div class="userinfo">is this your first time buying home?</div>
+                        <select name="buying_firstTime" id="select" required>
+                          <option value="Choose" selected disabled>CHOOSE</option>
+                          <option value="YES">YES</option>
+                          <option value="NO">NO</option>
+                        </select>
+                      </div>
+                      <div class="user-info">
+                        <div class="userinfo">When do you plan on buying/Renting a home?</div>
+                        <select name="plan_on_buying_home" id="select2" required>
+                          <option value="Choose" selected disabled>CHOOSE</option>
+                          <option value="0-3 month"> 0-3 month </option>
+                          <option value="3-6 month"> 3-6 month </option>
+                          <option value="6-12 month"> 6-12 month </option>
+                          <option value="12+ month"> 12+ month </option>
+                          <option value="I am not sure">I am not sure</option>
+                        </select>
+                      </div>
+                      <div class="user-info">
+                        <div class="userinfo">Are you or your spouse a veteran or active military?</div>
+                        <select name="active_military_status" id="select3" required>
+                          <option value="Choose" selected disabled>CHOOSE</option>
+                          <option value="YES">YES</option>
+                          <option value="NO">NO</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <div id="container-forms">
+                      <button
+                        onclick="DoFast('?home_id=<%= home._id %>&owner=<%= home.UserInformation.owner_name %>&ownerPhone=<%= home.UserInformation.owner_phone%>&sellOrRent=<%= home.BuildingInformation.sellOrRent %>&offered_at=<%= home.BuildingInformation.offered_at %>&rentDeposit=<%= home.BuildingInformation.rentDeposit %>&first_image=<%= home.PropertyImages.first_image %>&second_image=<%= home.PropertyImages.second_image %>&third_image=<%= home.PropertyImages.third_image %>&fourth_image=<%= home.PropertyImages.fourth_image %>&home_Type=<%= home.BuildingInformation.home_Type %>&area_name=<%= home.BuildingInformation.Location.area_name %>&district_name=<%= home.BuildingInformation.Location.district_name %>&city_name=<%= home.BuildingInformation.Location.city_name %>&nearest_landmark=<%= home.BuildingInformation.Location.nearest_landmark %>&sq_ft=<%= home.BuildingInformation.sq_ft %>&parking=<%= home.BuildingInformation.parking %>&floor=<%= home.BuildingInformation.floor %>&age=<%= home.BuildingInformation.age %>&user_id=<%= user %>&userName=<%= userName %>&userPhone=<%= userPhone %>&state_name=<%= home.BuildingInformation.Location.state_name %>&country_name=<%= home.BuildingInformation.Location.country_name %>&house_number=<%= home.BuildingInformation.house_number %>&building_name=<%= home.BuildingInformation.building_name %>')"
+                        class="input" id="button-2" type="submit">Show Your Interest ❤️</button>
+                    </div>
+
+                  </form>
                 </div>
-              
+                <% }) %>
+                  <% } %>
+                    <!-- {{!-- things end here --}} -->
 
-                <div id="container-forms">
-                  
-                  <!-- <button
-                    onclick="DoFast('?home_id=<%= home._id %>&owner=<%= home.owner_name %>&sellOrRent=<%= home.sellOrRent %>&offered_at=<%= home.offered_at %>&first_image=<%= home.first_image %>&second_image=<%= home.second_image %>&third_image=<%= home.third_image %>&fourth_image=<%= home.fourth_image %>&home_Type=<%= home.home_Type %>&area_name=<%= home.area_name %>&city_name=<%= home.city_name %>&nearest_landmark=<%= home.nearest_landmark %>&sq_ft=<%= home.sq_ft %>&parking=<%= home.parking %>&floor=<%= home.floor %>&age=<%= home.age %>&user_id=<%= user %>&user_name=<%= userName %>&user_phone=<%= userPhone %>&state_name=<%= home.state_name %>&country_name=<%= home.country_name %>')"
-                    style="text-align: center; display: none;" class="input" id="primaryButton" type="button">  Show Your Interest ❤️</button> -->
-                    <button onclick="DoFast('?home_id=<%= home._id %>&owner=<%= home.UserInformation.owner_name %>&ownerPhone=<%= home.UserInformation.owner_phone%>&sellOrRent=<%= home.BuildingInformation.sellOrRent %>&offered_at=<%= home.BuildingInformation.offered_at %>&rentDeposit=<%= home.BuildingInformation.rentDeposit %>&first_image=<%= home.PropertyImages.first_image %>&second_image=<%= home.PropertyImages.second_image %>&third_image=<%= home.PropertyImages.third_image %>&fourth_image=<%= home.PropertyImages.fourth_image %>&home_Type=<%= home.BuildingInformation.home_Type %>&area_name=<%= home.BuildingInformation.Location.area_name %>&district_name=<%= home.BuildingInformation.Location.district_name %>&city_name=<%= home.BuildingInformation.Location.city_name %>&nearest_landmark=<%= home.BuildingInformation.Location.nearest_landmark %>&sq_ft=<%= home.BuildingInformation.sq_ft %>&parking=<%= home.BuildingInformation.parking %>&floor=<%= home.BuildingInformation.floor %>&age=<%= home.BuildingInformation.age %>&user_id=<%= user %>&userName=<%= userName %>&userPhone=<%= userPhone %>&state_name=<%= home.BuildingInformation.Location.state_name %>&country_name=<%= home.BuildingInformation.Location.country_name %>&house_number=<%= home.BuildingInformation.house_number %>&building_name=<%= home.BuildingInformation.building_name %>')" class="input" id="button-2" type="submit">Show Your Interest ❤️</button>
-                </div>
+</body>
+<%- include ("footer.ejs") %>
+  <script src="../jq/jquery.js" type="text/javascript"></script>
 
-              </form>
-            </div>
-            <% }) %>
-            <% } %>
-              <!-- {{!-- things end here --}} -->
+  <!-- <script src="../js/bootstrap.js" type="text/javascript"></script> -->
+  <!--jq cnd link-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--custom js link-->
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
-            </body>
-            <%- include ("footer.ejs") %>
-<script src="../jq/jquery.js" type="text/javascript"></script>
-
-<!-- <script src="../js/bootstrap.js" type="text/javascript"></script> -->
-<!--jq cnd link-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!--custom js link-->
-<script src="js/main.js"></script>
-<script src="js/home.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </html>

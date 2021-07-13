@@ -1,11 +1,9 @@
-
 .home {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background: url(/images/Marjorie-Holmes.png);
-    
     background-size: cover;
     border-radius: 0 0 10px 10px;
     background-position: center;
@@ -30,22 +28,18 @@
 }
 
 .home .content p {
-   
     font-size: 2.5rem;
     color: #000000;
     text-align: center;
     font-weight: 700;
-   
-
     padding: 1rem 0;
 }
 
-.btnn{
+.btnn {
     height: 4.5rem;
     width: 19rem;
     color: rgb(255, 255, 255);
     font-weight: 700;
-    
     border: .2rem solid var(--red);
     outline: .2rem solid var(--red);
     outline-offset: -.8rem;
@@ -53,28 +47,25 @@
     margin: 1.5rem 0;
     cursor: pointer;
     background: none;
-    
 }
+
 .home .btnn {
-    
-    background: rgba( 255, 127, 0, 0.35 );
+    background: rgba( 255, 127, 0, 0.35);
     box-shadow: 10px 15px 32px 10px rgb(255, 255, 255);
     color: white;
-    
 }
 
 .home .plus {
     border-radius: 25px;
-    background-color:var(--red);
+    background-color: var(--red);
 }
 
-.btnn:hover{
+.btnn:hover {
     outline-offset: .4rem;
     background: var(--red);
     border-radius: 0px;
     color: white;
 }
-
 
 .homelook {
     text-align: center;
@@ -91,7 +82,6 @@
     border-bottom: 1px solid darkgray;
 }
 
-
 .look-property {
     min-height: 100vh;
 }
@@ -102,9 +92,9 @@
     font-size: 2.2rem;
     margin-top: 25px;
     font-weight: 700;
-} 
+}
 
-.look-property .img-box  {
+.look-property .img-box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +117,7 @@
     object-fit: cover;
 }
 
-.look-property .img-box .box h2{
+.look-property .img-box .box h2 {
     text-align: center;
     font-size: 3rem;
     font-weight: 100 !important;
@@ -142,7 +132,7 @@
     color: gray;
 }
 
-.look-property .img-box .box .buttons{
+.look-property .img-box .box .buttons {
     text-align: center;
     font-size: 2rem;
     margin: 2.9rem;
@@ -156,29 +146,23 @@
     transition: 150ms ease-in;
 }
 
-.look-property .img-box .box:hover > .buttons a {
-    color:whitesmoke;
+.look-property .img-box .box:hover>.buttons a {
+    color: whitesmoke;
     background-color: var(--red);
     font-size: 2.2rem;
 }
 
-
-
 .index-prop {
     padding: 60px 30px;
-
 }
 
 .wrapperss {
     max-height: 294px;
-
     display: flex;
     margin-top: 50px;
     overflow-x: scroll;
     padding: 20px 5px;
-
     width: 100%;
-
 }
 
 .wrapperss .item {
@@ -190,11 +174,11 @@
     line-height: 25px;
     border-radius: 20px;
     text-align: center;
-    background: rgba( 255, 255, 255, 0.75 );
-box-shadow: 0 8px 14px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 8.0px );
--webkit-backdrop-filter: blur( 8.0px );
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba( 255, 255, 255, 0.75);
+    box-shadow: 0 8px 14px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 8.0px);
+    -webkit-backdrop-filter: blur( 8.0px);
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
 .item img {
@@ -207,4 +191,3 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     font-size: 1.5rem;
     font-weight: bold;
 }
-

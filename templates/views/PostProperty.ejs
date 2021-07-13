@@ -19,70 +19,64 @@
 <body style="overflow: hidden !important;">
     <div style="height: 65px;">
         <%- include ("navbar.ejs") %>
-      </div>
+    </div>
 
-        <!-- {{!-- things start here --}} -->
+    <!-- {{!-- things start here --}} -->
 
-        <section class="postprop">
+    <section class="postprop">
 
-            <div class="post-title">
-                <h2>FILL ALL REQUIRED INFORMATIONS</h2>
+        <div class="post-title">
+            <h2>FILL ALL REQUIRED INFORMATIONS</h2>
 
 
-            </div>
+        </div>
 
-            <form action="/PostProperty" method="POST" enctype="multipart/form-data" autocomplete="off"
-                class="container">
-                <div class="upload_block active_div" id="div1">
-                    <div class="heading">Uploader Details</div>
-                    <div class="uploader-info">
-                        <div class="uploader-details">
-                            <h2>Uploader Name</h2>
-                            <input class="input_filed" id="user_name" type="text" name="uploader_name"
-                                value="<%= userName%>" readonly>
-                        </div>
-                        <div class="uploader-details">
-                            <h2>Uploader Phone</h2>
-                            <input class="input_filed" type="tel" id="user_phone" name="uploader_phone"
-                                value="<%= userPhone%>" readonly>
-                        </div>
-                        <div class="uploader-details">
-                            <h2>Uploader email</h2>
-                            <input style="text-transform: lowercase;" class="input_filed email" type="email" id="user_email" name="uploader_email"
-                                value="<%= userEmail%>" readonly>
-                        </div>
+        <form action="/PostProperty" method="POST" enctype="multipart/form-data" autocomplete="off" class="container">
+            <div class="upload_block active_div" id="div1">
+                <div class="heading">Uploader Details</div>
+                <div class="uploader-info">
+                    <div class="uploader-details">
+                        <h2>Uploader Name</h2>
+                        <input class="input_filed" id="user_name" type="text" name="uploader_name" value="<%= userName%>" readonly>
+                        <input type="text" value="<%= user %>" name="user_idbyUp" readonly hidden>
                     </div>
-                    <div class="heading">Owner Details</div>
-                    <div class="uploader-info owner-info">
-                        <input type="checkbox" id="switch" class="checkbox" onclick="sameAsAbove()" />
-                        <label for="switch" class="toggle" id="swiched"></label>
-                        <h4>Same as above</h4>
-                        <div class="uploader-details">
-                            <h2>Owner Name</h2>
-                            <input class="input_filed" type="text" name="owner_name" id="owner_name"
-                                placeholder="Enter your name">
-                        </div>
-                        <div class="uploader-details">
-                            <h2>Owner Phone</h2>
-                            <input class="input_filed" type="tel" name="owner_phone" id="owner_phone"
-                                placeholder="Enter your phone">
-                        </div>
-                        <div class="uploader-details">
-                            <h2>Owner email</h2>
-                            <input style="text-transform: lowercase;" class="input_filed email" type="email" id="owner_email" name="owner_email"
-                                placeholder="Enter your email">
-                        </div>
-                        
+                    <div class="uploader-details">
+                        <h2>Uploader Phone</h2>
+                        <input class="input_filed" type="tel" id="user_phone" name="uploader_phone" value="<%= userPhone%>" readonly>
                     </div>
-                    <div class="uploader-info">
-
-                        <div class="next_back_button">
-                            <div class="next_btn" onclick="next(1)">Next</div>
-                        </div>
+                    <div class="uploader-details">
+                        <h2>Uploader email</h2>
+                        <input style="text-transform: lowercase;" class="input_filed email" type="email" id="user_email" name="uploader_email" value="<%= userEmail%>" readonly>
                     </div>
                 </div>
-                <div id="div2" class="upload_block">
-                    <div class="heading">Home Details</div>
+                <div class="heading">Owner Details</div>
+                <div class="uploader-info owner-info">
+                    <input type="checkbox" id="switch" class="checkbox" onclick="sameAsAbove()" />
+                    <label for="switch" class="toggle" id="swiched"></label>
+                    <h4>Same as above</h4>
+                    <div class="uploader-details">
+                        <h2>Owner Name</h2>
+                        <input class="input_filed" type="text" name="owner_name" id="owner_name" placeholder="Enter your name">
+                    </div>
+                    <div class="uploader-details">
+                        <h2>Owner Phone</h2>
+                        <input class="input_filed" type="tel" name="owner_phone" id="owner_phone" placeholder="Enter your phone">
+                    </div>
+                    <div class="uploader-details">
+                        <h2>Owner email</h2>
+                        <input style="text-transform: lowercase;" class="input_filed email" type="email" id="owner_email" name="owner_email" placeholder="Enter your email">
+                    </div>
+
+                </div>
+                <div class="uploader-info">
+
+                    <div class="next_back_button">
+                        <div class="next_btn" onclick="next(1)">Next</div>
+                    </div>
+                </div>
+            </div>
+            <div id="div2" class="upload_block">
+                <div class="heading">Home Details</div>
                 <div class="prop-info">
                     <div class="prop-details">
                         <h2>Home Type</h2>
@@ -100,28 +94,23 @@
                     </div>
                     <div class="prop-details">
                         <h2>House Number</h2>
-                        <input class="input_filed_home" id="house_number" type="text" name="house_number"
-                            placeholder="Enter house no.">
+                        <input class="input_filed_home" id="house_number" type="text" name="house_number" placeholder="Enter house no.">
                     </div>
                     <div class="prop-details">
                         <h2>Square Ft. area</h2>
-                        <input class="input_filed_home" id="sq_ft" type="number" name="sq_ft"
-                            placeholder="Enter Square feet area eg. 3000 sq.ft">
+                        <input class="input_filed_home" id="sq_ft" type="number" name="sq_ft" placeholder="Enter Square feet area eg. 3000 sq.ft">
                     </div>
                     <div class="prop-details">
                         <h2>Home availble on floor</h2>
-                        <input class="input_filed_home" id="floor" type="number" name="floor"
-                            placeholder="On which floor home is">
+                        <input class="input_filed_home" id="floor" type="number" name="floor" placeholder="On which floor home is">
                     </div>
                     <div class="prop-details">
                         <h2>Building Name</h2>
-                        <input class="input_filed_home" id="building_name" type="text" name="building_name"
-                            placeholder="Enter Building name">
+                        <input class="input_filed_home" id="building_name" type="text" name="building_name" placeholder="Enter Building name">
                     </div>
                     <div class="prop-details">
                         <h2>age of property</h2>
-                        <input class="input_filed_home" id="age" type="number" name="age"
-                            placeholder="how long it being property built?">
+                        <input class="input_filed_home" id="age" type="number" name="age" placeholder="how long it being property built?">
                     </div>
                     <div class="prop-details">
                         <h2>Parking space</h2>
@@ -134,33 +123,27 @@
                     </div>
                     <div class="prop-details">
                         <h2>Area Name</h2>
-                        <input class="input_filed_home" id="area_name" type="text" name="area_name"
-                            placeholder="Enter area name">
+                        <input class="input_filed_home" id="area_name" type="text" name="area_name" placeholder="Enter area name">
                     </div>
                     <div class="prop-details">
                         <h2>Nearest Landmark</h2>
-                        <input class="input_filed_home" id="nearest_landmark" type="text" name="nearest_landmark"
-                            placeholder="Enter nearest landmark eg. hospital,temple">
+                        <input class="input_filed_home" id="nearest_landmark" type="text" name="nearest_landmark" placeholder="Enter nearest landmark eg. hospital,temple">
                     </div>
                     <div class="prop-details">
                         <h2>City Name</h2>
-                        <input class="input_filed_home" id="city_name" type="text" name="city_name"
-                            placeholder="Enter city name">
+                        <input class="input_filed_home" id="city_name" type="text" name="city_name" placeholder="Enter city name">
                     </div>
                     <div class="prop-details">
                         <h2>District Name</h2>
-                        <input class="input_filed_home" id="city_name" type="text" name="district_name"
-                            placeholder="Enter District name">
+                        <input class="input_filed_home" id="city_name" type="text" name="district_name" placeholder="Enter District name">
                     </div>
                     <div class="prop-details">
                         <h2>state</h2>
-                        <input class="input_filed_home" id="state_name" type="text" name="state_name"
-                            placeholder="Enter state name">
+                        <input class="input_filed_home" id="state_name" type="text" name="state_name" placeholder="Enter state name">
                     </div>
                     <div class="prop-details">
                         <h2>country</h2>
-                        <input class="input_filed_home" id="country_name" type="text" name="country_name"
-                            placeholder="Enter country name" value="Hindustan (only in IND)" readonly>
+                        <input class="input_filed_home" id="country_name" type="text" name="country_name" placeholder="Enter country name" value="Hindustan (only in IND)" readonly>
                     </div>
                 </div>
                 <div class="uploader-info">
@@ -170,32 +153,31 @@
                         <div class="next_btn" onclick="next(2)">Next</div>
                     </div>
                 </div>
-                </div>
-                <div id="div3" class="upload_block">
-                    <div class="heading">Upload Images</div>
+            </div>
+            <div id="div3" class="upload_block">
+                <div class="heading">Upload Images</div>
                 <div class="image_upload">
                     <h3>Please upload 4 images of your home that attract to customer
-                        <br><br>
-                        (note : images will be publicly release cross this site please upload wisely)
+                        <br><br> (note : images will be publicly release cross this site please upload wisely)
                     </h3>
 
                     <div class="images_file">
                         <h2> First Image </h2>
                         <input type="file" name="first_image" id="image" accept=".jpg,.jpeg,.png">
-                            </div>
-                            <div class=" images_file">
+                    </div>
+                    <div class=" images_file">
                         <h2> Second Image </h2>
                         <input type="file" name="second_image" id="image2" accept=".jpg,.jpeg,.png">
-                            </div>
-                            <div class=" images_file">
+                    </div>
+                    <div class=" images_file">
                         <h2> Third Image </h2>
                         <input type="file" name="third_image" id="image3" accept=".jpg,.jpeg,.png">
-                            </div>
-                            <div class=" images_file">
+                    </div>
+                    <div class=" images_file">
                         <h2> Fourth Image </h2>
                         <input type="file" name="fourth_image" id="image4" accept=".jpg,.jpeg,.png">
-                            </div>
                     </div>
+                </div>
                 <div class="uploader-info">
 
                     <div class="next_back_button">
@@ -204,64 +186,53 @@
                     </div>
                 </div>
 
+            </div>
+
+            <div id="div4" class="upload_block">
+
+
+                <div class=" heading">Sell or Rent & Amount
                 </div>
 
-                <div id="div4" class="upload_block">
+                <div id="message">
 
-
-                    <div class=" heading">Sell or Rent & Amount
+                </div>
+                <div class="type-money-detail" id="money_details">
+                    <div class="money-detail">
+                        <h2 class="jada">Sell or Rent</h2>
+                        <select name="sellOrRent" id="sellOrRent" onchange="myChoose()">
+                            <option value="null" selected disabled> choose </option>
+                            <option value="sell">Sell</option>
+                            <option value="rent">Rent</option>
+                        </select>
                     </div>
-  
-                    <div id="message">
-               
+                    <div class="money-detail hidden" id="selling">
+                        <h2 id="sell_rent_label">Amount </h2>
+                        <input class="input_filed_home" id="amount_value" disabled type="text" name="offered_at" placeholder="Enter Amount">
                     </div>
-                    <div class="type-money-detail" id="money_details">
-                        <div class="money-detail">
-                            <h2 class="jada">Sell or Rent</h2>
-                            <select name="sellOrRent" id="sellOrRent" onchange="myChoose()">
-                                <option value="null" selected disabled> choose </option>
-                                <option value="sell">Sell</option>
-                                <option value="rent">Rent</option>
-                            </select>
-                        </div>
-                        <div class="money-detail hidden" id="selling">
-                            <h2 id="sell_rent_label">Amount </h2>
-                            <input class="input_filed_home" id="amount_value" disabled   type="text" name="offered_at"
-                                placeholder="Enter Amount">
-                        </div>
-                        <div class="money-detail hidden" id="moneyCase">
-                            <h2>Amount of deposit (optional)</h2>
-                            <input class="input_filed_home" type="text" id="moneyValueDepo" name="rentDeposit"
-                                placeholder="Enter Amount of deposit">
-                        </div>
-                    </div>
-                    <div class="uploader-info">
-
-                        <div class="next_back_button">
-                            <div class="back_btn" onclick="back(4)">Back</div>
-                            <input type="submit" id="submit" class="next_btn low_opacity" disabled value="Submit">
-                        </div>
+                    <div class="money-detail hidden" id="moneyCase">
+                        <h2>Amount of deposit (optional)</h2>
+                        <input class="input_filed_home" type="text" id="moneyValueDepo" name="rentDeposit" placeholder="Enter Amount of deposit">
                     </div>
                 </div>
-     
-                    <!-- <div class="buttonProp">
-                        <div class="buttonProps resetbutton">
-                            <input type="reset" value="reset information">
-                        </div>
-                        <div class="buttonProps submitbutton">
-                            <input type="submit" value="submit" >
-                        </div>
-                    </div> -->
-            </form>
+                <div class="uploader-info">
+
+                    <div class="next_back_button">
+                        <div class="back_btn" onclick="back(4)">Back</div>
+                        <input type="submit" id="submit" class="next_btn low_opacity" disabled value="Submit">
+                    </div>
+                </div>
+            </div>
+        </form>
 
 
 
-        </section>
+    </section>
 
 
-        <!-- {{!-- things end here --}} -->
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <%- include ("footer.ejs") %>
+    <!-- {{!-- things end here --}} -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <%- include ("footer.ejs") %>
         <% if(typeof isDone !="undefined" ){ %>
             <script>
                 var heading = "<%= head %>";
@@ -269,10 +240,10 @@
                 var type = "<%= type %>";
                 swal(heading, message, type)
                     .then((value) => {
-                        if(value == true){
+                        if (value == true) {
                             window.location.href = "/"
-                            
-                        }else{
+
+                        } else {
                             window.location.href = "/"
                         }
                     });
@@ -280,11 +251,10 @@
             <% } %>
 </body>
 <script>
-
-    function buttonClick () {
+    function buttonClick() {
         var money_details = document.getElementById("money_details");
         var next = document.getElementById("next");
-        
+
     }
 
     function myChoose() {
@@ -301,20 +271,16 @@
             sell_rent_label.innerHTML = "Enter The Ammount Of Selling"
             var moneyCaseDepo = document.getElementById("moneyValueDepo").value = '';
 
-        }
-        else if (sellOrRent == "rent") {
+        } else if (sellOrRent == "rent") {
             sell_rent.classList.remove("input_with_label2");
             moneyCase.classList.remove("hidden");
             sell_rent.classList.toggle("input_with_label2");
             sell_rent_label.innerHTML = "Enter The Amount Of Rent <span class='small'>(per month)</span>"
-        }
-        else {
+        } else {
             sell_rent.classList.remove("input_with_label2");
 
         }
     }
-
-
 </script>
 
 

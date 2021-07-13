@@ -21,17 +21,17 @@ const messageSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
-  message:{
+  message: {
     type: String,
     required: true,
     trim: true,
   },
-  phone:{
+  phone: {
     type: String,
     required: true,
     trim: true,
   },
-  receivedAt:{
+  receivedAt: {
     type: String,
     default: new Date(),
   }

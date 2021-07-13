@@ -2,9 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
-
-html{
-  scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
 .postprop .post-title h2 {
@@ -12,7 +11,7 @@ html{
     font-family: 'Concert One', cursive;
     word-spacing: 3px;
     text-align: center;
-    text-transform:capitalize;
+    text-transform: capitalize;
     padding: 12px;
     margin: 10px 40px;
     text-shadow: 5px -1px 4px rgba(208, 99, 193, 0.31);
@@ -29,6 +28,7 @@ html{
     text-shadow: -3px 1px 4px rgba(172, 150, 150, 1);
 }
 
+
 /* .postprop .i{
     
     display: flex;
@@ -37,7 +37,10 @@ html{
 
 } */
 
-.postprop .uploader-info, .prop-info , .image_upload , .type-money-detail  {
+.postprop .uploader-info,
+.prop-info,
+.image_upload,
+.type-money-detail {
     display: flex;
     flex-wrap: wrap;
     /* text-align: center; */
@@ -46,19 +49,23 @@ html{
     margin: 1% 3%;
     background: rgb(255, 255, 255);
     box-shadow: 1px 5px 8px 2px rgb(31 38 135 / 37%);
-
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
-.postprop .uploader-details .input_filed , .prop-details .input_filed_home , .money-detail .input_filed_home {
+.postprop .uploader-details .input_filed,
+.prop-details .input_filed_home,
+.money-detail .input_filed_home {
     /* width: 50%; */
     padding: 10px 0;
     margin: 0px 0px 15px 0px;
 }
 
-.uploader-details input , .prop-details input , .prop-details select , .money-detail input ,select {
+.uploader-details input,
+.prop-details input,
+.prop-details select,
+.money-detail input,
+select {
     border-top: none;
     border-left: none;
     border-right: none;
@@ -73,23 +80,28 @@ html{
     padding: 15px 15px;
 }
 
-.uploader-details input:focus ,
-.prop-details input:focus , .money-detail input:focus {
+.uploader-details input:focus,
+.prop-details input:focus,
+.money-detail input:focus {
     border-radius: 10px;
     border-color: mediumvioletred;
 }
 
-.postprop .uploader-details , .prop-details , .images_file , .money-detail {
+.postprop .uploader-details,
+.prop-details,
+.images_file,
+.money-detail {
     margin: 10px 0;
     width: 50%;
 }
 
-
-.postprop .uploader-details h2 , .prop-details h2 , .image_upload h2 , .money-detail h2 {
+.postprop .uploader-details h2,
+.prop-details h2,
+.image_upload h2,
+.money-detail h2 {
     font-size: 2.8rem;
-    text-align:left;
+    text-align: left;
     font-family: 'Source Serif Pro', serif;
-    
     color: rgb(43, 43, 43);
 }
 
@@ -101,15 +113,16 @@ html{
     width: 50%;
     padding: 10px 0px;
     display: inline-block !important;
-  }
-  
-  .input_with_label2 > h2 {
+}
+
+.input_with_label2>h2 {
     font-size: 2.8rem;
-    text-align:left;
+    text-align: left;
     font-family: 'Source Serif Pro', serif;
     color: rgb(43, 43, 43);
-  }
-  .input_with_label2 > input {
+}
+
+.input_with_label2>input {
     width: 90%;
     padding: 8px 6px;
     border-color: var(--red);
@@ -118,12 +131,13 @@ html{
     border-right: none;
     outline: 0;
     font-family: "Poppins", sans-serif;
-  }
-  .input_with_label2 > input:focus {
+}
+
+.input_with_label2>input:focus {
     box-shadow: 0 15px 10px -5px #d1f2eb;
     transition: 0.2s;
     border-radius: 10px;
-  }
+}
 
 .postprop .owner-info {
     display: flex;
@@ -134,60 +148,63 @@ html{
     margin: 1% 3%;
     background: rgb(255, 255, 255);
     box-shadow: 1px 5px 8px 2px rgb(31 38 135 / 37%);
-    backdrop-filter: blur( 2.0px );
-    -webkit-backdrop-filter: blur( 2.0px );
+    backdrop-filter: blur( 2.0px);
+    -webkit-backdrop-filter: blur( 2.0px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
 
+/* toggle in label designing */
+
+.toggle {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    top: 0;
+    left: 0;
+    margin: 20px 0px 0px 85px;
+    height: 32px;
+    background-color: rgb(89, 89, 89);
+    border-radius: 30px;
+    border: 2px solid gray;
+}
 
 
+/* After slide changes */
+
+.toggle:after {
+    content: '';
+    position: absolute;
+    width: 26.5px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    left: 0px;
+    transition: all 0.2s;
+}
 
 
+/* Checkbox cheked effect */
 
-    /* toggle in label designing */
-      .toggle {
-        position : absolute;
-        display : inline-block;
-        width : 50px;
-        top: 0;
-        left: 0;
-        margin: 20px 0px 0px 85px;
-        height : 32px;
-        background-color: rgb(89, 89, 89);
-        border-radius: 30px;
-        border: 2px solid gray;
-    }
-            
-    /* After slide changes */
-    .toggle:after {
-        content: '';
-        position: absolute;
-        width: 26.5px;
-        height: 28px;
-        border-radius: 50%;
-        background-color: rgb(255, 255, 255);
-        top: 0px; 
-        left: 0px;
-        transition:  all 0.2s;
-    }
-            
-    /* Checkbox cheked effect */
-    .checkbox:checked + .toggle::after{
-        left: 20px;
-    }
-            
-    /* Checkbox cheked toggle label bg color */
-    .checkbox:checked + .toggle {
-        background-color: var(--red);
-    }
-            
-    /* Checkbox vanished */
-    .checkbox { 
-        display : none;
-    }
+.checkbox:checked+.toggle::after {
+    left: 20px;
+}
+
+
+/* Checkbox cheked toggle label bg color */
+
+.checkbox:checked+.toggle {
+    background-color: var(--red);
+}
+
+
+/* Checkbox vanished */
+
+.checkbox {
+    display: none;
+}
 
 .postprop .uploader-info h4 {
     width: max-content;
@@ -199,7 +216,8 @@ html{
     color: rgb(82, 114, 145);
 }
 
-.image_upload h3 , .money-detail h3 {
+.image_upload h3,
+.money-detail h3 {
     font-size: 1.5rem;
     width: fit-content;
     border-radius: 15px;
@@ -214,14 +232,16 @@ html{
     margin-top: 10px;
 }
 
+
 /* Hide the browser's default checkbox */
+
 .postprop .money-detail .input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
+}
 
 .postprop .money-detail .checkboxs {
     width: fit-content !important;
@@ -238,16 +258,16 @@ html{
     width: 94%;
     background: rgb(255, 255, 255);
     box-shadow: 1px 1px 2px 1px rgb(31 38 135 / 37%);
-
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
-.buttonProp .buttonProps  {
+.buttonProp .buttonProps {
     width: 47%;
 }
 
-.resetbutton input , .submitbutton input {
+.resetbutton input,
+.submitbutton input {
     font-size: 1.6rem;
     font-weight: 700;
     height: 50px;
@@ -256,14 +276,17 @@ html{
     background: rgb(255, 213, 174);
     padding: 12px;
 }
+
 .small {
     font-size: 0.6em;
     opacity: 0.7;
-  }
-  .small_note {
+}
+
+.small_note {
     font-size: 0.4em;
     opacity: 0.7;
-  }
+}
+
 .alert-warning {
     color: #4f3c03;
     background-color: #fff3cd;
@@ -276,105 +299,116 @@ html{
     text-align: center;
     margin: 2rem;
     border: 1px solid transparent;
-    border-radius:15px;
+    border-radius: 15px;
 }
 
 .errMessage {
     color: #fd6a02;
     font-family: "Poppins", sans-serif;
     font-size: 0.9em;
-  }
+}
 
-  
-  .hidden {
+.hidden {
     display: none;
-  }
-  
-  .active_div {
-    display: inline-block !important;
-    
-  }
+}
 
-  .upload_block {
+.active_div {
+    display: inline-block !important;
+}
+
+.upload_block {
     display: none;
     transition: 1s;
     width: 100%;
-  }
-  
-  .next_back_button {
+}
+
+.next_back_button {
     width: 100%;
     display: flex;
     font-size: 2.5rem !important;
     justify-content: space-between;
     margin: 20px 0px 0px 0px;
-  }
-  
-  .back_btn {
+}
+
+.back_btn {
     border: 3px solid #5d6d7e;
     padding: 5px 20px;
     font-size: 1.2em;
     font-family: "Poppins", sans-serif;
     background-color: #fff;
     color: #5d6d7e;
-  }
-  .back_btn:hover {
+}
+
+.back_btn:hover {
     background-color: #5d6d7e;
     color: #fff;
     transition: 0.2s;
     box-shadow: 0 8px 10px -5px #5d6d7e;
     cursor: pointer !important;
-  }
-  
-  .next_btn {
+}
+
+.next_btn {
     border: 3px solid #5d6d7e;
     padding: 5px 20px;
     font-size: 1.2em;
     font-family: "Poppins", sans-serif;
     background-color: #fff;
     color: #5d6d7e;
-  }
-  .next_btn:hover {
+}
+
+.next_btn:hover {
     background-color: orangered;
     color: #fff;
     transition: 0.2s;
     border: 3px solid orangered;
     box-shadow: 0 8px 10px -5px orangered;
     cursor: pointer !important;
-  } 
-  
-  
-  /* responsiveness */
-  
-  @media (max-width : 824px) {
-    .postprop .uploader-info, .prop-info, .image_upload, .type-money-detail {
-      display: flex;
-      flex-direction: column !important;
-    }
-    .postprop .uploader-details , .prop-details , .images_file , .money-detail {
-      
-      width: 100%;
-  }
-  .uploader-details input , .prop-details input , .prop-details select , .money-detail input ,select {
-    width: 100%;
-  }
-
-  .postprop .uploader-info h4 {
-    left: 15rem;
-  }
-
 }
-  @media (max-width : 536px) {
-    .postprop .uploader-info, .prop-info, .image_upload, .type-money-detail {
-      padding: 20px 40px;
+
+
+/* responsiveness */
+
+@media (max-width: 824px) {
+    .postprop .uploader-info,
+    .prop-info,
+    .image_upload,
+    .type-money-detail {
+        display: flex;
+        flex-direction: column !important;
     }
-    .postprop .owner-info {
-      padding: 30px 40px !important;
+    .postprop .uploader-details,
+    .prop-details,
+    .images_file,
+    .money-detail {
+        width: 100%;
     }
-    .toggle {
-      margin: 10px 0px 0px 40px;
+    .uploader-details input,
+    .prop-details input,
+    .prop-details select,
+    .money-detail input,
+    select {
+        width: 100%;
     }
     .postprop .uploader-info h4 {
-      left: 11rem;
-      top:8px;
+        left: 15rem;
+    }
+}
+
+@media (max-width: 536px) {
+    .postprop .uploader-info,
+    .prop-info,
+    .image_upload,
+    .type-money-detail {
+        padding: 20px 40px;
+    }
+    .postprop .owner-info {
+        padding: 30px 40px !important;
+    }
+    .toggle {
+        margin: 10px 0px 0px 40px;
+    }
+    .postprop .uploader-info h4 {
+        left: 11rem;
+        top: 8px;
     }
 }

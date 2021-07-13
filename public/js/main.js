@@ -10,34 +10,34 @@ $(document).ready(function () {
     $('#user').click(function () {
         $('.user').toggleClass('user-toggle');
     });
-    
-window.onscroll = function() {myFunction()}; 
+
+    window.onscroll = function () { myFunction() };
 
     var header = document.getElementById("header-2");
     var sticky = header.offsetTop;
-    
+
     function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("header-active");
-      } else {
-        header.classList.remove("header-active");
-      }
+        if (window.pageYOffset > sticky) {
+            header.classList.add("header-active");
+        } else {
+            header.classList.remove("header-active");
+        }
     }
 
-    $('.control .button').click(function(e){
+    $('.control .button').click(function (e) {
         $(this).addClass('button-active').siblings().removeClass('button-active');
 
         let filter = $(this).attr('data-filter');
 
-        if(filter == 'all'){
-            
+        if (filter == 'all') {
+
             $('.property .image').show(400);
- 
-        }else {
-            $('.property .image ').not('.'+filter).hide(200);
-            $('.property .image ' ).filter('.'+filter).show(400);
+
+        } else {
+            $('.property .image ').not('.' + filter).hide(200);
+            $('.property .image ').filter('.' + filter).show(400);
         }
-        
+
 
     });
 

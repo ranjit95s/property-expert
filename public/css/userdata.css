@@ -9,34 +9,35 @@ body {
     width: 90%;
     margin: 1% 0% 0% 5%;
     font-size: 1.7rem;
-    border-radius: 20px 20px 0px 0px ;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .container .info-de h1 {
     color: #ffffff;
     font-size: 3rem;
 }
+
 .container .info-de h3 {
     color: #ffffff;
     font-size: 2rem;
 }
+
 .container .info-de h3 span {
     color: #ffffff;
     font-size: 1.5rem;
 }
-
 
 .usermain {
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
     margin: 0% 0% 0% 5%;
-    border-radius: 0px 0px 15px 15px ;
+    border-radius: 0px 0px 15px 15px;
     width: 90%;
     height: max-content;
     align-items: center;
     background-image: linear-gradient(to right top, #ee4365, #f23b5d, #f63254, #f9274b, #fc1b41, #f3143a, #e90b34, #e0002d, #ca0029, #b40024, #9e0020, #89001b);
-border: 1px solid rgba(255, 255, 255, 0.466);
+    border: 1px solid rgba(255, 255, 255, 0.466);
     justify-content: center;
 }
 
@@ -47,9 +48,9 @@ border: 1px solid rgba(255, 255, 255, 0.466);
     position: relative;
     margin: 15px;
     width: max-content;
-    background: rgba( 151, 151, 151, 0.60 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba( 151, 151, 151, 0.60);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
 .userbox .trash {
@@ -62,17 +63,19 @@ border: 1px solid rgba(255, 255, 255, 0.466);
     border-radius: 25%;
     padding: 5px;
     cursor: pointer;
-    color:rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
 }
+
 .userbox .trash:hover {
     border: 1px solid rgb(255, 255, 255);
     background-color: rgb(255, 0, 0);
     color: white;
 }
+
 .main1 {
     display: flex;
     flex-wrap: wrap;
-   height: auto;
+    height: auto;
 }
 
 .main1 .img {
@@ -95,27 +98,27 @@ border: 1px solid rgba(255, 255, 255, 0.466);
 .main1 .user {
     color: white;
     width: 40rem;
-    
 }
 
 .main1 .user h2 {
     margin-top: 15px;
     font-size: 15px;
 }
+
 .main1 .user h3 {
     margin-top: 10px;
     font-size: 15px;
 }
 
-.username-box2 {    
+.username-box2 {
     text-align: center;
     padding: 10px;
     border-radius: 30px;
     margin-top: 5px;
     background: rgba(255, 255, 255, 0.671);
-    backdrop-filter: blur( 8.5px );
-    -webkit-backdrop-filter: blur( 8.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur( 8.5px);
+    -webkit-backdrop-filter: blur( 8.5px);
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
 .username-box2 h1 {
@@ -124,40 +127,42 @@ border: 1px solid rgba(255, 255, 255, 0.466);
 }
 
 .username-box2 h1 i {
-   font-size: 2.3rem;
+    font-size: 2.3rem;
 }
 
-
-@media (max-width : 607px) {
+@media (max-width: 607px) {
     .main1 .user {
         width: 28rem;
     }
-    .username-box2 h1 , .username-box2 h1 i {
+    .username-box2 h1,
+    .username-box2 h1 i {
         font-size: 1.8rem;
     }
 }
-@media (max-width : 478px) {
+
+@media (max-width: 478px) {
     .usermain {
         width: 100%;
         margin: 0;
     }
     .container .info-de {
         width: 100%;
-        margin: 0;  
+        margin: 0;
     }
     .main1 .user {
         width: 32rem;
     }
-    .username-box2 h1 , .username-box2 h1 i {
+    .username-box2 h1,
+    .username-box2 h1 i {
         font-size: 1.9rem;
     }
     .main1 .img {
         width: 8rem;
     }
-    .main1 .user h2{
+    .main1 .user h2 {
         font-size: 15px;
     }
-    .main1 .user h3{
+    .main1 .user h3 {
         font-size: 14px;
     }
     .main1 {
@@ -165,7 +170,7 @@ border: 1px solid rgba(255, 255, 255, 0.466);
     }
 }
 
-@media (max-width : 444px) {
+@media (max-width: 444px) {
     .main1 {
         text-align: center;
         display: block;
@@ -184,8 +189,8 @@ border: 1px solid rgba(255, 255, 255, 0.466);
     .main1 .user h3 {
         font-size: 11px;
     }
-    .username-box2 h1, .username-box2 h1 i {
+    .username-box2 h1,
+    .username-box2 h1 i {
         font-size: 1.5rem;
     }
- }
-
+}

@@ -19,6 +19,7 @@ body {
     font-size: 3.5rem;
     color: white;
 }
+
 .sec .head h2 {
     font-size: 2.5rem;
     color: white;
@@ -35,27 +36,26 @@ body {
     align-items: center;
     background-image: linear-gradient(to left bottom, #005d71, #006170, #00646d, #00676a, #006a66, #006863, #006760, #00655d, #005e5b, #005858, #005155, #004b51);
     box-shadow: 0 8px 26px 0 rgb(31 38 135 / 37%);
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba( 255, 255, 255, 0.18);
     justify-content: center;
 }
+
 .sec .box {
     width: 40rem;
     margin: 1% 2% 2% 2%;
-    
 }
 
 .form .trash {
-    
     font-size: 1.7rem;
     color: red;
     border-radius: 10px;
     padding: 5px;
     border: 2px solid rgb(255, 0, 0);
-    cursor:pointer;
+    cursor: pointer;
 }
+
 .form .trash:hover {
     background-color: black;
-
 }
 
 .sec .box4User {
@@ -65,8 +65,8 @@ body {
     box-shadow: 0 8px 26px 0 rgb(31 38 135 / 37%);
 }
 
-
-.sec .box4User .idbox , .sec .box4Owner .idbox {
+.sec .box4User .idbox,
+.sec .box4Owner .idbox {
     display: flex;
     align-items: center;
     justify-content: space-between !important;
@@ -75,17 +75,18 @@ body {
     padding: 10px;
 }
 
-.sec .box4User .idbox h3 , .sec .box4Owner .idbox h3 {
+.sec .box4User .idbox h3,
+.sec .box4Owner .idbox h3 {
     width: fit-content;
     letter-spacing: 1px;
-    background: rgba( 70, 70, 70, 0.70 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 3.0px );
--webkit-backdrop-filter: blur( 3.0px );
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-padding: 8px;
-border-radius: 8px;
-color: white;
+    background: rgba( 70, 70, 70, 0.70);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 3.0px);
+    -webkit-backdrop-filter: blur( 3.0px);
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
 }
 
 .sec .box4Owner .idbox h3 a {
@@ -97,8 +98,8 @@ color: white;
     color: rgb(200, 200, 255);
 }
 
-
-.sec .box4User .userName h2 , .box4Owner .OwnerName h2 {
+.sec .box4User .userName h2,
+.box4Owner .OwnerName h2 {
     margin-top: 5px;
     margin-bottom: 5px;
     color: #ffffff;
@@ -113,26 +114,29 @@ color: white;
     flex-wrap: wrap;
 }
 
-.userName , .OwnerName {
+.userName,
+.OwnerName {
     width: 62%;
 }
-.userName h2 , .OwnerName h2 , .loc h3 {
+
+.userName h2,
+.OwnerName h2,
+.loc h3 {
     font-size: 1.6rem;
     padding: 3px;
     margin-left: 5px;
 }
 
-
 .addition-info {
     width: 38%;
-    background: rgba( 255, 255, 255, 0.55 );
-    box-shadow: 0 8px 8px 0 rgba( 31, 38, 135, 0.37 );
+    background: rgba( 255, 255, 255, 0.55);
+    box-shadow: 0 8px 8px 0 rgba( 31, 38, 135, 0.37);
     margin-bottom: 5px;
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
-.addition-info .ans{
+.addition-info .ans {
     margin-top: 10px;
     padding: 6px;
     border-radius: 5px;
@@ -143,6 +147,7 @@ color: white;
     font-size: 1.8rem;
     text-align: center;
 }
+
 .addition-info h2 {
     font-size: 1.3rem;
     text-align: center;
@@ -154,12 +159,10 @@ color: white;
     padding: 2px;
     border-radius: 20px 20px 20px 20px;
     background: rgba(255, 255, 255, 0.71);
-    backdrop-filter: blur( 8.5px );
-    -webkit-backdrop-filter: blur( 8.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur( 8.5px);
+    -webkit-backdrop-filter: blur( 8.5px);
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
-
-
 
 .userShowInt {
     background-color: rgb(154 154 154 / 36%);
@@ -179,9 +182,11 @@ color: white;
     text-decoration: underline !important;
     cursor: pointer;
 }
+
 .userShowInt h1:hover {
     color: rgb(51, 51, 51);
 }
+
 .userShowInt h2 {
     font-size: 1.7rem;
     border: 2px solid darkred;
@@ -192,24 +197,26 @@ color: white;
     cursor: pointer;
 }
 
-@media (max-width : 480px) {
-    .userName h2, .OwnerName h2, .loc h3{
+@media (max-width: 480px) {
+    .userName h2,
+    .OwnerName h2,
+    .loc h3 {
         font-size: 1.2rem;
     }
-    .sec{
+    .sec {
         width: 100%;
         margin: 0;
     }
     .sec .head h2 {
         font-size: 1.6rem;
     }
-    .sec .box4User .idbox h3, .sec .box4Owner .idbox h3 {
-      
+    .sec .box4User .idbox h3,
+    .sec .box4Owner .idbox h3 {
         letter-spacing: 0px;
-        background: rgba( 70, 70, 70, 0.70 );
+        background: rgba( 70, 70, 70, 0.70);
         box-shadow: 0 3px 8px 0 rgb(31 38 135 / 37%);
-        backdrop-filter: blur( 0px );
-        -webkit-backdrop-filter: blur( 0px );
+        backdrop-filter: blur( 0px);
+        -webkit-backdrop-filter: blur( 0px);
         padding: 5px;
     }
     .addition-info h1 {

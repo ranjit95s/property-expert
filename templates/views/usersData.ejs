@@ -1,101 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <link rel="stylesheet" href="/css/userdata.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>Admin Panel - Users Data</title>
 </head>
+
 <body>
     <div class="container">
 
-                <div class="info-de">
-                    <h1>Users </h1>
-                    <br>
-                    <h3>Total <%= count %> users <span><a href="/database/95s20d0205/users" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span>OR<span><a href="/database/" target="_self" rel="noopener noreferrer"> (Back To Database) </a></span></h3>
-                </div>
-                
-                <div class="usermain">
+        <div class="info-de">
+            <h1>Users </h1>
+            <br>
+            <h3>Total <%= count %> users <span><a href="/database/95s20d0205/users" target="_blank"
+                            rel="noopener noreferrer"> (view in json format) </a></span>OR<span><a href="/database/"
+                            target="_self" rel="noopener noreferrer"> (Back To Database) </a></span></h3>
+        </div>
 
-                    <!-- here -->
-                    <% getUsers.forEach(function (user){ %>
-                    <div class="userbox">
-                        <div class="username-box1">
-                            <div class="main1">
-                                <div class="img">
-                                    <img src="/images/Reddit-F/<%=user.user_photo%>" alt="" srcset="" onerror="this.src='/images/Reddit-F/d-1.png'">
-                                </div>
-                                <div class="user">
-                                    <h2>
-                                       name : <%= user.name %>
-                                    </h2>
-                                    <h3>
-                                       id : <%= user._id %>
-                                    </h3>
-                                    <form action="/database/users/delete" method="POST">
-                                    <button title="Are You Sure Want to delete <%= user.name %>'s record ?" class="trash" type="button" onclick="userId('?_id=<%= user._id %>')"> <i class="fas fa-trash"></i> </button>
-                                    </form>
-                                    <h3>
-                                       joined on : <%= moment(user.created_at).format('LL');  %>
-                                    </h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="username-box2">
-                                <% if( user.isVerified != false ){ %>
-                                <h1 style="color: green;">
-                                   <i class="fas fa-user-check"> Verifyed </i>
-                                </h1>
-                                <% } %>
-                                <% if( user.isVerified != true ){ %>
-                                <h1 style="color: red;">
-                                   <i class="fas fa-user-times"> Non-Verifyed </i>
-                                </h1>
-                                <% } %>
-                                <h1>
-                                   <i class="fas fa-phone-alt"></i> <%= user.phone %>
-                                </h1>
-                                <h1 style="text-transform: lowercase;">
-                                   <i class="fas fa-envelope"></i> <%= user.email %>
-                                </h1>
-                            </div>
+        <div class="usermain">
 
+            <!-- here -->
+            <% getUsers.forEach(function (user){ %>
+                <div class="userbox">
+                    <div class="username-box1">
+                        <div class="main1">
+                            <div class="img">
+                                <img src="/images/Reddit-F/<%=user.user_photo%>" alt="" srcset=""
+                                    onerror="this.src='/images/Reddit-F/d-1.png'">
+                            </div>
+                            <div class="user">
+                                <h2>
+                                    name : <%= user.name %>
+                                </h2>
+                                <h3>
+                                    id : <%= user._id %>
+                                </h3>
+                                <form action="/database/users/delete" method="POST">
+                                    <button title="Are You Sure Want to delete <%= user.name %>'s record ?"
+                                        class="trash" type="button" onclick="userId('?_id=<%= user._id %>')"> <i
+                                            class="fas fa-trash"></i> </button>
+                                </form>
+                                <h3>
+                                    joined on : <%= moment(user.created_at).format('LL'); %>
+                                </h3>
+
+                            </div>
                         </div>
+                        <div class="username-box2">
+                            <% if( user.isVerified !=false ){ %>
+                                <h1 style="color: green;">
+                                    <i class="fas fa-user-check"> Verifyed </i>
+                                </h1>
+                                <% } %>
+                                    <% if( user.isVerified !=true ){ %>
+                                        <h1 style="color: red;">
+                                            <i class="fas fa-user-times"> Non-Verifyed </i>
+                                        </h1>
+                                        <% } %>
+                                            <h1>
+                                                <i class="fas fa-phone-alt"></i>
+                                                <%= user.phone %>
+                                            </h1>
+                                            <h1 style="text-transform: lowercase;">
+                                                <i class="fas fa-envelope"></i>
+                                                <%= user.email %>
+                                            </h1>
+                        </div>
+
                     </div>
-                    <% }) %>
-                    <% if( getUsers == 0){ %>
+                </div>
+                <% }) %>
+                    <% if( getUsers==0){ %>
                         <div id="no_data" class="no_data hidden">
                             <i class="far fa-sad-tear"></i>
                             <p>Sorry! No Data Found.</p>
                         </div>
                         <% } %>
-                    <!-- here -->
-                </div>
+                            <!-- here -->
+        </div>
 
     </div>
 </body>
 <script type="text/javascript" src="js/mainlog.js"></script>
 <script>
 
-function userId(str2) {
-    var inputString2 = str2;
-    // window.location.href = "/homeInterest"+inputString;
-    var href2 = "/database/users/delete" + inputString2 ;
-    console.log(href2)
-    window.location.href = href2;
-  }
+    function userId(str2) {
+        var inputString2 = str2;
+        // window.location.href = "/homeInterest"+inputString;
+        var href2 = "/database/users/delete" + inputString2;
+        console.log(href2)
+        window.location.href = href2;
+    }
 
-// You could easily add more colors to this array.
-var colors = ['royalblue', '#69e23a', 'green', '#dfc800', '#df3f00', '#4e00df', '#df00af', 'saddlebrown'];
-var boxes = document.querySelectorAll(".userbox");
+    // You could easily add more colors to this array.
+    var colors = ['royalblue', '#69e23a', 'green', '#dfc800', '#df3f00', '#4e00df', '#df00af', 'saddlebrown'];
+    var boxes = document.querySelectorAll(".userbox");
 
-for (i = 0; i < boxes.length; i++) {
-  // Pick a random color from the array 'colors'.
-  boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-}
+    for (i = 0; i < boxes.length; i++) {
+        // Pick a random color from the array 'colors'.
+        boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    }
 </script>
+
 </html>

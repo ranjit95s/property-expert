@@ -4,10 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
-:root{
-    --red:#e84118;
+:root {
+    --red: #e84118;
 }
-
 
 * {
     font-family: 'Open Sans', sans-serif;
@@ -18,10 +17,10 @@
     list-style: none!important;
     outline: none;
     text-transform: capitalize;
-    transition: all .2s cubic-bezier(.37,1.14,.26,1.24);
+    transition: all .2s cubic-bezier(.37, 1.14, .26, 1.24);
 }
 
-*::selection{
+*::selection {
     background: var(--red);
     color: #fff;
 }

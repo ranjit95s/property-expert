@@ -11,27 +11,30 @@
     border-radius: 20px 20px 0px 0px;
 }
 
-.container-main .head h1{
+.container-main .head h1 {
     color: #ffffff;
-font-size: 3rem;
+    font-size: 3rem;
 }
-.container-main .head h2{
+
+.container-main .head h2 {
     color: #ffffff;
-font-size: 2rem;
+    font-size: 2rem;
 }
+
 .container-main .head h2 span {
     color: #ffffff;
-font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .container-main .head2 {
     background-image: linear-gradient(to left bottom, #ee43a4, #e344a6, #d844a7, #cd45a8, #c146a8, #b843a2, #af409c, #a63d96, #9d3689, #932f7c, #8a286f, #802263);
     border-radius: 0px 0px 15px 15px;
-
 }
+
 .form {
     position: relative;
 }
+
 .form .trash {
     position: absolute;
     top: 10px;
@@ -41,16 +44,14 @@ font-size: 1.5rem;
     border-radius: 10px;
     padding: 5px;
     border: 2px solid rgb(255, 0, 0);
-    cursor:pointer;
+    cursor: pointer;
 }
+
 .form .trash:hover {
     background-color: black;
-
 }
 
-
-@media (max-width : 526px) {
-
+@media (max-width: 526px) {
     .property .glass {
         margin: 5px !important;
         font-size: 10px !important;

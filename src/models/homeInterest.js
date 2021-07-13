@@ -13,9 +13,9 @@ const homeInterestSchema = mongoose.Schema({
       trim: true,
     },
   },
-  
+
   OwnerPropertyInformation: {
-    
+
     home_id: {
       type: String,
       trim: true,
@@ -105,7 +105,7 @@ const homeInterestSchema = mongoose.Schema({
     },
   },
 
-  InterestedUserInformation :{
+  InterestedUserInformation: {
     user_id: {
       type: String,
       trim: true,
@@ -119,7 +119,7 @@ const homeInterestSchema = mongoose.Schema({
       trim: true,
     },
   },
-  UserAdditionalDeatils : {
+  UserAdditionalDeatils: {
 
     message_add: {
       type: String,

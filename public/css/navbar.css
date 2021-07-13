@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&display=swap');
-
-.navbarli a > #user_btn {
+.navbarli a>#user_btn {
     border: 2px solid black;
     border-radius: 50px;
     background-color: #fff;
@@ -11,17 +10,15 @@
     color: darkolivegreen;
 }
 
-.navbarli a > #user_btn:hover {
+.navbarli a>#user_btn:hover {
     border: 2px solid var(--red);
 }
 
-
-#user_btn > img {
-    border-radius: 50px; 
+#user_btn>img {
+    border-radius: 50px;
     object-fit: fill;
     width: 60px;
     height: 55px;
-
 }
 
 #fixed {
@@ -35,23 +32,22 @@
     z-index: 1;
     width: 100%;
     background-color: #fff;
-  }
+}
 
-  .mainLogo a {
+.mainLogo a {
     color: rgb(0, 0, 0);
     font-family: 'Reggae One', cursive;
     font-weight: 800;
     padding-left: 40px;
     font-size: 3rem;
+}
 
-  }
-
-  .mainLogo a span {
+.mainLogo a span {
     color: var(--red);
     font-family: 'Reggae One', cursive;
-  }
-  
-  .heading {
+}
+
+.heading {
     text-align: center;
     width: 90%;
     margin: 0 auto;
@@ -73,25 +69,28 @@ header .header-2 {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background:white;
+    background: white;
     padding: 0.2rem 0.1rem;
     position: relative;
     z-index: 1000;
     border-bottom: 1px solid rgb(197, 195, 195);
 }
 
-header .header-2 .navbar ul , .share ul {
+header .header-2 .navbar ul,
+.share ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
-header .header-2 .navbar ul li , .share ul li {
+
+header .header-2 .navbar ul li,
+.share ul li {
     margin: 0rem 2.5rem;
     padding: 0px;
-    
 }
-header .header-2 .navbar ul a li , .share ul li a {
+
+header .header-2 .navbar ul a li,
+.share ul li a {
     font-size: 1.8rem;
     text-align: center;
     font-weight: 800;
@@ -101,125 +100,113 @@ header .header-2 .navbar ul a li , .share ul li a {
     border-radius: 5px;
 }
 
-
 header .header-2 .share a {
     display: contents;
     color: rgb(0, 0, 0);
 }
+
 header .header-2 .share a:hover {
     color: rgb(255, 239, 146);
 }
-header .header-2 #menu{
+
+header .header-2 #menu {
     font-size: 3rem;
     color: #fff;
     cursor: pointer;
     display: none;
     margin: 1rem;
 }
+
 .header-2.header-active {
     position: fixed;
     top: 0;
     width: 100%;
-    
-background: rgba(230, 230, 230, 0.4);
-box-shadow: 0 4px 12px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 10.5px );
--webkit-backdrop-filter: blur( 10.5px );
-
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(230, 230, 230, 0.4);
+    box-shadow: 0 4px 12px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 10.5px);
+    -webkit-backdrop-filter: blur( 10.5px);
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
-.navbarli li .icons  {
-    
+.navbarli li .icons {
     display: none !important;
 }
+
 
 /* .share {
     position: relative;
 } */
 
-.style_nav_icon , .style_nav_icons  {
+.style_nav_icon,
+.style_nav_icons {
     font-size: 2.5rem;
     text-align: center;
     transition: all .5s ease-in;
     margin: 0px;
 }
 
-
-
-header .header-2 .navbar ul a li:hover, .share ul li:hover {
-   color: var(--red);
+header .header-2 .navbar ul a li:hover,
+.share ul li:hover {
+    color: var(--red);
 }
 
-@media (max-width : 900px) {
+@media (max-width: 900px) {
     .mainLogo a {
         padding-left: 0px;
     }
-    header .header-2 .navbar ul a li, .share ul li {
+    header .header-2 .navbar ul a li,
+    .share ul li {
         font-size: 1.4rem;
     }
 }
 
-
-
-
-
-
 @media ( max-width :789px) {
-    
     html {
         font-size: 55%;
     }
     #fixed3 {
         margin-top: 7px;
     }
-    header .header-2 .navbar ul a li, .share ul li a {
+    header .header-2 .navbar ul a li,
+    .share ul li a {
         margin: 15px;
     }
     .about .row .content h3 {
         text-align: initial;
-    } 
+    }
     .about .row .content p {
         text-align: initial;
     }
-    .wrapper h1{
+    .wrapper h1 {
         font-size: 25px !important;
-      }
-      
+    }
     header .header-2 {
         padding: 0;
     }
-
-    .agents .agents-what-do p, .agents .agents-what-is p {
+    .agents .agents-what-do p,
+    .agents .agents-what-is p {
         text-align: start;
     }
-
     .mainLogo a {
-    position: absolute;
-    top: 23px;
-    left: 60px;
-    padding: 0;
-    font-size: 2rem;
+        position: absolute;
+        top: 23px;
+        left: 60px;
+        padding: 0;
+        font-size: 2rem;
     }
-
     .user {
         width: 50%;
         right: -50%;
     }
-    .user-toggle{
+    .user-toggle {
         right: 0;
     }
-
-
-.navbarli li .ico  {
-    
-    display: none !important;
-}
-.navbarli li .icons {
-    
-    display: inline !important;
-}
-
+    .navbarli li .ico {
+        display: none !important;
+    }
+    .navbarli li .icons {
+        display: inline !important;
+    }
     header .header-2 #menu {
         display: block;
     }
@@ -234,19 +221,19 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
         /* min-height: calc(100vh - 6rem); */
         /* padding-bottom: 6rem; */
         margin-top: 2px;
-        background: rgba( 255, 255, 255, 0.75 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 18.0px );
-        -webkit-backdrop-filter: blur( 18.0px );
+        background: rgba( 255, 255, 255, 0.75);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+        backdrop-filter: blur( 18.0px);
+        -webkit-backdrop-filter: blur( 18.0px);
         border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        border: 1px solid rgba( 255, 255, 255, 0.18);
         width: 32rem;
     }
     header .header-2 .navbar ul li {
         /* width: 100%; */
         text-align: center;
     }
-    header .header-2 .navbar ul li a  {
+    header .header-2 .navbar ul li a {
         font-size: 2.7rem;
         display: block;
         margin: 15px;
@@ -276,24 +263,20 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
     .about .row .image img {
         width: 85%;
     }
-    .slogan h2{
+    .slogan h2 {
         font-size: 3.4rem;
     }
-    .slogan h3{
+    .slogan h3 {
         font-size: 2.8rem;
     }
- 
 }
 
-@media ( max-width :526px){
-
+@media ( max-width :526px) {
     .header-2.header-active {
-    background: rgb(226, 226, 226);
-    box-shadow: 0 4px 8px 0 rgba( 31, 38, 135, 0.37 );
-    
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+        background: rgb(226, 226, 226);
+        box-shadow: 0 4px 8px 0 rgba( 31, 38, 135, 0.37);
+        border: 1px solid rgba( 255, 255, 255, 0.18);
     }
-
     html {
         font-size: 50%;
     }
@@ -314,7 +297,7 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
         right: -100%;
         overflow: hidden;
     }
-    .user-toggle{
+    .user-toggle {
         right: 0;
     }
     .homelook {
@@ -323,31 +306,27 @@ header .header-2 .navbar ul a li:hover, .share ul li:hover {
     .wrapper h1 {
         font-size: 20px !important;
     }
-
-.slogan h2{
-    font-size: 3.2rem;
-}
-.slogan h3{
-    font-size: 2.5rem;
-}
-}
-
-@media (max-width : 380px) {
-    
-    .mainLogo a {
-        top: 23px;
-    left: 50px;
-    font-size: 1.8rem;
+    .slogan h2 {
+        font-size: 3.2rem;
     }
-    .wrapper h1 {
-        font-size: 15px !important;
-    }
-    .slogan h2{
-        font-size: 3rem;
-    }
-    .slogan h3{
+    .slogan h3 {
         font-size: 2.5rem;
     }
 }
 
-
+@media (max-width: 380px) {
+    .mainLogo a {
+        top: 23px;
+        left: 50px;
+        font-size: 1.8rem;
+    }
+    .wrapper h1 {
+        font-size: 15px !important;
+    }
+    .slogan h2 {
+        font-size: 3rem;
+    }
+    .slogan h3 {
+        font-size: 2.5rem;
+    }
+}

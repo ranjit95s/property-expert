@@ -18,69 +18,77 @@
 </head>
 
 <body style="overflow: hidden; user-select: none;">
-  
+
   <!-- {{!-- NAVBARS CSS GRAB DONE !!! --}} -->
   <div style="height: 65px;">
     <%- include ("navbar.ejs") %>
 
   </div>
   <section class="home" id="home">
-      <div class="content">
-        <h1><span>Property</span>Experts.Com</h1>
-        <p>When you’re ready for a change, we’re ready to help.</p>
-        <a href="/aboutmore"><button class="btnn plus">Know More <i class="fas fa-arrow-circle-right"></i></button></a>
-      </div>
-    </section>
+    <div class="content">
+      <h1><span>Property</span>Experts.Com</h1>
+      <p>When you’re ready for a change, we’re ready to help.</p>
+      <a href="/aboutmore"><button class="btnn plus">Know More <i class="fas fa-arrow-circle-right"></i></button></a>
+    </div>
+  </section>
 
-      <section class="look-property">
-        <h1 class="heading"><span>Browse Now !!!</span></h1>
-        <div class="container">
-          <p class="head">Whether you’re buying, selling or renting, we can help you move forward.</p>
-          <div class="img-box">
-            <div class="box">
-              <img src="/images/Buy_a_home.png" alt="" class="image">
-              <h2>Buy a home</h2>
-              <p>Find your place with an immersive photo experience and the most listings, including things you
-                won’t find anywhere else.</p>
-              <div class="buttons"><a href="/properties"> search homes </a></div>
-            </div>
-            <div class="box">
-              <img src="/images/Sell_a_home.png" alt="">
-              <h2>Sell a home</h2>
-              <p>Whether you get a cash offer through <span style="text-decoration: underline !important;;">PropertyExpert</span> Offers® or choose to sell traditionally, we can help
-                you navigate a successful sale.</p>
-              <div class="buttons"><a href="/postproperty">See your options </a></div>
-            </div>
-            <div class="box">
-              <img src="/images/Rent_a_home.png" alt="">
-              <h2>Rent a home</h2>
-              <p>We’re creating a seamless online experience – from shopping on the largest rental network, to
-                applying, to paying rent.</p>
-              <div class="buttons"><a href="/properties"> find rental </a></div>
-            </div>
-          </div>
-
-
-      </section>
-
-
-
-      <section class="index-prop" id="index-prop">
-        <h2 class="homelook">Here is latest home to see !</h2>
-        <div class="wrapperss">
-          <% getHome.forEach(function (home){ %>
-            <a href="/home?h_id=<%= home._id %>">
-            <div class="item">
-              <img src="/images/Reddit-F/<%=home.PropertyImages.first_image%>" onerror="this.src='/images/property/d-1.jpg'" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
-              <p style="text-decoration: none !important; color: #000;">Area :<%= home.BuildingInformation.Location.district_name %>, <%= home.BuildingInformation.Location.state_name%> </p>
-              <p style="text-decoration: none; color: #000;"><%= home.BuildingInformation.sellOrRent %> : <%= home.BuildingInformation.offered_at %></p>
-            </div>
-          </a>
-            <% }) %>
+  <section class="look-property">
+    <h1 class="heading"><span>Browse Now !!!</span></h1>
+    <div class="container">
+      <p class="head">Whether you’re buying, selling or renting, we can help you move forward.</p>
+      <div class="img-box">
+        <div class="box">
+          <img src="/images/Buy_a_home.png" alt="" class="image">
+          <h2>Buy a home</h2>
+          <p>Find your place with an immersive photo experience and the most listings, including things you
+            won’t find anywhere else.</p>
+          <div class="buttons"><a href="/properties"> search homes </a></div>
         </div>
-      </section>
-      <%- include ("footer.ejs") %>
-        <!-- {{!-- FOOTER CSS GRAB DONE !!! --}} -->
+        <div class="box">
+          <img src="/images/Sell_a_home.png" alt="">
+          <h2>Sell a home</h2>
+          <p>Whether you get a cash offer through <span
+              style="text-decoration: underline !important;;">PropertyExpert</span> Offers® or choose to sell
+            traditionally, we can help
+            you navigate a successful sale.</p>
+          <div class="buttons"><a href="/postproperty">See your options </a></div>
+        </div>
+        <div class="box">
+          <img src="/images/Rent_a_home.png" alt="">
+          <h2>Rent a home</h2>
+          <p>We’re creating a seamless online experience – from shopping on the largest rental network, to
+            applying, to paying rent.</p>
+          <div class="buttons"><a href="/properties"> find rental </a></div>
+        </div>
+      </div>
+
+
+  </section>
+
+
+
+  <section class="index-prop" id="index-prop">
+    <h2 class="homelook">Here is latest home to see !</h2>
+    <div class="wrapperss">
+      <% getHome.forEach(function (home){ %>
+        <a href="/home?h_id=<%= home._id %>">
+          <div class="item">
+            <img src="/images/Reddit-F/<%=home.PropertyImages.first_image%>"
+              onerror="this.src='/images/property/d-1.jpg'"
+              alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
+            <p style="text-decoration: none !important; color: #000;">Area :<%=
+                home.BuildingInformation.Location.district_name %>, <%= home.BuildingInformation.Location.state_name%>
+            </p>
+            <p style="text-decoration: none; color: #000;">
+              <%= home.BuildingInformation.sellOrRent %> : <%= home.BuildingInformation.offered_at %>
+            </p>
+          </div>
+        </a>
+        <% }) %>
+    </div>
+  </section>
+  <%- include ("footer.ejs") %>
+    <!-- {{!-- FOOTER CSS GRAB DONE !!! --}} -->
 
 
 </body>
@@ -92,4 +100,3 @@
 <script src="js/main.js"></script>
 
 </html>
-

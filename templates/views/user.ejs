@@ -2,132 +2,166 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hello user</title>
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" /> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" /> -->
-  <link rel="stylesheet" href="css/user.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <!-- <script type="text/javascript" src="lib/iscroll.js"></script> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello user</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" /> -->
+    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/index-style.css">
+    <!-- <script type="text/javascript" src="lib/iscroll.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
 </head>
 
 <body style="overflow: hidden; user-select: none;">
 
 
-  <div style="height: 65px;">
-    <%- include ("navbar.ejs") %>
-  </div>
+    <div style="height: 65px;">
+        <%- include ("navbar.ejs") %>
+    </div>
     <section id="user-section">
-      <% if( typeof getUser !='undefined' && getUser==false ){ %>
-        <script>
-          window.location.href = "/"
-        </script>
-        <% } %>
-        <% if( typeof getUser !='undefined' && getUser==true ){ %>
-          <% foundUser.forEach(function (user){ %>
-      <div class="container">
+        <% if( typeof getUser !='undefined' && getUser==false ){ %>
+            <script>
+                window.location.href = "/"
+            </script>
+            <% } %>
+                <% if( typeof getUser !='undefined' && getUser==true ){ %>
+                    <% foundUser.forEach(function (user){ %>
+                        <div class="container">
 
-        <div class="user-details">
-          <div class="user-infoo ud1">
-            <p class="user_logo-user"><img src="/images/Reddit-F/<%=userPhoto%>"
-                onerror="this.src='/images/Reddit-F/d-1.png'"></p>
-            <form action="/logout" method="POST" class="setting-icon">
-              <button type="submit">Logout <i class="fas fa-sign-out-alt"></i>
-                </button>
-            </form>
-          </div>
-          <div class="user-infoo ud2">
-            <div class="user-d">
-              <p>
-                <%= userName %>
-              </p>
-            </div>
-            <div class="user-d">
-              <p>
-                <%= userPhone%>
-              </p>
-            </div>
-            <div class="user-d">
-              <p> <span><i class="fas fa-map-marker-alt"></i> hindustan</span> <span
-                  style="text-transform: lowercase;"><i class="fas fa-envelope"></i>
-                  <%= userEmail %>
-                </span> <span>
-                  <i class="fas fa-calendar-alt"></i> Joined <%= moment(user.created_at).format('LL');  %></span></p>
-            </div>
-          </div>
-        </div>
-        <div class="post-section">
-          <div class="postcard">
-            <h2>Post Your Properties !!</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="/postproperty"> <button style="cursor: pointer;"><i class="fas fa-bookmark"></i> Post Properties
-              </button></a>
-          </div>
-        </div>
-        <div class="styleAvatar0">
-          <a class="styleAvatar"> <button id='hideshow'> <i class="fas fa-tshirt" style="margin-right: 20px;"></i> Style
-              Avatar</button></a>
-        </div>
-        <div class="user-setting" id='content' hidden>
-          <div class="hidden">
-            <div class="user-con">
-              <form action="/user" method="POST" enctype="multipart/form-data">
-                <div class="user-avatar">
-                  <div class="user-head">
-                    <p><i class="fas fa-user-cog"></i> Change Profile Pic</p>
-                    <div class="main-op">
-                      <input type="tel" name="newphone" id="" value="<%=userPhone%>" readonly hidden>
-                      <div class="main-op-2">
-                        <select id="id_select2_example" name="user_photo" style="width: 200px;">
-                          <option data-img_src="/images/Reddit-F/1.png" value="1.png"></option>
-                          <option data-img_src="/images/Reddit-F/2.png" value="2.png"></option>
-                          <option data-img_src="/images/Reddit-F/3.png" value="3.png"></option>
-                          <option data-img_src="/images/Reddit-F/4.png" value="4.png"></option>
-                          <option data-img_src="/images/Reddit-F/5.png" value="5.png"></option>
-                          <option data-img_src="/images/Reddit-F/6.png" value="6.png"></option>
-                          <option data-img_src="/images/Reddit-F/7.png" value="7.png"></option>
-                          <option data-img_src="/images/Reddit-F/8.png" value="8.png"></option>
-                          <option data-img_src="/images/Reddit-F/9.png" value="9.png"></option>
-                          <option data-img_src="/images/Reddit-F/10.png" value="10.png"></option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="subbtn">
-                      <input type="submit" id="avatarbtn" value="Save Avatar" style="cursor: pointer;">
-                    </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% }) %>
-      <% } %>
+                            <div class="user-details">
+                                <div class="user-infoo ud1">
+                                    <p class="user_logo-user"><img src="/images/Reddit-F/<%=userPhoto%>" onerror="this.src='/images/Reddit-F/d-1.png'"></p>
+                                    <form action="/logout" method="POST" class="setting-icon">
+                                        <button type="submit">Logout <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                                    </form>
+                                </div>
+                                <div class="user-infoo ud2">
+                                    <div class="user-d">
+                                        <p>
+                                            <%= userName %>
+                                        </p>
+                                    </div>
+                                    <div class="user-d">
+                                        <p>
+                                            <%= userPhone%>
+                                        </p>
+                                    </div>
+                                    <div class="user-d">
+                                        <p> <span><i class="fas fa-map-marker-alt"></i> hindustan</span> <span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>
+                        <%= userEmail %>
+                      </span> <span>
+                        <i class="fas fa-calendar-alt"></i> Joined <%= moment(user.created_at).format('LL'); %></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <section class="index-prop" id="index-prop">
+                                <h2 class="homelook">Your Uploaded Property !</h2>
+                                <div class="wrapperss">
+                                    <% foundUserUp.forEach(function (home){ %>
+                                        <a href="/home?h_id=<%= home._id %>">
+                                            <div class="item">
+                                                <img src="/images/Reddit-F/<%=home.PropertyImages.first_image%>" onerror="this.src='/images/property/d-1.jpg'" alt="images doesn't save long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).">
+                                                <p style="text-decoration: none !important; color: #000;">Area :
+                                                    <%=
+                                        home.BuildingInformation.Location.district_name %>,
+                                                        <%= home.BuildingInformation.Location.state_name%>
+                                                </p>
+                                                <p style="text-decoration: none; color: #000;">
+                                                    <%= home.BuildingInformation.sellOrRent %> :
+                                                        <%= home.BuildingInformation.offered_at %>
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <% }) %>
+                                </div>
+
+                                <% if( foundUserUp==0){ %>
+                                    <div id="no_data" class="no_data hidden">
+                                        <i class="far fa-sad-tear"></i>
+                                        <p>You have not uploaded Property yet !</p>
+                                    </div>
+                                    <% } %>
+                            </section>
+                            <div class="post-section">
+                                <div class="postcard">
+                                    <h2>Post Your Properties !!</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <a href="/postproperty"> <button style="cursor: pointer;"><i class="fas fa-bookmark"></i> Post
+                      Properties
+                    </button></a>
+                                </div>
+                            </div>
+                            <div class="styleAvatar0">
+                                <a class="styleAvatar"> <button id='hideshow'> <i class="fas fa-tshirt" style="margin-right: 20px;"></i>
+                    Style
+                    Avatar</button></a>
+                            </div>
+                            <div class="user-setting" id='content' hidden>
+                                <div class="hidden">
+                                    <div class="user-con">
+                                        <form action="/user" method="POST" enctype="multipart/form-data">
+                                            <div class="user-avatar">
+                                                <div class="user-head">
+                                                    <p><i class="fas fa-user-cog"></i> Change Profile Pic</p>
+                                                    <div class="main-op">
+                                                        <input type="tel" name="newphone" id="" value="<%=userPhone%>" readonly hidden>
+                                                        <div class="main-op-2">
+                                                            <select id="id_select2_example" name="user_photo" style="width: 200px;">
+                                <option data-img_src="/images/Reddit-F/1.png" value="1.png"></option>
+                                <option data-img_src="/images/Reddit-F/2.png" value="2.png"></option>
+                                <option data-img_src="/images/Reddit-F/3.png" value="3.png"></option>
+                                <option data-img_src="/images/Reddit-F/4.png" value="4.png"></option>
+                                <option data-img_src="/images/Reddit-F/5.png" value="5.png"></option>
+                                <option data-img_src="/images/Reddit-F/6.png" value="6.png"></option>
+                                <option data-img_src="/images/Reddit-F/7.png" value="7.png"></option>
+                                <option data-img_src="/images/Reddit-F/8.png" value="8.png"></option>
+                                <option data-img_src="/images/Reddit-F/9.png" value="9.png"></option>
+                                <option data-img_src="/images/Reddit-F/10.png" value="10.png"></option>
+                              </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="subbtn">
+                                                        <input type="submit" id="avatarbtn" value="Save Avatar" style="cursor: pointer;">
+                                                    </div>
+
+                                        </form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <% }) %>
+                                    <% } %>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
     <script type="text/javascript">
-      function custom_template(obj) {
-        var data = $(obj.element).data();
-        var text = $(obj.element).text();
-        if (data && data['img_src']) {
-          img_src = data['img_src'];
-          template = $("<div><img src=\"" + img_src + "\" + id=\"id\">  <p style=\"font-weight: 700;font-size:14pt;text-align:center;\">" + text + "</p></div>");
-          return template;
+        function custom_template(obj) {
+            var data = $(obj.element).data();
+            var text = $(obj.element).text();
+            if (data && data['img_src']) {
+                img_src = data['img_src'];
+                template = $("<div><img src=\"" + img_src + "\" + id=\"id\">  <p style=\"font-weight: 700;font-size:14pt;text-align:center;\">" + text + "</p></div>");
+                return template;
+            }
         }
-      }
-      var options = {
-        'templateSelection': custom_template,
-        'templateResult': custom_template,
-      }
-      $('#id_select2_example').select2(options);
-      $('.select2-container--default .select2-selection--single').css({ 'height': '220px' });
-
+        var options = {
+            'templateSelection': custom_template,
+            'templateResult': custom_template,
+        }
+        $('#id_select2_example').select2(options);
+        $('.select2-container--default .select2-selection--single').css({
+            'height': '220px'
+        });
     </script>
     <%- include ("footer.ejs") %>
 </body>
@@ -141,26 +175,21 @@
 <script src="js/user.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <% if(typeof newAvatarSet !="undefined" ){ %>
-  <script>
-    var heading = "<%= head %>";
-    var message = "<%= message %>";
-    var type = "<%= type %>";
-    swal(heading, message, type)
-      .then((value) => {
-        if (value == true) {
-          window.location.href = "/"
+    <script>
+        var heading = "<%= head %>";
+        var message = "<%= message %>";
+        var type = "<%= type %>";
+        swal(heading, message, type)
+            .then((value) => {
+                if (value == true) {
+                    window.location.href = "/"
 
-        } else {
-          window.location.href = "/"
-        }
-      });
-  </script>
-  <% } %>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-
-
-
+                } else {
+                    window.location.href = "/"
+                }
+            });
+    </script>
+    <% } %>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 </html>
