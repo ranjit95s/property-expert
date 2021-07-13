@@ -1,9 +1,10 @@
 body {
-    background-color: rgb(98, 151, 153);
+    background: rgb(2,0,36);
+    background: linear-gradient(193deg, rgba(2,0,36,1) 0%, rgba(9,121,93,1) 52%, rgba(0,212,255,1) 100%);
 }
 
 #admin {
-    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(to left top, #9d3d3d, #7c3348, #552e46, #332736, #1c1c1c);
     height: max-content;
     width: 80%;
     margin: 1% 0% 1% 10%;
@@ -15,6 +16,7 @@ body {
 .headOfPage h1 {
     font-size: 30px;
     font-weight: 800;
+    color: whitesmoke;
 }
 
 .headOfPage span {
@@ -49,12 +51,10 @@ body {
 .container-box .box .headSet h2 {
     color: white;
     font-style: italic;
-    font-family: cursive;
 }
 .container-box .box .headSet h4 {
     color: rgb(0, 0, 0) !important;
     font-style:oblique;
-    font-family: cursive;
 }
 
 .container-box .box .mainTot {

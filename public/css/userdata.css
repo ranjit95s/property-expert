@@ -3,7 +3,7 @@ body {
 }
 
 .container .info-de {
-    background-color: rgb(238, 67, 101);
+    background-image: linear-gradient(to left top, #ee4365, #e9395a, #e42d4e, #de2043, #d80f37);
     padding: 15px;
     text-align: center;
     width: 90%;
@@ -35,7 +35,7 @@ body {
     width: 90%;
     height: max-content;
     align-items: center;
-    background: rgba( 255, 35, 35, 0.50 );
+    background-image: linear-gradient(to right top, #ee4365, #f23b5d, #f63254, #f9274b, #fc1b41, #f3143a, #e90b34, #e0002d, #ca0029, #b40024, #9e0020, #89001b);
 border: 1px solid rgba(255, 255, 255, 0.466);
     justify-content: center;
 }
@@ -72,7 +72,7 @@ border: 1px solid rgba(255, 255, 255, 0.466);
 .main1 {
     display: flex;
     flex-wrap: wrap;
-    height: 9.5rem;
+   height: auto;
 }
 
 .main1 .img {

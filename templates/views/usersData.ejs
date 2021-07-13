@@ -16,7 +16,7 @@
                 <div class="info-de">
                     <h1>Users </h1>
                     <br>
-                    <h3>Total <%= count %> users <span><a href="/database/95s20d0205/users" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span></h3>
+                    <h3>Total <%= count %> users <span><a href="/database/95s20d0205/users" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span>OR<span><a href="/database/" target="_self" rel="noopener noreferrer"> (Back To Database) </a></span></h3>
                 </div>
                 
                 <div class="usermain">
@@ -67,6 +67,12 @@
                         </div>
                     </div>
                     <% }) %>
+                    <% if( getUsers == 0){ %>
+                        <div id="no_data" class="no_data hidden">
+                            <i class="far fa-sad-tear"></i>
+                            <p>Sorry! No Data Found.</p>
+                        </div>
+                        <% } %>
                     <!-- here -->
                 </div>
 

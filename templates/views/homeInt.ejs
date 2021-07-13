@@ -13,7 +13,7 @@
     <div class="sec">
         <div class="head">
             <h1>Interest</h1>
-            <h2>Total <%= countInterest %> users Interest <span style="font-size: 1.7rem;"><a href="/database/95s20d0205/receivedHomeInterests" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span></h2>
+            <h2>Total <%= countInterest %> users Interest <span style="font-size: 1.7rem;"><a href="/database/95s20d0205/receivedHomeInterests" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span>OR<span style="font-size: 1.7rem;"><a href="/database/" target="_self" rel="noopener noreferrer"> (Back To Database) </a></span></h2>
         </div>
         <div class="container">
             
@@ -30,22 +30,46 @@
                         <div class="userName">
                             <h2> <i class="fas fa-user-circle"></i> <%= homeInterest.InterestedUserInformation.userName%></h2>
                             <h2> <i class="fas fa-phone-alt"></i>  <%= homeInterest.InterestedUserInformation.userPhone%></h2>
-                            <h2> <i class="fas fa-id-card"></i> <%= homeInterest.InterestedUserInformation.user_id%> </h2>
-                            <h2> <i class="fas fa-info-circle"></i> <%= moment(homeInterest.requestedAt).format('LL');  %> </h2>
+                            <h2 title="user id"> <i class="fas fa-id-card"></i> <%= homeInterest.InterestedUserInformation.user_id%> </h2>
+                            <h2 title="request made on"> <i class="fas fa-info-circle"></i> <%= moment(homeInterest.requestedAt).format('LL');  %> </h2>
                         </div>
                         <div class="addition-info">
-                            <div class="ans">
-                                    <h1><%= homeInterest.UserAdditionalDeatils.buying_firstTime%></h1>
-                                    <h2>Buying First Time</h2>
-                            </div>
-                            <div class="ans">
-                                <h1><%= homeInterest.UserAdditionalDeatils.plan_on_buying_home%></h1>
-                                <h2>Plan to Buy Home !</h2>
-                            </div>
-                            <div class="ans" style="border-bottom: none;">
-                                    <h1><%= homeInterest.UserAdditionalDeatils.active_military_status%></h1>
-                                    <h2>Active Military Status</h2>
-                            </div>
+                            <% if( homeInterest.UserAdditionalDeatils.buying_firstTime != null ){ %>
+                                <div class="ans">
+                                        <h1>  <%= homeInterest.UserAdditionalDeatils.buying_firstTime %></h1>
+                                        <h2>Buying First Time</h2>
+                                </div>
+                                <% } %>
+                            <% if( homeInterest.UserAdditionalDeatils.buying_firstTime == null ){ %>
+                                <div class="ans">
+                                        <h1>Yes</h1>
+                                        <h2>Buying First Time</h2>
+                                </div>
+                                <% } %>
+                                <% if( homeInterest.UserAdditionalDeatils.plan_on_buying_home != null ){ %>
+                                    <div class="ans">
+                                            <h1>  <%= homeInterest.UserAdditionalDeatils.plan_on_buying_home %></h1>
+                                            <h2>Plan To Buy Home !</h2>
+                                    </div>
+                                    <% } %>
+                                <% if( homeInterest.UserAdditionalDeatils.plan_on_buying_home == null ){ %>
+                                    <div class="ans">
+                                            <h1>I am not sure</h1>
+                                            <h2>Plan To Buy Home !</h2>
+                                    </div>
+                                    <% } %>
+                                    <% if( homeInterest.UserAdditionalDeatils.active_military_status != null ){ %>
+                                        <div class="ans" style="border-bottom: none;">
+                                                <h1>  <%= homeInterest.UserAdditionalDeatils.active_military_status %></h1>
+                                                <h2>Active Military Status</h2>
+                                        </div>
+                                        <% } %>
+                                    <% if( homeInterest.UserAdditionalDeatils.active_military_status == null ){ %>
+                                        <div class="ans" style="border-bottom: none;">
+                                                <h1>No</h1>
+                                                <h2>Active Military Status</h2>
+                                        </div>
+                                        <% } %>
                         </div>
                     </div>
                     <div class="box4Owner">
@@ -55,7 +79,7 @@
                         </div>
                         <div class="boxU">
                             <div class="OwnerName">
-                                <h2> <i class="fas fa-city"></i> <%= homeInterest.PropertyOwner.owner%></h2>
+                                <h2> <i class="fas fa-city"></i> <%= homeInterest.PropertyOwner.owner%>'s Home </h2>
                                 <h2> <i class="fas fa-phone-alt"></i> <%= homeInterest.PropertyOwner.ownerPhone%></h2>
                                 <div class="loc">
                                     <h3><i class="fas fa-search-location"></i> Location :</h3>
@@ -92,6 +116,12 @@
                 </div>
             </div>
             <% }) %>
+            <% if( getHomeInterest == 0){ %>
+                <div id="no_data" class="no_data hidden">
+                    <i class="far fa-sad-tear"></i>
+                    <p>Sorry! No Data Found.</p>
+                </div>
+                <% } %>
         </div>
     </div>
 

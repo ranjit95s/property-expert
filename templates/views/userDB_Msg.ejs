@@ -8,7 +8,7 @@
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <link rel="stylesheet" href="/css/userdata.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <title>Admin Panel - Users Data</title>
+    <title>Admin Panel - Users Messages</title>
     <style>
 
 @media (max-width : 444px) {
@@ -24,7 +24,7 @@
                 <div class="info-de">
                     <h1>Users Messages </h1>
                     <br>
-                    <h3>Total <%= countMsg %> users Messages <span><a href="/database/95s20d0205/messages" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span></h3>
+                    <h3>Total <%= countMsg %> users Messages <span><a href="/database/95s20d0205/messages" target="_blank" rel="noopener noreferrer"> (view in json format) </a></span>OR<span><a href="/database/" target="_self" rel="noopener noreferrer"> (Back To Database) </a></span></h3>
                 </div>
                 
                 <div class="usermain">
@@ -39,22 +39,22 @@
                                 </div>
                                 <div class="user">
                                     <h2>
-                                       name : <%=message.name %>
+                                      <i class="fas fa-user"></i> <%=message.name %>
                                     </h2>
                                     <h2>
-                                       phone : <%=message.phone %>
+                                        <i class="fas fa-phone-alt"></i> <%=message.phone %>
                                     </h2>
                                     <h2>
-                                       email : <span style="text-transform: lowercase;"><%=message.email %></span>
+                                        <i class="fas fa-envelope"></i> <span style="text-transform: lowercase;"><%=message.email %></span>
                                     </h2>
                                     <h3>
-                                      User id : <%= message.userId %>
+                                        <i class="fas fa-id-card"></i> <%= message.userId %>
                                     </h3>
                                     <form action="/database/messages/delete" method="POST">
                                     <button title="Are You Sure Want to delete <%= message.name %>'s record ?" class="trash" type="button" onclick="userId('?_id=<%= message._id %>')"> <i class="fas fa-trash"></i> </button>
                                     </form>
                                     <h3>
-                                       messaged on : <%= moment(message.receivedAt).format('LL');  %>
+                                        <i class="fas fa-calendar-alt"></i> <%= moment(message.receivedAt).format('LL');  %>
                                     </h3>
                                     
                                 </div>
@@ -68,6 +68,14 @@
                         </div>
                     </div>
                     <% }) %>
+                    
+                    <% if( getMsg == 0){ %>
+                        <div id="no_data" class="no_data hidden">
+                            <i class="far fa-sad-tear"></i>
+                            <p>Sorry! No Data Found.</p>
+                        </div>
+                        <% } %>
+
                     <!-- here -->
                 </div>
 

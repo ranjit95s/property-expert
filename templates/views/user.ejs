@@ -24,6 +24,13 @@
     <%- include ("navbar.ejs") %>
   </div>
     <section id="user-section">
+      <% if( typeof getUser !='undefined' && getUser==false ){ %>
+        <script>
+          window.location.href = "/"
+        </script>
+        <% } %>
+        <% if( typeof getUser !='undefined' && getUser==true ){ %>
+          <% foundUser.forEach(function (user){ %>
       <div class="container">
 
         <div class="user-details">
@@ -99,6 +106,8 @@
           </div>
         </div>
       </div>
+      <% }) %>
+      <% } %>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>

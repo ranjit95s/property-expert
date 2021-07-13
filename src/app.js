@@ -233,10 +233,16 @@ app.get("/user", async (req, res) => {
     const getUsers = await user.find({ _id: verifyUser._id });
     
     try {
-        if (getUsers.length == 1) {
-            res.render("user", { getUsers, getUser: true, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
+        var id = req.query._id;
+        const foundUser = await user.find({ _id : id }).limit(1);
+        var created_at = req.body.created_at;
+        let createdOn = moment(created_at).toString();
+
+        if (foundUser.length == 1) {
+            console.log(foundUser.length);
+            res.render("user", { foundUser, getUser: true, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email, moment : moment });
         } else {
-            res.render("user", { getUsers, getUser: false, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
+            res.render("user", { foundUser, getUser: false, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email , moment : moment });
         }
 
     } catch (e) {

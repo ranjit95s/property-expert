@@ -1,5 +1,5 @@
 body {
-    background-color: darkcyan;
+    background-color: rgb(95, 95, 95);
 }
 
 .sec {
@@ -10,7 +10,7 @@ body {
 .sec .head {
     text-align: center;
     padding: 10px;
-    background: rgb(104, 104, 104);
+    background-image: linear-gradient(to left top, #43d0ee, #33c6db, #27bcc8, #21b2b5, #20a7a2, #1da09a, #199892, #16918a, #0b8b89, #028588, #007e86, #007883);
     border-radius: 20px 20px 0px 0px
 }
 
@@ -33,10 +33,8 @@ body {
     width: 100%;
     height: max-content;
     align-items: center;
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-    backdrop-filter: blur( 8.5px );
-    -webkit-backdrop-filter: blur( 8.5px );
+    background-image: linear-gradient(to left bottom, #005d71, #006170, #00646d, #00676a, #006a66, #006863, #006760, #00655d, #005e5b, #005858, #005155, #004b51);
+    box-shadow: 0 8px 26px 0 rgb(31 38 135 / 37%);
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     justify-content: center;
 }
@@ -64,6 +62,7 @@ body {
     background-color: crimson;
     border-radius: 20px 20px 20px 20px;
     padding: 2px;
+    box-shadow: 0 8px 26px 0 rgb(31 38 135 / 37%);
 }
 
 
@@ -128,7 +127,7 @@ color: white;
     width: 38%;
     background: rgba( 255, 255, 255, 0.55 );
     box-shadow: 0 8px 8px 0 rgba( 31, 38, 135, 0.37 );
-
+    margin-bottom: 5px;
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

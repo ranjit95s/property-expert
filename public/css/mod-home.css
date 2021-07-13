@@ -5,7 +5,7 @@
 }
 
 .container-main .head {
-    background-color: rgb(238, 67, 101);
+    background-image: linear-gradient(to right top, #ee43a4, #e939a7, #e42fab, #dd23af, #d617b4, #cd10ad, #c308a6, #ba009f, #ad008c, #9e007a, #90006a, #81005a);
     padding: 15px;
     text-align: center;
     border-radius: 20px 20px 0px 0px;
@@ -25,7 +25,7 @@ font-size: 1.5rem;
 }
 
 .container-main .head2 {
-    background-color: rgb(241, 241, 238);
+    background-image: linear-gradient(to left bottom, #ee43a4, #e344a6, #d844a7, #cd45a8, #c146a8, #b843a2, #af409c, #a63d96, #9d3689, #932f7c, #8a286f, #802263);
     border-radius: 0px 0px 15px 15px;
 
 }
@@ -50,6 +50,14 @@ font-size: 1.5rem;
 
 
 @media (max-width : 526px) {
+
+    .property .glass {
+        margin: 5px !important;
+        font-size: 10px !important;
+    }
+    .property .img-con .image img {
+        height: 22rem;
+    }
     .container-main {
         width: 100% !important;
         margin: 0 !important;

@@ -40,3 +40,10 @@ html {
     background: #e26e51;
     border-radius: 6px;
 }
+
+#no_data {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
