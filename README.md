@@ -20,6 +20,7 @@ git clone https://github.com/ranjit95s/property-expert.git
 cd property-expert
 npm i
 npm start
+npm run dev
 ```
 
 ### Routers
@@ -32,10 +33,13 @@ npm start
 | #4  | `GET`  | `/property`       | All user uploaded property appears here                                          |
 | #5  | `GET`  | `/home?h=home.id` | Each property full details appear here with home ID,(homeID generate automatically after posting property)|
 | #6  | `POST` | `/post-property`  | User can post property here                                                      |
-| #7  | `GET`  | `/User`           | Registered users information + **_User can change his/her avatar_**              |
+| #7  | `GET`  | `/User?_id`       | Registered users information + **_User can change his/her avatar_**              |
 | #8  | `POST` | `/logout`         | Registered users can logout and after can login with same registered information |
 | #9  | `GET`  | `/aboutmore`      | About page                                                                       |
 | #10 | `POST` | `/contact`        | Only registered user can send message                                            |
+| #10 | `GET` | `/database/`       | API DATA   |
+| #11 | `POST` | `/deptlogin/`     | Department login For stuff only , for deleting , adding , editing infomation and contacting to user that interesting buying or renting homes|
+
 
 
 | No  | Request Body                         | Response Body                   |
@@ -64,6 +68,10 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 │   │   ├── abouts.css
 │   │   ├── contact.css
 │   │   ├── footer.css
+│   │   ├── AdminSetUp.css
+│   │   ├── homeInt.css
+│   │   ├── mod-home.css
+│   │   ├── userdata.css
 │   │   ├── home.css
 │   │   ├── index-style.css
 │   │   ├── login.css
@@ -106,6 +114,12 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 │   │   ├── properties.ejs
 │   │   ├── signup.ejs
 │   │   ├── user.ejs
+│   │   ├── database.ejs
+│   │   ├── deptlogin.ejs
+│   │   ├── homeData.ejs
+│   │   ├── homeInt.ejs
+│   │   ├── userDB_Msg.ejs
+│   │   ├── usersData.ejs
 │   └── └── verifyOtp.ejs
 ├── .env
 ├── .gitignore
