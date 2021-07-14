@@ -135,7 +135,7 @@ Available on root "/". It can be removed from server.js file.
 ![landing page](https://user-images.githubusercontent.com/74762032/125641239-79e13426-bc9c-448f-b481-b6ccac1f42fa.png)
 ![home sec](https://user-images.githubusercontent.com/74762032/125642931-8b0d1bd5-2bc0-4d30-ab35-4eaaf80e0c5d.png)
 
-### User Model
+### Model
 User Model is created with [mongoose](https://www.npmjs.com/package/mongoose) in user.js.
 home Model is created with [mongoose](https://www.npmjs.com/package/mongoose) in home.js.
 message Model is created with [mongoose](https://www.npmjs.com/package/mongoose) in message.js.
