@@ -37,8 +37,8 @@ npm run dev
 | #8  | `POST` | `/logout`         | Registered users can logout and after can login with same registered information |
 | #9  | `GET`  | `/aboutmore`      | About page                                                                       |
 | #10 | `POST` | `/contact`        | Only registered user can send message                                            |
-| #10 | `GET` | `/database/`       | API DATA   |
-| #11 | `POST` | `/deptlogin/`     | Department login For stuff only , for deleting , adding , editing infomation and contacting to user that interesting buying or renting homes|
+| #11 | `GET` | `/database/`       | API DATA   |
+| #12 | `POST` | `/deptlogin/`     | Department login For stuff only , for deleting , adding , editing infomation and contacting to user that interesting buying or renting homes|
 
 
 
