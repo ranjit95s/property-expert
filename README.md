@@ -20,6 +20,7 @@ git clone https://github.com/ranjit95s/property-expert.git
 cd property-expert
 npm i
 npm start
+npm run dev
 ```
 
 ### Routers
@@ -32,10 +33,13 @@ npm start
 | #4  | `GET`  | `/property`       | All user uploaded property appears here                                          |
 | #5  | `GET`  | `/home?h=home.id` | Each property full details appear here with home ID,(homeID generate automatically after posting property)|
 | #6  | `POST` | `/post-property`  | User can post property here                                                      |
-| #7  | `GET`  | `/User`           | Registered users information + **_User can change his/her avatar_**              |
+| #7  | `GET`  | `/User?_id`       | Registered users information + **_User can change his/her avatar_**              |
 | #8  | `POST` | `/logout`         | Registered users can logout and after can login with same registered information |
 | #9  | `GET`  | `/aboutmore`      | About page                                                                       |
 | #10 | `POST` | `/contact`        | Only registered user can send message                                            |
+| #11 | `GET` | `/database/`       | API DATA   |
+| #12 | `POST` | `/deptlogin/`     | Department login For stuff only , for deleting , adding , editing infomation and contacting to user that interesting buying or renting homes|
+
 
 
 | No  | Request Body                         | Response Body                   |
@@ -64,6 +68,10 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 │   │   ├── abouts.css
 │   │   ├── contact.css
 │   │   ├── footer.css
+│   │   ├── AdminSetUp.css
+│   │   ├── homeInt.css
+│   │   ├── mod-home.css
+│   │   ├── userdata.css
 │   │   ├── home.css
 │   │   ├── index-style.css
 │   │   ├── login.css
@@ -106,6 +114,12 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 │   │   ├── properties.ejs
 │   │   ├── signup.ejs
 │   │   ├── user.ejs
+│   │   ├── database.ejs
+│   │   ├── deptlogin.ejs
+│   │   ├── homeData.ejs
+│   │   ├── homeInt.ejs
+│   │   ├── userDB_Msg.ejs
+│   │   ├── usersData.ejs
 │   └── └── verifyOtp.ejs
 ├── .env
 ├── .gitignore
@@ -118,34 +132,16 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 ### User Interface
 Mini user interface is build with vue.js to show up what is going on.
 Available on root "/". It can be removed from server.js file.
-![Screenshot_2021-05-02 authentication-sever User Interface](https://user-images.githubusercontent.com/39749730/116825809-808cf700-ab99-11eb-8b30-98a5cfbc8f3e.png)
-![Screenshot_2021-05-02 authentication-sever User Interface(1)](https://user-images.githubusercontent.com/39749730/116825812-8256ba80-ab99-11eb-9e98-9f9741344224.png)
+![landing page](https://user-images.githubusercontent.com/74762032/125641239-79e13426-bc9c-448f-b481-b6ccac1f42fa.png)
+![home sec](https://user-images.githubusercontent.com/74762032/125642931-8b0d1bd5-2bc0-4d30-ab35-4eaaf80e0c5d.png)
 
-### User Model
-User Model is created with [mongoose](https://www.npmjs.com/package/mongoose) in userModel.js.
-userModel = { username, email, password }
+### Model
+User Model is created with [mongoose](https://www.npmjs.com/package/mongoose) in user.js.
+home Model is created with [mongoose](https://www.npmjs.com/package/mongoose) in home.js.
+message Model is created with [mongoose](https://www.npmjs.com/package/mongoose) in message.js.
+homeinterest Model is created with [mongoose](https://www.npmjs.com/package/mongoose) in homeinterest.js.
 
 ### Hash Password
 Password is hashed with [bcryptjs](https://www.npmjs.com/package/bcryptjs).
 For performance see also: [bcrypt](https://www.npmjs.com/package/bcrypt).
-
-### Validations
-Implemented with [joi](https://joi.dev/api/?v=17.4.0) in validation.js
-There are 2 validations(register and login) for request body.
-
-### Middleware
-The isAuthenticated middleware verifies the jwt in authorization header.
-Simplified version of [express-jwt](https://www.npmjs.com/package/express-jwt).
-Used in /validate endpoint for testing purposes.
-
-### Logger
-Logging made with [morgan](https://www.npmjs.com/package/morgan).
-The formats is "tiny". In server.js file it can be customized.
-
-### Todos
-- Refresh tokens can be saved in storage like redis or mongoDB
-- Login or Register limitation by ip address
-- Add JWT claims like iss, sub, aud...
-- Email verification
-- Login with username instead of email
 
