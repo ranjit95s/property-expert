@@ -1,3 +1,4 @@
+// mod-nav icon changes !!!
 $(document).ready(function () {
     'use strict';
     $('#menu').click(function () {
@@ -11,6 +12,7 @@ $(document).ready(function () {
         $('.user').toggleClass('user-toggle');
     });
 
+// sticky navbar !!!
     window.onscroll = function () { myFunction() };
 
     var header = document.getElementById("header-2");
@@ -24,6 +26,8 @@ $(document).ready(function () {
         }
     }
 
+
+    // home data filter !!!
     $('.control .button').click(function (e) {
         $(this).addClass('button-active').siblings().removeClass('button-active');
 

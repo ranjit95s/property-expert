@@ -1,11 +1,14 @@
+// web query !!
+
 function DoFast(str) {
   var inputString = str;
-  // window.location.href = "/homeInterest"+inputString;
   var href = "/homeInterest" + inputString;
   console.log(href)
   window.location.href = href;
 }
 
+
+// tigger interest btn
 $('#container-forms').on("click", '#primaryButton', function (e) {
   alert('CLICKED 1');
 });
@@ -14,7 +17,6 @@ $('#container-forms').on("click", '#button-2', function (e) {
   alert('CLICKED 2');
 });
 
-// When the user scrolls the page, execute myFunction 
 window.onscroll = function () { myFunction() };
 
 function myFunction() {

@@ -1,3 +1,6 @@
+
+// render user information in Owner Part {START} !!!
+
 function sameAsAbove() {
     var sameAsAbove = document.querySelector("#switch:checked");
     if (sameAsAbove != null) {
@@ -25,7 +28,11 @@ function sameAsAbove() {
         console.log("removed")
     }
 }
+// render user information in Owner Part {END} !!!
 
+
+
+// below code make sure that very filed filled by user or not .. if not it deactivate submit button else enable submit button {START}
 function validateFormInfo() {
     var owner_name = document.getElementById("owner_name").value;
     var owner_phone = document.getElementById("owner_phone").value;
@@ -49,8 +56,9 @@ function validateFormInfo() {
     var sellOrRent = document.getElementById("amount_value");
 
     var submit_two = document.getElementById("submit");
-
+    // check if file is image or not -
     var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+    // check if phone number format is right -
     var phoneno = /^\d{10}$/;
 
     if (owner_name == null || owner_phone == null || owner_phone == null || owner_email == null ||
@@ -69,31 +77,33 @@ function validateFormInfo() {
         fourthImage == "") {
 
 
-        var errMessage = document.getElementById("message");
+    var errMessage = document.getElementById("message");
         errMessage.innerHTML = '<div class="alert alert-warning" role="alert"> Note: All details are required! Please fill all details.Then you can able to enter ammount of sell / rent.</div > ';
         sellOrRent.setAttribute("disabled", true);
         submit_two.setAttribute("disabled", true);
-    } else if (!allowedExtensions.exec(firstImage) || !allowedExtensions.exec(secondImage) || !allowedExtensions.exec(thirdImage) || !allowedExtensions.exec(firstImage)) {
+    } 
+    else if (!allowedExtensions.exec(firstImage) || !allowedExtensions.exec(secondImage) || !allowedExtensions.exec(thirdImage) || !allowedExtensions.exec(firstImage)) {
         var errMessage = document.getElementById("message");
         errMessage.innerHTML = '<div class="alert alert-warning" role="alert"> Note: Please upload only jpg, jpeg and png images! Then you can able to enter ammount of sell/rent.</div>';
         sellOrRent.setAttribute("disabled", true);
         submit_two.setAttribute("disabled", true);
-    } else if (!owner_phone.match(phoneno)) {
+    } 
+    else if (!owner_phone.match(phoneno)) {
         var errMessage = document.getElementById("message");
         errMessage.innerHTML = `<div class="alert alert-warning" role="alert"> Note: Owner's mobile number not entered properly. Please enter a valid mobile number. Then you can able to enter ammount of sell/rent.</div>`;
         sellOrRent.setAttribute("disabled", true);
         submit_two.setAttribute("disabled", true);
-    } else {
+    } 
+    else {
         var errMessage = document.getElementById("message");
         errMessage.innerHTML = ``;
         sellOrRent.removeAttribute("disabled");
         submit_two.removeAttribute("disabled");
     }
-
-
-
 }
+// below code make sure that very filed filled by user or not .. if not it deactivate submit button else enable submit button {START}
 
+// next button
 function next(currentNum) {
     if (!currentNum == 0) {
         var currentDiv = "div" + currentNum;
@@ -108,7 +118,7 @@ function next(currentNum) {
         document.documentElement.scrollTop = 0;
     }
 }
-
+// back button
 function back(currentNum) {
     if (!currentNum <= 0) {
         var currentDiv = "div" + currentNum;

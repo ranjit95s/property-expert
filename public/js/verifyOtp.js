@@ -1,24 +1,5 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// var firebaseConfig = {
-//   apiKey: "AIzaSyCvBL2vw_hem-FXAYZj-tv8lieMXUa4ndE",
-//   authDomain: "property-expert-95s.firebaseapp.com",
-//   projectId: "property-expert-95s",
-//   storageBucket: "property-expert-95s.appspot.com",
-//   messagingSenderId: "281563211565",
-//   appId: "1:281563211565:web:f08fd7effcc793ffb255a4",
-//   measurementId: "G-9SDS5DBSJD"
-// };
-// // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
 
-
-
-
-
-
-
+// firebase OTP VERIFICATION ___
 
 $(document).ready(function () {
   const firebaseConfig = {
