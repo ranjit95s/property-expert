@@ -86,6 +86,14 @@ app.get("/", async (req, res) => {
         const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
         console.log(verifyUser);
         const userDetails = await user.findOne({ _id: verifyUser._id });
+
+                        // if user isn't verifyed number with firebase then throw an error and render to verification page !
+                        if (userDetails.isVerified != true) {
+                            console.log("user not verified")
+                            // redirecting to page
+                            res.redirect(`/verifyOtp?phoneNo=${phoneNo}`); // grab user phone number
+                        }
+
         // user verification -- {END} --
 
         res.render("index", { getHome, user: userDetails._id, userName: userDetails.name, userPhone: userDetails.phone, userPhoto: userDetails.user_photo, userEmail: userDetails.email });
@@ -289,6 +297,7 @@ app.get("/user", async (req, res) => {
     // user verification -- {END} --
     const getUsers = await user.find({ _id: verifyUser._id }); //non-used for now !
 
+
     try {
         // getting home ._id from searchBar---
         var id = req.query._id;
@@ -307,6 +316,8 @@ app.get("/user", async (req, res) => {
         // to get actual time property uploaed -- moment npm make time format more readable -- 
         var created_at = req.body.created_at;
         let createdOn = moment(created_at).toString();
+
+        
 
         // check if ONLY ONE user data is passing or not if limit is greater than 1 .. 
         // make getUser = false and it will redirect to landing page else getUser = true , show user data

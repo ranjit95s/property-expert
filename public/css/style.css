@@ -46,3 +46,6 @@ html {
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
+#no_data i {
+    font-size: 8rem;
+}

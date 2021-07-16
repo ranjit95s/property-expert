@@ -5,6 +5,7 @@ body {
 .sec {
     width: 90%;
     margin: 1% 0% 0% 5%;
+    min-height: 100vh;
 }
 
 .sec .head {
@@ -207,6 +208,9 @@ body {
         width: 100%;
         margin: 0;
     }
+    .sec .head {
+        border-radius: 0;
+    }
     .sec .head h2 {
         font-size: 1.6rem;
     }
@@ -224,5 +228,8 @@ body {
     }
     .addition-info h2 {
         font-size: 1rem;
+    }
+    .sec .container {
+        border-radius: 0;
     }
 }

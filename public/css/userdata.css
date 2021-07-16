@@ -1,5 +1,9 @@
 body {
-    background-color: rgb(185, 185, 185);
+    background-image: linear-gradient(to right top, #9a28ae, #8c44ab, #8155a4, #7a629a, #776d8d, #786f8e, #7a708e, #7b728f, #816c9e, #8b64aa, #995ab3, #a94bb9);
+}
+
+.container {
+    min-height: 100vh;
 }
 
 .container .info-de {
@@ -144,10 +148,12 @@ body {
     .usermain {
         width: 100%;
         margin: 0;
+        border-radius: 0;
     }
     .container .info-de {
         width: 100%;
         margin: 0;
+    border-radius: 0;
     }
     .main1 .user {
         width: 32rem;

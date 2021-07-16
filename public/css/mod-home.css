@@ -4,11 +4,21 @@
     height: max-content;
 }
 
+body {
+    background-image: linear-gradient(to right top, #4e1444, #502950, #533b5b, #584b62, #5f5a68, #665f75, #6d6482, #746990, #7f63a7, #8e5abb, #a34acb, #bd2bd6);
+}
+
 .container-main .head {
     background-image: linear-gradient(to right top, #ee43a4, #e939a7, #e42fab, #dd23af, #d617b4, #cd10ad, #c308a6, #ba009f, #ad008c, #9e007a, #90006a, #81005a);
     padding: 15px;
     text-align: center;
     border-radius: 20px 20px 0px 0px;
+    box-shadow: 0 .4rem .8rem black;
+}
+
+.container-main .head2 {
+    box-shadow: 0 .4rem .8rem black;
+
 }
 
 .container-main .head h1 {
@@ -71,5 +81,8 @@
     }
     .property .img-con .image .view {
         font-size: 1.5rem;
+    }
+    .container-main .head , .container-main .head2 {
+        border-radius: 0;
     }
 }

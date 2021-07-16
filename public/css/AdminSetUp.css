@@ -4,25 +4,25 @@ body {
 }
 
 #admin {
-    background-image: linear-gradient(to left top, #9d3d3d, #7c3348, #552e46, #332736, #1c1c1c);
+    background-image: linear-gradient(to right top, #c05bb7, #9c58a4, #7b538d, #604b73, #494158, #43455f, #3a4a64, #304f68, #006c89, #008993, #00a581, #12bc55);
     height: max-content;
     width: 80%;
     margin: 1% 0% 1% 10%;
     border-radius: 30px 30px 10px 10px;
     padding: 20px;
-    box-shadow: 0 .2rem .5rem black;
+    box-shadow: 0 .4rem .8rem black;
 }
 
 .headOfPage h1 {
     font-size: 30px;
     font-weight: 800;
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
 }
 
 .headOfPage span {
     font-size: 20px;
     font-weight: 700;
-    color: rgb(104, 104, 104);
+    color: rgb(185, 185, 185);
 }
 
 .container-box {
@@ -125,6 +125,11 @@ body {
 }
 
 @media (max-width: 510px) {
+    #admin {
+border-radius: 0;
+margin: 0% 0% 0% 1%;
+width: 98%;
+    }
     .container-box .box {
         width: 30rem !important;
     }

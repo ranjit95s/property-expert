@@ -61,7 +61,7 @@ function onSignInSubmit() {
         console.log(error.message);
         swal(
           "Can't Send OTP",
-          "OTP cannot be send at this moment please try again after some time. Sorry...!",
+          "We have blocked all requests from this device due to unusual activity. Try again later. Sorry...!",
           "error"
         );
 
@@ -80,7 +80,7 @@ function onSignInSubmit() {
         const user = result.user;
         console.log("Successfull");
 
-        verifyBtn.value = "Verify OTP";
+        verifyBtnz.value = "Verify OTP";
         swal(
           "Verified!",
           "OTP verified successfully! Please click on submit. Thank You..",
@@ -89,16 +89,16 @@ function onSignInSubmit() {
         otpInput.classList.toggle("hidden");
         verifyBtn.classList.toggle("hidden");
         submitBtn.classList.remove("hidden");
+
+        verifyBtnz.value = "Verify OTP";
       })
       .catch((error) => {
         console.log("wrong captcha");
         swal("Wrong OTP!", "Entered OTP is wrong please try again!", "error");
-        verifyBtn.value = "Verify OTP";
         sendBtn.classList.remove("hidden");
+        verifyBtnz.value = "Verify OTP";
         otpInput.classList.toggle("hidden");
         verifyBtn.classList.toggle("hidden");
-
-        verifyBtn.value = "Verify OTP";
       });
   });
 }
