@@ -97,6 +97,8 @@ function onSignInSubmit() {
         sendBtn.classList.remove("hidden");
         otpInput.classList.toggle("hidden");
         verifyBtn.classList.toggle("hidden");
+
+        verifyBtn.value = "Verify OTP";
       });
   });
 }
