@@ -295,9 +295,10 @@ select {
 
 .alert {
     position: relative;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     text-align: center;
     margin: 2rem;
+    font-size: 1rem;
     border: 1px solid transparent;
     border-radius: 15px;
 }
