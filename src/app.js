@@ -890,7 +890,7 @@ app.post("/deptlogin/", async (req, res) => {
         const getCountinterest = await homeInterest.count({}, function (err, countInterest) {
             console.log("Number of homeInterest:", countInterest);
         })
-        if (admin0 == "admin" && admin1 == "admin") {
+        if (admin0 == process.env.DEPT_KEY && admin1 == process.env.DEPT_KEY) {
             res.render("database", { success: "true", count: getCountUsers, countHome: getCountHome, countMsg: getCountMeg, countInterest: getCountinterest });
         } else {
             err = " username or password is wrong, please try again ! ";
