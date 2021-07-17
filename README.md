@@ -1,5 +1,6 @@
 # Sell / Buy Property
-The :house_with_garden:**_Property-Expert.Com_**:house_with_garden: is a node app/site that handles user registration, authentication & authorization with [JWT](https://www.npmjs.com/package/jsonwebtoken), home sell data in api form as well as user home interest data.
+The :house_with_garden:**_Property-Expert.Com_**:house_with_garden: successfully completing “Property-Expert.Com” and “Project Goal : property portal, deals with every aspect of the consumers’ needs in the real estate industry. It is an online forum where buyers, sellers and brokers/agents can exchange information about real estate properties quickly, effectively and inexpensively. At Property-Expert.Com you can advertise a property, search for a property, browse through properties, build your own property microsite, and keep yourself updated with the latest news and trends making headlines in the realty sector. Took 1 month to structure base of this project like simple UI design and all backend work then afterward took 1 month to design user frindly interface then few week take to counter bugs and clear various "Test Case". budget : free of cost !”.
+Node site that handles user registration, authentication & authorization with [JWT](https://www.npmjs.com/package/jsonwebtoken), keep user , Home data in api form as well as user home interest data.
 
 Here is the [REPO](https://github.com/ranjit95s/property-expert).
 
@@ -7,10 +8,10 @@ Here is the [DEMO](https://property-expert.herokuapp.com/).
 
 ### How it works?
 
-  Registered users are stored in mongoDB and their password is hashed by bcrypt. When the user POSTs their credentials to the server, they recieve 1 Json Web Token (access token & that will exprire certain time later!).
+  Registered users are stored in mongoDB and their password is hashed by bcrypt. When the user POSTs their credentials to the server, they recieve 1 Json Web Token (access token & that will exprire certain time later!).On the client side user have to re-login if token is exprire.
 for safety purpose we are using firebase phone auth to verify user and then after proccesed next task.
-On the client side user have to re-login if token is exprire.
-The :house_with_garden: **_Property-Expert.Com_** :house_with_garden: allow user to SELL(post) there Property Details and Property will display on site then user can show there interest in property, after clicking show interest button; user details along with property details save to dbs thats all we have in it
+
+The :house_with_garden: **_Property-Expert.Com_** :house_with_garden: allow user to SELL(post) there Property Details and Property will display on site then user can show there interest in property, after clicking show interest button; user details along with property details save to dbs thats all we have in it. later we contact with user and home owner to deal comfirmation of Property.
 
 -----
 
