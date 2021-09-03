@@ -131,8 +131,7 @@ MONGO_URL=mongodb://localhost:27017/<db_name>
 
 
 ### User Interface
-Mini user interface is build with vue.js to show up what is going on.
-Available on root "/". It can be removed from server.js file.
+Mini user interface is build
 ![landing page](https://user-images.githubusercontent.com/74762032/125641239-79e13426-bc9c-448f-b481-b6ccac1f42fa.png)
 ![home sec](https://user-images.githubusercontent.com/74762032/125642931-8b0d1bd5-2bc0-4d30-ab35-4eaaf80e0c5d.png)
 
